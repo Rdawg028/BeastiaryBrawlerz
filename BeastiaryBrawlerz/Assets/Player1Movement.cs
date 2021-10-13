@@ -8,15 +8,15 @@ public class Player1Movement : MonoBehaviour
     //bool ground = true;
     // Start is called before the first frame update
     Animator theAnimator;
-    Rigidbody2D CubertEngine;
+    Rigidbody2D Player1Engine;
     SpriteRenderer facing;
     void Start()
     {
 
 
-        CubertEngine = GameObject.Find("Cubert").GetComponent<Rigidbody2D>();
-        theAnimator = GameObject.Find("Cubert").GetComponent<Animator>();
-        facing = GameObject.Find("Cubert").GetComponent<SpriteRenderer>();
+        Player1Engine = GameObject.Find("Player1").GetComponent<Rigidbody2D>();
+        theAnimator = GameObject.Find("Player1").GetComponent<Animator>();
+        facing = GameObject.Find("Player1").GetComponent<SpriteRenderer>();
         //physicsEngine.AddForce(firstVector);
         Debug.Log("GameStart");
 
@@ -42,7 +42,7 @@ public class Player1Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
 
-            CubertEngine.velocity = rightMove;
+            Player1Engine.velocity = rightMove;
             theAnimator.SetBool("Moving", true);
             facing.flipX = true;
             
@@ -52,36 +52,36 @@ public class Player1Movement : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.A))
         {
-            CubertEngine.velocity = leftMove;
+            Player1Engine.velocity = leftMove;
             theAnimator.SetBool("Moving", true);
             facing.flipX = false;
-            CubertEngine.SetRotation(0);
+            Player1Engine.SetRotation(0);
         }
         //
         else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
         {
-            CubertEngine.AddForce(jumpForce, ForceMode2D.Impulse);
+            Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
             theAnimator.SetBool("OnGround", false);
            // ground = false;
 
         }
         else
         {
-            if (CubertEngine.velocity.x > 0)
+            if (Player1Engine.velocity.x > 0)
             {
-                CubertEngine.velocity = CubertEngine.velocity - VelFriction;
-                if (CubertEngine.velocity.x < 0)
+                Player1Engine.velocity = Player1Engine.velocity - VelFriction;
+                if (Player1Engine.velocity.x < 0)
                 {
-                    CubertEngine.velocity = noMove;
+                    Player1Engine.velocity = noMove;
                     theAnimator.SetBool("Moving", false);
                 }
             }
-            else if (CubertEngine.velocity.x < 0)
+            else if (Player1Engine.velocity.x < 0)
             {
-                CubertEngine.velocity = CubertEngine.velocity + VelFriction;
-                if (CubertEngine.velocity.x > 0)
+                Player1Engine.velocity = Player1Engine.velocity + VelFriction;
+                if (Player1Engine.velocity.x > 0)
                 {
-                    CubertEngine.velocity = noMove;
+                    Player1Engine.velocity = noMove;
                     theAnimator.SetBool("Moving", false);
                 }
             }
