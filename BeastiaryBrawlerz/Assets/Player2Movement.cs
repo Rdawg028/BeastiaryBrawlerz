@@ -98,13 +98,25 @@ public class Player2Movement : MonoBehaviour
         {
             //if collision with ground
             theAnimator.SetBool("OnGround", true);
+            theAnimator.SetBool("InAir", false);
             // ground = true;
 
         }
         else
         {
-            theAnimator.SetBool("OnGround", false);
+            if (theAnimator.GetBool("InAir")){
+                theAnimator.SetBool("OnGround", false);
+            }
+            
         }
 
+    }
+
+    public void OnTriggerExit(Collider TheTrigger)
+    {
+        if (TheTrigger.gameObject.CompareTag("floorCollider")){
+            theAnimator.SetBool("InAir", true);
+        }
+        
     }
 }
