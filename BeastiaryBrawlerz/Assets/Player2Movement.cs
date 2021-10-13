@@ -38,7 +38,7 @@ public class Player2Movement : MonoBehaviour
         // theAnimator.SetBool("Moving", move);
 
 
-        Debug.Log(theAnimator.GetBool("OnGround"));
+        //Debug.Log(theAnimator.GetBool("OnGround"));
         if (Input.GetKey(KeyCode.RightArrow))
         {
 
@@ -86,6 +86,10 @@ public class Player2Movement : MonoBehaviour
                 }
             }
 
+            if (Player2Engine.velocity.y == 0)
+            {
+                theAnimator.SetBool("OnGround", true);
+            }
 
         }
     }
@@ -98,7 +102,7 @@ public class Player2Movement : MonoBehaviour
         {
             //if collision with ground
             theAnimator.SetBool("OnGround", true);
-            //theAnimator.SetBool("InAir", false);
+            theAnimator.SetBool("InAir", false);
             // ground = true;
 
         }
@@ -112,15 +116,5 @@ public class Player2Movement : MonoBehaviour
 
     }
 
-    public void OnCollisionStay2D(Collider TheTrigger)
-    {
-        if (TheTrigger.gameObject.CompareTag("floorCollider")){
-            theAnimator.SetBool("InAir", false);
-        }
-        else
-        {
-            theAnimator.SetBool("InAir", false);
-        }
-        
-    }
+    
 }
