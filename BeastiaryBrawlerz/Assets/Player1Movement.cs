@@ -38,7 +38,7 @@ public class Player1Movement : MonoBehaviour
         // theAnimator.SetBool("Moving", move);
 
 
-        //Debug.Log(theAnimator.GetBool("OnGround"));
+        Debug.Log(theAnimator.GetBool("OnGround"));
         if (Input.GetKey(KeyCode.D))
         {
 
@@ -60,7 +60,7 @@ public class Player1Movement : MonoBehaviour
         //
         else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
         {
-            Debug.Log("Hit jump");
+            
             Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
             theAnimator.SetBool("OnGround", false);
            // ground = false;
