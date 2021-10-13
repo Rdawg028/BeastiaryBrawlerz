@@ -28,7 +28,7 @@ public class Player2Movement : MonoBehaviour
         Vector2 noMove = new Vector2(0, 0);
         Vector2 VelFriction = new Vector2(1, 0);
         Vector2 firstVector = new Vector2(-5, 5);
-        Vector2 jumpForce = new Vector2(0, 100);
+        Vector2 jumpForce = new Vector2(0, 10);
         Vector2 rightMove = new Vector2(5, 0);
         Vector2 leftMove = new Vector2(-5, 0);
 
@@ -98,7 +98,7 @@ public class Player2Movement : MonoBehaviour
         {
             //if collision with ground
             theAnimator.SetBool("OnGround", true);
-            theAnimator.SetBool("InAir", false);
+            //theAnimator.SetBool("InAir", false);
             // ground = true;
 
         }
@@ -112,10 +112,14 @@ public class Player2Movement : MonoBehaviour
 
     }
 
-    public void OnTriggerExit(Collider TheTrigger)
+    public void OnCollisionStay2D(Collider TheTrigger)
     {
         if (TheTrigger.gameObject.CompareTag("floorCollider")){
-            theAnimator.SetBool("InAir", true);
+            theAnimator.SetBool("InAir", false);
+        }
+        else
+        {
+            theAnimator.SetBool("InAir", false);
         }
         
     }
