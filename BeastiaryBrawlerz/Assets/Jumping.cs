@@ -19,8 +19,10 @@ public class Jumping : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D TheTrigger)
     {
-        
+        if (TheTrigger.gameObject.CompareTag("Ground")){
             theAnimator.SetBool("InAir", false);
+        }
+            
 
     }
     public void OnTriggerExit2D(Collider2D TheTrigger)
