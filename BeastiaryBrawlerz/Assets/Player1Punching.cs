@@ -10,7 +10,7 @@ public class Player1Punching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GameObject.Find("Cubert").GetComponent<Animator>();
+        anim = GameObject.Find("Player1").GetComponent<Animator>();
     }
 
     // Update is called once per frame
