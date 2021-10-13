@@ -39,6 +39,7 @@ public class Player2Movement : MonoBehaviour
 
 
         //Debug.Log(theAnimator.GetBool("OnGround"));
+        
         if (Input.GetKey(KeyCode.RightArrow))
         {
 
@@ -61,6 +62,10 @@ public class Player2Movement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.UpArrow) && theAnimator.GetBool("OnGround"))
         {
             Player2Engine.AddForce(jumpForce, ForceMode2D.Impulse);
+            if (theAnimator.GetBool("InAir"))
+            {
+                theAnimator.SetBool("OnGround", false);
+            }
             theAnimator.SetBool("OnGround", false);
             // ground = false;
 
@@ -100,6 +105,7 @@ public class Player2Movement : MonoBehaviour
 
         if (TheCollision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("Hitting Ground");
             //if collision with ground
             theAnimator.SetBool("OnGround", true);
             theAnimator.SetBool("InAir", false);
