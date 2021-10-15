@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player1Punching : MonoBehaviour
 {
     Animator anim;
+    int p1Health;
     // Start is called before the first frame update
     void Start()
     {
