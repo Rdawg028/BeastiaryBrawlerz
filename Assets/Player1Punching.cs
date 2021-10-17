@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -9,6 +10,7 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     int p2Health;
     GameObject p2;
+   
     bool hitting;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,19 @@ public class Player1Punching : MonoBehaviour
         }
         if (p2Health <= 0)
         {
+            GameObject Player1 = GameObject.Find("Player1");
+            DontDestroyOnLoad(Player1);
+            GameObject theCamera = GameObject.FindWithTag("MainCamera");
+            DontDestroyOnLoad(theCamera);
+            GameObject floor = GameObject.FindWithTag("ground");
+            DontDestroyOnLoad(floor);
+
+            GameObject gameManager = GameObject.FindWithTag("gameManager");
+            DontDestroyOnLoad(gameManager);
+            //move character
+            //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
+
+            SceneManager.LoadScene("player1Win");
             Object.Destroy(p2);
         }
 
