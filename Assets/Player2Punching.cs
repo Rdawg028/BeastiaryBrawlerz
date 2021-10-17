@@ -35,6 +35,23 @@ public class Player2Punching : MonoBehaviour
         
         if (p1Health <= 0)
         {
+
+
+            GameObject Player2 = GameObject.Find("Player2");
+            DontDestroyOnLoad(Player2);
+            GameObject theCamera = GameObject.FindWithTag("MainCamera");
+            DontDestroyOnLoad(theCamera);
+            GameObject floor = GameObject.FindWithTag("Ground");
+            DontDestroyOnLoad(floor);
+
+            //GameObject gameManager = GameObject.FindWithTag("gameManager");
+            //DontDestroyOnLoad(gameManager);
+            //move character
+            //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
+
+            SceneManager.LoadScene("player1Win");
+            
+            scene++;
             Object.Destroy(p1);
             
             
