@@ -16,7 +16,7 @@ public class Player2Punching : MonoBehaviour
     void Start()
     {
         anim = GameObject.Find("Player2").GetComponent<Animator>();
-        p1Health = 10;
+        p1Health = 25;
         p1 = GameObject.Find("Player1");
     }
 
