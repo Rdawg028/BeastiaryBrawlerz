@@ -7,12 +7,14 @@ using UnityEngine;
 public class Player2Punching : MonoBehaviour
 {
     Animator anim;
-    int p2Health;
+    int p1Health;
+    GameObject p1;
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.Find("Player2").GetComponent<Animator>();
-       
+        p1Health = 10;
+        p1 = GameObject.Find("Player1");
     }
 
     // Update is called once per frame
@@ -28,6 +30,19 @@ public class Player2Punching : MonoBehaviour
             anim.SetBool("IsPunch", false);
             // anim.speed = f;
         }
+        
+        if (p1Health <= 0)
+        {
+            Object.Destroy(p1);
+        }
 
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            p1Health -= 5;
+        }
     }
 }
