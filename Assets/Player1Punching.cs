@@ -11,8 +11,8 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     int p2Health;
     GameObject p2;
-    
-   
+    scene current = scene.Arena;
+
     bool hitting;
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class Player1Punching : MonoBehaviour
             anim.SetBool("IsPunch", false);
             // anim.speed = f;
         }
-        scene current = scene.Arena;
+        
         if (p2Health <= 0&&current==scene.Arena)
         {
             GameObject Player1 = GameObject.Find("Player1");
@@ -52,7 +52,7 @@ public class Player1Punching : MonoBehaviour
 
             SceneManager.LoadScene("player1Win");
             Object.Destroy(p2);
-            scene++;
+            current=scene.P1;
         }
 
     }
