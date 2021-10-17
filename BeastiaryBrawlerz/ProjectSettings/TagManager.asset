@@ -54,3 +54,6 @@ TagManager:
   - name: Background_1
     uniqueID: 2772971635
     locked: 0
+  - name: Winner
+    uniqueID: 3998785125
+    locked: 0
