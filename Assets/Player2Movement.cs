@@ -58,18 +58,19 @@ public class Player2Movement : MonoBehaviour
             facing.flipX = false;
             Player2Engine.SetRotation(0);
         }
-        //
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && theAnimator.GetBool("OnGround"))
-        {
-            Player2Engine.AddForce(jumpForce, ForceMode2D.Impulse);
-            if (theAnimator.GetBool("InAir"))
-            {
-                theAnimator.SetBool("OnGround", false);
-            }
-            theAnimator.SetBool("OnGround", false);
-            // ground = false;
+        //&& theAnimator.GetBool("OnGround")
+        //else if (Input.GetKeyDown(KeyCode.UpArrow) )
+        //{
+        //    //*Time.deltaTime
+        //    Player2Engine.AddForce(jumpForce, ForceMode2D.Impulse);
+        //    if (theAnimator.GetBool("InAir"))
+        //    {
+        //        theAnimator.SetBool("OnGround", false);
+        //    }
+        //    theAnimator.SetBool("OnGround", false);
+        //    // ground = false;
 
-        }
+        //}
         else
         {
             if (Player2Engine.velocity.x > 0)
@@ -91,36 +92,37 @@ public class Player2Movement : MonoBehaviour
                 }
             }
 
-            if (Player2Engine.velocity.y == 0)
-            {
-                theAnimator.SetBool("OnGround", true);
-            }
+            //if (Player2Engine.velocity.y == 0)
+            //{
+            //   // theAnimator.SetBool("OnGround", true);
+            //}
 
         }
     }
+    //old Jumping code, now gone
 
-    public void OnCollisionEnter2D(Collision2D TheCollision)
-    {
-        //gets called on collision
+    //public void OnCollisionEnter2D(Collision2D TheCollision)
+    //{
+    //    //gets called on collision
 
-        if (TheCollision.gameObject.CompareTag("Ground"))
-        {
+    //    if (TheCollision.gameObject.CompareTag("Ground"))
+    //    {
            
-            //if collision with ground
-            theAnimator.SetBool("OnGround", true);
-            theAnimator.SetBool("InAir", false);
-            // ground = true;
+    //        //if collision with ground
+    //        theAnimator.SetBool("OnGround", true);
+    //        //theAnimator.SetBool("InAir", false);
+    //        // ground = true;
 
-        }
-        else
-        {
-            if (theAnimator.GetBool("InAir")){
-                theAnimator.SetBool("OnGround", false);
-            }
+    //    }
+    //    else
+    //    {
+    //        if (theAnimator.GetBool("InAir")){
+    //            theAnimator.SetBool("OnGround", false);
+    //        }
             
-        }
+    //    }
 
-    }
+    //}
 
     
 }
