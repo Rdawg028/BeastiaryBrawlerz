@@ -105,7 +105,7 @@ public class Player2Movement : MonoBehaviour
 
         if (TheCollision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Hitting Ground");
+           
             //if collision with ground
             theAnimator.SetBool("OnGround", true);
             theAnimator.SetBool("InAir", false);
