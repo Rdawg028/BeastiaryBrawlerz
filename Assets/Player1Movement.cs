@@ -38,7 +38,7 @@ public class Player1Movement : MonoBehaviour
         // theAnimator.SetBool("Moving", move);
 
 
-        Debug.Log(theAnimator.GetBool("OnGround"));
+       // Debug.Log(theAnimator.GetBool("OnGround"));
         if (Input.GetKey(KeyCode.D))
         {
 
