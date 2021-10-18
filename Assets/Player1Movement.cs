@@ -58,14 +58,14 @@ public class Player1Movement : MonoBehaviour
             Player1Engine.SetRotation(0);
         }
         //
-        else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
-        {
+        //else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
+        //{
             
-            Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
-            theAnimator.SetBool("OnGround", false);
-           // ground = false;
+        //    Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
+        //    theAnimator.SetBool("OnGround", false);
+        //   // ground = false;
 
-        }
+        //}
         else
         {
             if (Player1Engine.velocity.x > 0)
@@ -91,21 +91,21 @@ public class Player1Movement : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D TheCollision)
-    {
-        //gets called on collision
+    //public void OnCollisionEnter2D(Collision2D TheCollision)
+    //{
+    //    //gets called on collision
 
-        if (TheCollision.gameObject.CompareTag("Ground"))
-        {
-            //if collision with ground
-            theAnimator.SetBool("OnGround", true);
-           // ground = true;
+    //    if (TheCollision.gameObject.CompareTag("Ground"))
+    //    {
+    //        //if collision with ground
+    //        theAnimator.SetBool("OnGround", true);
+    //       // ground = true;
 
-        }
-        else
-        {
-            theAnimator.SetBool("OnGround", false);
-        }
+    //    }
+    //    else
+    //    {
+    //        theAnimator.SetBool("OnGround", false);
+    //    }
 
-    }
+    //}
 }
