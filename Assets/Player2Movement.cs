@@ -58,6 +58,9 @@ public class Player2Movement : MonoBehaviour
             facing.flipX = false;
             Player2Engine.SetRotation(0);
         }
+
+
+
         //&& theAnimator.GetBool("OnGround")
         //else if (Input.GetKeyDown(KeyCode.UpArrow) )
         //{
@@ -70,7 +73,7 @@ public class Player2Movement : MonoBehaviour
         //    theAnimator.SetBool("OnGround", false);
         //    // ground = false;
 
-        //}
+            //}
         else
         {
             if (Player2Engine.velocity.x > 0)
@@ -98,7 +101,25 @@ public class Player2Movement : MonoBehaviour
             //}
 
         }
+
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            theAnimator.SetBool("IsBlocking", true);
+            theAnimator.SetBool("BlockHolding", true);
+
+
+        }
+        else
+        {
+            theAnimator.SetBool("IsBlocking", false);
+            theAnimator.SetBool("BlockHolding", false);
+
+
+        }
     }
+
+
     //old Jumping code, now gone
 
     //public void OnCollisionEnter2D(Collision2D TheCollision)
@@ -123,6 +144,7 @@ public class Player2Movement : MonoBehaviour
     //    }
 
     //}
+
 
     
 }
