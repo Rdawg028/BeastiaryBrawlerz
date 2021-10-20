@@ -55,6 +55,11 @@ public class Player1Punching : MonoBehaviour
             current=scene.P1;
         }
 
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            anim.SetBool("IsBlocking", true);
+        }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
