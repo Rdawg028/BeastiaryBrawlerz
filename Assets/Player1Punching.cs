@@ -65,7 +65,9 @@ public class Player1Punching : MonoBehaviour
         else
         {
             anim.SetBool("IsBlocking", false);
-            anim.SetBool("BlockHolding", false);
+            anim.SetBool("BlockHolding", false); 
+            
+            
         }
         
     }
