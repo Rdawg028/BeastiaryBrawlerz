@@ -6,15 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuCode : MonoBehaviour
 {
-    Text sceneChooser;
-    Button Arena;
+    
+    Button sceneChooser;
+    int buttonScene;
+    const int MAX_SCENES=2;
+    Sprite button;
     // Start is called before the first frame update
     void Start()
     {
-        sceneChooser = GameObject.Find("SceneName").GetComponent<Text>();
-        sceneChooser.text = "SampleScene";
-        Arena = GameObject.Find("SceneChanger").GetComponent<Button>();
-       // Arena.GetComponentInChildren<Text> = "Yep";
+
+         sceneChooser = GameObject.Find("SceneChanger").GetComponent<Button>();
+        buttonScene = 0;
+        button = Resources.Load<Sprite>("Frame 1");
+        // Arena.GetComponentInChildren<Text> = "Yep";
     }
 
     // Update is called once per frame
@@ -26,16 +30,66 @@ public class MenuCode : MonoBehaviour
     
     public void GameStart()
     {
-        SceneManager.LoadScene(sceneChooser.text);
+        SceneManager.LoadScene(buttonScene);
     }
 
-    public void ChangeSceneChoice()
-    {
-        sceneChooser.text = "player1Win";
-    }
+   
 
     public void ButtonChange()
     {
+        switch (buttonScene)
+        {
+            case 0:
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
+                break;
+            case 1:
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Player 1 Win Screen";
+                sceneChooser.GetComponent<Image>().sprite=button;
+                break;
+            case 2:
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Menu";
+                break;
+        }
+    }
 
+    public void LeftArrrow()
+    {
+        //changing buttons so it can change which scene is pciked
+        
+            buttonScene--;
+            //if it goes to the winning screen it changes to the arena
+        //    if (buttonScene == 1)
+        //    {
+        //        buttonScene = 0;
+        //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
+        //}
+
+            //loops back around if it goes to -1 
+            if(buttonScene<0)
+            {
+                buttonScene = MAX_SCENES;
+            }
+
+        ButtonChange();
+        
+    }
+
+    public void rightArrow()
+    {
+        //changing buttons so it can change which scene is pciked
+        
+            buttonScene++;
+            //if it goes to the winning screen it changes to the arena
+            //if (buttonScene == 1)
+            //{
+            //    buttonScene = 0;
+            //}
+
+            //loops back around if it goes above MAX_SCENES
+            if (buttonScene > MAX_SCENES)
+            {
+                buttonScene = 0;
+            }
+        ButtonChange();
     }
 }
