@@ -13,7 +13,7 @@ public class Player1Punching : MonoBehaviour
     GameObject p2;
     scene current = scene.Arena;
     Player2Punching scr;
-    GameObject scr2;
+    
     
    
 
@@ -24,7 +24,7 @@ public class Player1Punching : MonoBehaviour
         anim = GameObject.Find("Player1").GetComponent<Animator>();
         p2Health = 25;
         p2 = GameObject.Find("Player2");
-        scr = scr2.GetComponent<Player2Punching>();
+       
     }
 
     // Update is called once per frame
@@ -65,15 +65,11 @@ public class Player1Punching : MonoBehaviour
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
             
-           
-            
         }
         else
         {
             anim.SetBool("IsBlocking", false);
             anim.SetBool("BlockHolding", false);
-            
-            
             
         }
         
