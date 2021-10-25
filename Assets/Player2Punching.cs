@@ -79,8 +79,7 @@ public class Player2Punching : MonoBehaviour
         {
             p1Health = takeDamageLight(p1Health);
         }
-        
-
+  
     }
 
     public int takeDamageLight(int health)
