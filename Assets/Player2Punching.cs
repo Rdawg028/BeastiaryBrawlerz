@@ -77,8 +77,18 @@ public class Player2Punching : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            p1Health -= 5;
+            p1Health = takeDamageLight(p1Health);
         }
+        
 
     }
+
+    public int takeDamageLight(int health)
+    {
+        Debug.Log("Hit dectected");
+        health -= 5;
+        return health;
+    }
+
+
 }
