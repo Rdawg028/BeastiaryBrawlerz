@@ -12,6 +12,7 @@ public class Player2Punching : MonoBehaviour
     GameObject p1;
     GameObject win1;
     scene current = scene.Arena;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,18 @@ public class Player2Punching : MonoBehaviour
             
         }
 
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            anim.SetBool("IsBlocking", true);
+            anim.SetBool("BlockHolding", true);
+            
+        }
+        else
+        {
+            anim.SetBool("IsBlocking", false);
+            anim.SetBool("BlockHolding", false);
+        }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -66,5 +79,6 @@ public class Player2Punching : MonoBehaviour
         {
             p1Health -= 5;
         }
+
     }
 }

@@ -9,9 +9,10 @@ public enum scene { Arena=0,P1=1,P2=2};
 public class Player1Punching : MonoBehaviour
 {
     Animator anim;
-    int p2Health;
+    public int p2Health;
     GameObject p2;
     scene current = scene.Arena;
+   
 
     bool hitting;
     // Start is called before the first frame update
@@ -59,13 +60,15 @@ public class Player1Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
+            
            
             
         }
         else
         {
             anim.SetBool("IsBlocking", false);
-            anim.SetBool("BlockHolding", false); 
+            anim.SetBool("BlockHolding", false);
+            
             
             
         }

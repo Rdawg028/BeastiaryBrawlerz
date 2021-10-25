@@ -107,6 +107,7 @@ public class Player2Movement : MonoBehaviour
         {
             theAnimator.SetBool("IsBlocking", true);
             theAnimator.SetBool("BlockHolding", true);
+           
 
 
         }
