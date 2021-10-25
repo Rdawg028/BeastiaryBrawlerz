@@ -12,6 +12,7 @@ public class Player2Punching : MonoBehaviour
     GameObject p1;
     GameObject win1;
     scene current = scene.Arena;
+    bool blocking;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class Player2Punching : MonoBehaviour
         anim = GameObject.Find("Player2").GetComponent<Animator>();
         p1Health = 25;
         p1 = GameObject.Find("Player1");
+        blocking = false;
     }
 
     // Update is called once per frame
@@ -63,19 +65,25 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
+            blocking = true;
             
         }
         else
         {
             anim.SetBool("IsBlocking", false);
             anim.SetBool("BlockHolding", false);
+            blocking = false;
         }
 
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.S))
+        {
+            blocking = true;
+        }
+        if (Input.GetKey(KeyCode.Alpha1) && !blocking)
         {
             p1Health = takeDamageLight(p1Health);
         }
@@ -84,9 +92,12 @@ public class Player2Punching : MonoBehaviour
 
     public int takeDamageLight(int health)
     {
-        Debug.Log("Hit dectected");
-        health -= 5;
-        return health;
+
+            Debug.Log("Hit dectected");
+            health -= 5;
+            return health;
+
+       
     }
 
 
