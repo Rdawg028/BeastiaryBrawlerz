@@ -121,5 +121,12 @@ public class Player2Punching : MonoBehaviour
         return health;
     }
 
+    public int takeRangeDamage(int health)
+    {
+        Debug.Log("Range Hit");
+        health -= 3;
+        return health;
+    }
+
 
 }
