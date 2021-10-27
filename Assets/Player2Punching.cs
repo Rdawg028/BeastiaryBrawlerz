@@ -106,6 +106,8 @@ public class Player2Punching : MonoBehaviour
         }
     }
 
+
+    // Functions for doing damage. 
     public int takeDamageLight(int health)
     {
 
@@ -121,7 +123,7 @@ public class Player2Punching : MonoBehaviour
         return health;
     }
 
-    public int takeRangeDamage(int health)
+    public int takeRangeDamage(int health) 
     {
         Debug.Log("Range Hit");
         health -= 3;
