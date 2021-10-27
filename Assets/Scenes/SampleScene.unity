@@ -600,6 +600,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1068763484628891850, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.8298275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068763484628891850, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4382918
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068763484628891850, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.87548816
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068763484628891850, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068763484628891850, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
       propertyPath: m_Name
       value: Player2

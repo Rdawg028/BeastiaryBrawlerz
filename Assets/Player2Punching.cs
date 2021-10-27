@@ -34,7 +34,14 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsPunch", false);
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            anim.SetBool("Heavy", true);
+        }
+        else
+        {
+            anim.SetBool("Heavy", false);
+        }
        
         
         if (p1Health <= 0 && current==scene.Arena)
@@ -87,6 +94,16 @@ public class Player2Punching : MonoBehaviour
         {
             p1Health = takeDamageLight(p1Health);
         }
+
+        if (Input.GetKey(KeyCode.Alpha2) && blocking)
+        {
+            anim.SetBool("IsBlocking", false);
+            p1Health = takeDamageHeavy(p1Health);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            p1Health = takeDamageHeavy(p1Health);
+        }
   
     }
 
@@ -101,7 +118,6 @@ public class Player2Punching : MonoBehaviour
     public int takeDamageHeavy(int health)
     {
         Debug.Log("Heavy Hit");
-        anim.SetBool("IsBlocking", false);
         health -= 10;
         return health;
     }
