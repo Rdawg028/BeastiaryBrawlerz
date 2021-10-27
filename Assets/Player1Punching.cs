@@ -39,6 +39,7 @@ public class Player1Punching : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
         {
             anim.SetBool("Heavy", true);
+            
         }
         else
         {
@@ -90,13 +91,13 @@ public class Player1Punching : MonoBehaviour
             p2Health = scr.takeDamageLight(p2Health);
             
         }
-        if (Input.GetKeyDown(KeyCode.Y) && blocking)
+        if (Input.GetKey(KeyCode.Y) && blocking)
         {
             anim.SetBool("IsBlocking", false);
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
         }
-        else if (Input.GetKeyDown(KeyCode.Y) && !blocking)
+        else if (Input.GetKey(KeyCode.Y))
         {
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
