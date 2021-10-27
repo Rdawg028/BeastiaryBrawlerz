@@ -104,7 +104,6 @@ public class Player2Punching : MonoBehaviour
         {
             p1Health = takeDamageHeavy(p1Health);
         }
-  
     }
 
     public int takeDamageLight(int health)
