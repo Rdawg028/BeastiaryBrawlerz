@@ -28,14 +28,14 @@ public class Player2Punching : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            anim.SetBool("IsPunch", true);
-            // anim.speed = 4f; 
+            anim.SetBool("IsPunch", true); 
         }
         else
         {
             anim.SetBool("IsPunch", false);
-            // anim.speed = f;
         }
+
+       
         
         if (p1Health <= 0 && current==scene.Arena)
         {
@@ -65,14 +65,14 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
-            blocking = true;
+           
             
         }
         else
         {
             anim.SetBool("IsBlocking", false);
             anim.SetBool("BlockHolding", false);
-            blocking = false;
+            
         }
 
     }
@@ -96,8 +96,14 @@ public class Player2Punching : MonoBehaviour
             Debug.Log("Hit dectected");
             health -= 5;
             return health;
+    }
 
-       
+    public int takeDamageHeavy(int health)
+    {
+        Debug.Log("Heavy Hit");
+        anim.SetBool("IsBlocking", false);
+        health -= 10;
+        return health;
     }
 
 

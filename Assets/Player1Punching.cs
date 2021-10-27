@@ -22,23 +22,27 @@ public class Player1Punching : MonoBehaviour
         p2Health = 25;
         p2 = GameObject.Find("Player2");
         scr = p2.GetComponent<Player2Punching>();
-        
-        
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)) {
+        if (Input.GetKeyDown(KeyCode.T))  // light attack
+        {
             anim.SetBool("IsPunch", true);
-        
-            // anim.speed = 4f; 
         }
         else
         {
             anim.SetBool("IsPunch", false);
-            // anim.speed = f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
+        {
+            anim.SetBool("Heavy", true);
+        }
+        else
+        {
+            anim.SetBool("Heavy", false);
         }
         
         if (p2Health <= 0&&current==scene.Arena)
@@ -71,15 +75,13 @@ public class Player1Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", false);
             anim.SetBool("BlockHolding", false);
-           
-            
         }
         
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             blocking = true;
         }
@@ -87,6 +89,17 @@ public class Player1Punching : MonoBehaviour
         {
             p2Health = scr.takeDamageLight(p2Health);
             
+        }
+        if (Input.GetKeyDown(KeyCode.Y) && blocking)
+        {
+            anim.SetBool("IsBlocking", false);
+            p2Health = scr.takeDamageHeavy(p2Health);
+            Debug.Log("Heavy Attack Hit");
+        }
+        else if (Input.GetKeyDown(KeyCode.Y) && !blocking)
+        {
+            p2Health = scr.takeDamageHeavy(p2Health);
+            Debug.Log("Heavy Attack Hit");
         }
     }
       
