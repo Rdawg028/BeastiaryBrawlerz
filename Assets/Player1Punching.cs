@@ -46,7 +46,16 @@ public class Player1Punching : MonoBehaviour
             anim.SetBool("Heavy", false);
         }
         
-        if (p2Health <= 0&&current==scene.Arena)
+        if (Input.GetKeyDown(KeyCode.U)) // range attack
+        {
+            anim.SetBool("Range", true);
+        }
+        else
+        {
+            anim.SetBool("Range", false);
+        }
+
+        if (p2Health <= 0 && current==scene.Arena)
         {
             GameObject Player1 = GameObject.Find("Player1");
             DontDestroyOnLoad(Player1);
@@ -69,8 +78,6 @@ public class Player1Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
-           
-            
         }
         else
         {
@@ -101,6 +108,12 @@ public class Player1Punching : MonoBehaviour
         {
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
+        }
+
+        if (Input.GetKey(KeyCode.U) && !blocking)
+        {
+            p2Health = scr.takeRangeDamage(p2Health);
+            Debug.Log("RangeAttack");
         }
     }
       

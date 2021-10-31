@@ -26,7 +26,7 @@ public class Player2Punching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1)) // light attack
         {
             anim.SetBool("IsPunch", true); 
         }
@@ -34,13 +34,22 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsPunch", false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2)) // heavy attack
         {
             anim.SetBool("Heavy", true);
         }
         else
         {
             anim.SetBool("Heavy", false);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha3)) // range attack
+        {
+            anim.SetBool("Range", true);
+        }
+        else
+        {
+            anim.SetBool("Range", false);
         }
        
         
@@ -72,14 +81,11 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", true);
             anim.SetBool("BlockHolding", true);
-           
-            
         }
         else
         {
             anim.SetBool("IsBlocking", false);
-            anim.SetBool("BlockHolding", false);
-            
+            anim.SetBool("BlockHolding", false);   
         }
 
     }
@@ -103,6 +109,12 @@ public class Player2Punching : MonoBehaviour
         else if (Input.GetKey(KeyCode.Alpha2))
         {
             p1Health = takeDamageHeavy(p1Health);
+        }
+
+        if (Input.GetKey(KeyCode.Alpha3) && !blocking)
+        {
+            p1Health = takeRangeDamage(p1Health);
+            Debug.Log("Range Attack hit");
         }
     }
 
