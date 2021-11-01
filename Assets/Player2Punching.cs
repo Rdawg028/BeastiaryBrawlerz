@@ -26,6 +26,7 @@ public class Player2Punching : MonoBehaviour
         blocking = false;
         P2Colliders = GameObject.FindGameObjectsWithTag("P2Collider");
         floorCollider = GameObject.FindGameObjectWithTag("floorCollider");
+        // debugging stuff, basically ignoring collisions with colliders on the same type
         Physics2D.IgnoreCollision(floorCollider.GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
         Physics2D.IgnoreCollision(P2Colliders[0].GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
         Physics2D.IgnoreCollision(P2Colliders[1].GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
