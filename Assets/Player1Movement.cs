@@ -12,8 +12,6 @@ public class Player1Movement : MonoBehaviour
     SpriteRenderer facing;
     void Start()
     {
-
-
         Player1Engine = GameObject.Find("Player1").GetComponent<Rigidbody2D>();
         theAnimator = GameObject.Find("Player1").GetComponent<Animator>();
         facing = GameObject.Find("Player1").GetComponent<SpriteRenderer>();
