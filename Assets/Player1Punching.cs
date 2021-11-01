@@ -105,7 +105,7 @@ public class Player1Punching : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Y) && blocking)
         {
-            anim.SetBool("IsBlocking", false);
+            anim.SetBool("IsBlocking", false); // trying to get block break
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
         }
