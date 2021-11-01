@@ -13,10 +13,9 @@ public class Player1Punching : MonoBehaviour
     GameObject p2;
     scene current = scene.Arena;
     Player2Punching scr;
-    GameObject[] P1Colliders;
     bool blocking; 
     bool hitting;
-    bool ignore;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +23,9 @@ public class Player1Punching : MonoBehaviour
         p2Health = 25;
         p2 = GameObject.Find("Player2");
         scr = p2.GetComponent<Player2Punching>();
-        P1Colliders = GameObject.FindGameObjectsWithTag("P1Collider");
-        Physics2D.IgnoreCollision(P1Colliders[0].GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
-        Physics2D.IgnoreCollision(P1Colliders[1].GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
-        Physics2D.IgnoreCollision(P1Colliders[2].GetComponent<Collider2D>(), GetComponent<Collider2D>(), ignore);
+        Physics2D.IgnoreLayerCollision(0, 6);
+        
+       
 
     }
 
