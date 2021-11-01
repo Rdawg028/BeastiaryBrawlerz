@@ -13,8 +13,7 @@ public class Player1Punching : MonoBehaviour
     GameObject p2;
     scene current = scene.Arena;
     Player2Punching scr;
-    bool blocking; 
-    bool hitting;
+    bool blocking;
  
     // Start is called before the first frame update
     void Start()
@@ -23,6 +22,7 @@ public class Player1Punching : MonoBehaviour
         p2Health = 25;
         p2 = GameObject.Find("Player2");
         scr = p2.GetComponent<Player2Punching>();
+        // ignores collisions of objects on the same layer. 
         Physics2D.IgnoreLayerCollision(0, 6);
         
        
