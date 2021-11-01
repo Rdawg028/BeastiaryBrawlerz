@@ -91,7 +91,7 @@ public class Player2Punching : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
         {
             blocking = true;
         }
@@ -100,7 +100,7 @@ public class Player2Punching : MonoBehaviour
             p1Health = takeDamageLight(p1Health);
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && blocking)
+        if (Input.GetKey(KeyCode.Alpha2) && blocking) // TODO fix block break
         {
             anim.SetBool("IsBlocking", false);
             p1Health = takeDamageHeavy(p1Health);
@@ -119,22 +119,21 @@ public class Player2Punching : MonoBehaviour
 
 
     // Functions for doing damage. 
-    public int takeDamageLight(int health)
+    public int takeDamageLight(int health) // light attack damage
     {
-
             Debug.Log("Hit dectected");
             health -= 5;
             return health;
     }
 
-    public int takeDamageHeavy(int health)
+    public int takeDamageHeavy(int health) // heavy attack damage
     {
         Debug.Log("Heavy Hit");
         health -= 10;
         return health;
     }
 
-    public int takeRangeDamage(int health) 
+    public int takeRangeDamage(int health) // range attack damage
     {
         Debug.Log("Range Hit");
         health -= 3;

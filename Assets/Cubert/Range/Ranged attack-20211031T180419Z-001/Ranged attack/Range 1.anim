@@ -30,8 +30,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.5
-        value: 4.6
+        time: 0.45
+        value: -4.7
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -51,7 +51,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: RangeAttackBox
+    path: P2Range
     classID: 61
     script: {fileID: 0}
   - curve:
@@ -79,7 +79,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: RangeAttackBox
+    path: P2Range
     classID: 61
     script: {fileID: 0}
   m_PPtrCurves:
@@ -150,7 +150,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2358610955
+      path: 1668223551
       attribute: 413499720
       script: {fileID: 0}
       typeID: 61
@@ -164,7 +164,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 2358610955
+      path: 1668223551
       attribute: 1872933342
       script: {fileID: 0}
       typeID: 61
@@ -232,8 +232,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.5
-        value: 4.6
+        time: 0.45
+        value: -4.7
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -253,7 +253,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: RangeAttackBox
+    path: P2Range
     classID: 61
     script: {fileID: 0}
   - curve:
@@ -281,7 +281,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: RangeAttackBox
+    path: P2Range
     classID: 61
     script: {fileID: 0}
   m_EulerEditorCurves: []
