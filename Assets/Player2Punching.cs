@@ -72,11 +72,8 @@ public class Player2Punching : MonoBehaviour
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
             
             SceneManager.LoadScene("player1Win");
-            
-           
+
             Object.Destroy(p1);
-            
-            
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
@@ -94,8 +91,6 @@ public class Player2Punching : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-
-
         if (Input.GetKey(KeyCode.S))
         {
             blocking = true;
@@ -145,6 +140,5 @@ public class Player2Punching : MonoBehaviour
         health -= 3;
         return health;
     }
-
 
 }
