@@ -8,6 +8,8 @@ TagManager:
   - Player 2
   - Player 1
   - floorCollider
+  - P1Collider
+  - P2Collider
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - P1Colliders
+  - P2Colliders
   - 
   - 
   - 
