@@ -610,7 +610,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743731744}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &743731746
 Camera:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743731744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -59.5}
+  m_LocalPosition: {x: 0, y: 0, z: -61.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Arena
+  m_Text: Tester
 --- !u!222 &1513326944
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1322,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.4
+      value: -41.8
       objectReference: {fileID: 0}
     - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_LocalPosition.y
