@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum scene { Arena=0,P1=1,P2=2};
 
@@ -14,6 +15,7 @@ public class Player1Punching : MonoBehaviour
     scene current = scene.Arena;
     Player2Punching scr;
     bool blocking;
+    public Slider HealthBar; 
  
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class Player1Punching : MonoBehaviour
         scr = p2.GetComponent<Player2Punching>();
         // ignores collisions of objects on the same layer. 
         Physics2D.IgnoreLayerCollision(0, 6);
+        
         
        
 

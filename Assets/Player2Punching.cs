@@ -14,6 +14,7 @@ public class Player2Punching : MonoBehaviour
     scene current = scene.Arena;
     bool blocking;
 
+
     // Start is called before the first frame update
     void Start()
     {
