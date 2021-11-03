@@ -2,28 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
 public class Player2Punching : MonoBehaviour
 {
     Animator anim;
-    int p1Health;
+    public float p1Health;
     GameObject p1;
     GameObject win1;
     scene current = scene.Arena;
     bool blocking;
+    GameObject tmpHealth;
+    Slider HealthBar; 
 
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.Find("Player2").GetComponent<Animator>();
-        p1Health = 25;
+        p1Health = 25.0f;
         p1 = GameObject.Find("Player1");
         blocking = false;
         // debugging stuff, basically ignoring collisions with colliders on the same layer
         Physics2D.IgnoreLayerCollision(0, 7);
+
+        //Health Bar stuff
+        tmpHealth = GameObject.Find("HealthBar");
+        HealthBar = tmpHealth.GetComponent<Slider>();
+        HealthBar.value = p1Health;
     }
 
     // Update is called once per frame
@@ -99,42 +107,46 @@ public class Player2Punching : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1) && !blocking)
         {
             p1Health = takeDamageLight(p1Health);
+            HealthBar.value = p1Health; 
         }
 
         if (Input.GetKey(KeyCode.Alpha2) && blocking) // TODO fix block break
         {
             anim.SetBool("IsBlocking", false);
             p1Health = takeDamageHeavy(p1Health);
+            HealthBar.value = p1Health;
         }
         else if (Input.GetKey(KeyCode.Alpha2))
         {
             p1Health = takeDamageHeavy(p1Health);
+            HealthBar.value = p1Health; 
         }
 
         if (Input.GetKey(KeyCode.Alpha3) && !blocking)
         {
             p1Health = takeRangeDamage(p1Health);
             Debug.Log("Range Attack hit");
+            HealthBar.value = p1Health; 
         }
     }
 
 
     // Functions for doing damage. 
-    public int takeDamageLight(int health) // light attack damage
+    public float takeDamageLight(float health) // light attack damage
     {
             Debug.Log("Hit dectected");
             health -= 5;
             return health;
     }
 
-    public int takeDamageHeavy(int health) // heavy attack damage
+    public float takeDamageHeavy(float health) // heavy attack damage
     {
         Debug.Log("Heavy Hit");
         health -= 10;
         return health;
     }
 
-    public int takeRangeDamage(int health) // range attack damage
+    public float takeRangeDamage(float health) // range attack damage
     {
         Debug.Log("Range Hit");
         health -= 3;

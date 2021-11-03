@@ -10,12 +10,13 @@ public enum scene { Arena=0,P1=1,P2=2};
 public class Player1Punching : MonoBehaviour
 {
     Animator anim;
-    public int p2Health;
+    public float p2Health;
     GameObject p2;
     scene current = scene.Arena;
     Player2Punching scr;
     bool blocking;
-    public Slider HealthBar; 
+    Slider HealthBar2;
+    GameObject tmpHealth; 
  
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,12 @@ public class Player1Punching : MonoBehaviour
         scr = p2.GetComponent<Player2Punching>();
         // ignores collisions of objects on the same layer. 
         Physics2D.IgnoreLayerCollision(0, 6);
-        
-        
+
+        //Health Bar stuff
+        tmpHealth = GameObject.Find("HealthBar2");
+        HealthBar2 = tmpHealth.GetComponent<Slider>();
+        HealthBar2.value = p2Health; 
+
        
 
     }
@@ -92,6 +97,8 @@ public class Player1Punching : MonoBehaviour
             anim.SetBool("IsBlocking", false);
             anim.SetBool("BlockHolding", false);
         }
+
+         
         
     }
 
@@ -104,6 +111,8 @@ public class Player1Punching : MonoBehaviour
         if (Input.GetKey(KeyCode.T) && !blocking)
         {
             p2Health = scr.takeDamageLight(p2Health);
+            HealthBar2.value = p2Health; 
+            
             
         }
         if (Input.GetKey(KeyCode.Y) && blocking)
@@ -111,17 +120,20 @@ public class Player1Punching : MonoBehaviour
             anim.SetBool("IsBlocking", false); // trying to get block break
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
+            HealthBar2.value = p2Health;
         }
         else if (Input.GetKey(KeyCode.Y))
         {
             p2Health = scr.takeDamageHeavy(p2Health);
             Debug.Log("Heavy Attack Hit");
+            HealthBar2.value = p2Health;
         }
 
         if (Input.GetKey(KeyCode.U) && !blocking)
         {
             p2Health = scr.takeRangeDamage(p2Health);
             Debug.Log("RangeAttack");
+            HealthBar2.value = p2Health; 
         }
     }
       
