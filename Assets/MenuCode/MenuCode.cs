@@ -9,7 +9,7 @@ public class MenuCode : MonoBehaviour
     
     Button sceneChooser;
     int buttonScene;
-    const int MAX_SCENES=2;
+    const int MAX_SCENES=4;
     Sprite button;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class MenuCode : MonoBehaviour
         switch (buttonScene)
         {
             case 0:
-                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Tester";
                 break;
             case 1:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Player 1 Win Screen";
@@ -49,6 +49,13 @@ public class MenuCode : MonoBehaviour
             case 2:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Menu";
                 break;
+            case 3:
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Mountain Temple";
+                break;
+            case 4:
+                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
+                break;
+
         }
     }
 
