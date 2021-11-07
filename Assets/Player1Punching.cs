@@ -108,31 +108,28 @@ public class Player1Punching : MonoBehaviour
         {
             blocking = true;
         }
-        if (Input.GetKey(KeyCode.T) && !blocking)
+        if (Input.GetKey(KeyCode.T) && !blocking && collision.collider.gameObject.tag == "Player 2")
         {
-            p2Health = scr.takeDamageLight(p2Health);
+            p2Health = scr.TakeDamageLight(p2Health);
             HealthBar2.value = p2Health; 
             
             
         }
-        if (Input.GetKey(KeyCode.Y) && blocking)
+        if (Input.GetKey(KeyCode.Y) && blocking && collision.collider.gameObject.tag == "Player 2")
         {
             anim.SetBool("IsBlocking", false); // trying to get block break
-            p2Health = scr.takeDamageHeavy(p2Health);
-            Debug.Log("Heavy Attack Hit");
+            p2Health = scr.TakeDamageHeavy(p2Health);
             HealthBar2.value = p2Health;
         }
-        else if (Input.GetKey(KeyCode.Y))
+        else if (Input.GetKey(KeyCode.Y) && !blocking && collision.collider.gameObject.tag == "Player 2")
         {
-            p2Health = scr.takeDamageHeavy(p2Health);
-            Debug.Log("Heavy Attack Hit");
+            p2Health = scr.TakeDamageHeavy(p2Health);
             HealthBar2.value = p2Health;
         }
 
-        if (Input.GetKey(KeyCode.U) && !blocking)
+        if (Input.GetKey(KeyCode.U) && !blocking && collision.collider.gameObject.tag == "Player 2")
         {
-            p2Health = scr.takeRangeDamage(p2Health);
-            Debug.Log("RangeAttack");
+            p2Health = scr.TakeRangeDamage(p2Health);
             HealthBar2.value = p2Health; 
         }
     }

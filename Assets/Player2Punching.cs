@@ -15,7 +15,10 @@ public class Player2Punching : MonoBehaviour
     scene current = scene.Arena;
     bool blocking;
     GameObject tmpHealth;
-    Slider HealthBar; 
+    Slider HealthBar;
+  
+   
+    
 
 
     // Start is called before the first frame update
@@ -32,6 +35,9 @@ public class Player2Punching : MonoBehaviour
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = p1Health;
+
+
+       
     }
 
     // Update is called once per frame
@@ -98,7 +104,7 @@ public class Player2Punching : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D (Collision2D collision)
     {
         if (Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
         {
@@ -108,27 +114,27 @@ public class Player2Punching : MonoBehaviour
         {
             blocking = false;
         }
-        if (Input.GetKey(KeyCode.Alpha1) && !blocking)
+        if (Input.GetKey(KeyCode.Alpha1) && !blocking && collision.collider.gameObject.tag == "Player 1")
         {
-            p1Health = takeDamageLight(p1Health);
+            p1Health = TakeDamageLight(p1Health);
             HealthBar.value = p1Health; 
         }
 
-        if (Input.GetKey(KeyCode.Alpha2) && blocking) // TODO fix block break
+        if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
         {
             anim.SetBool("IsBlocking", false);
-            p1Health = takeDamageHeavy(p1Health);
+            p1Health = TakeDamageHeavy(p1Health);
             HealthBar.value = p1Health;
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKey(KeyCode.Alpha2) && collision.collider.gameObject.tag == "Player 1")
         {
-            p1Health = takeDamageHeavy(p1Health);
+            p1Health = TakeDamageHeavy(p1Health);
             HealthBar.value = p1Health; 
         }
 
-        if (Input.GetKey(KeyCode.Alpha3) && !blocking)
+        if (Input.GetKey(KeyCode.Alpha3) && !blocking && collision.collider.gameObject.tag == "Player 1")
         {
-            p1Health = takeRangeDamage(p1Health);
+            p1Health = TakeRangeDamage(p1Health);
             Debug.Log("Range Attack hit");
             HealthBar.value = p1Health; 
         }
@@ -136,21 +142,21 @@ public class Player2Punching : MonoBehaviour
 
 
     // Functions for doing damage. 
-    public float takeDamageLight(float health) // light attack damage
+    public float TakeDamageLight(float health) // light attack damage
     {
             Debug.Log("Hit dectected");
             health -= 5;
             return health;
     }
 
-    public float takeDamageHeavy(float health) // heavy attack damage
+    public float TakeDamageHeavy(float health) // heavy attack damage
     {
         Debug.Log("Heavy Hit");
         health -= 10;
         return health;
     }
 
-    public float takeRangeDamage(float health) // range attack damage
+    public float TakeRangeDamage(float health) // range attack damage
     {
         Debug.Log("Range Hit");
         health -= 3;
