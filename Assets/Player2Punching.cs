@@ -37,7 +37,7 @@ public class Player2Punching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) // light attack
+        if (Input.GetKey(KeyCode.Alpha1)) // light attack
         {
             anim.SetBool("IsPunch", true); 
         }
@@ -45,7 +45,7 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsPunch", false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) // heavy attack
+        if (Input.GetKey(KeyCode.Alpha2)) // heavy attack
         {
             anim.SetBool("Heavy", true);
         }
@@ -54,7 +54,7 @@ public class Player2Punching : MonoBehaviour
             anim.SetBool("Heavy", false);
         }
         
-        if (Input.GetKeyDown(KeyCode.Alpha3)) // range attack
+        if (Input.GetKey(KeyCode.Alpha3)) // range attack
         {
             anim.SetBool("Range", true);
         }
@@ -103,6 +103,10 @@ public class Player2Punching : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
         {
             blocking = true;
+        }
+        else
+        {
+            blocking = false;
         }
         if (Input.GetKey(KeyCode.Alpha1) && !blocking)
         {
