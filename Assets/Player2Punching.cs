@@ -80,6 +80,8 @@ public class Player2Punching : MonoBehaviour
             DontDestroyOnLoad(theCamera);
             GameObject floor = GameObject.FindWithTag("Ground");
             DontDestroyOnLoad(floor);
+            GameObject Timer = GameObject.FindWithTag("UI");
+            DontDestroyOnLoad(Timer);
 
             //GameObject gameManager = GameObject.FindWithTag("gameManager");
             //DontDestroyOnLoad(gameManager);
