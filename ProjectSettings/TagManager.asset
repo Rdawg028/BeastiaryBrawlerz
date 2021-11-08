@@ -10,6 +10,7 @@ TagManager:
   - floorCollider
   - P1Collider
   - P2Collider
+  - UI
   layers:
   - Default
   - TransparentFX
