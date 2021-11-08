@@ -12,7 +12,7 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     public float p2Health;
     GameObject p2;
-    scene current = scene.Arena;
+    scene current = (scene)SceneManager.GetActiveScene().buildIndex;
     Player2Punching scr;
     bool blocking;
     Slider HealthBar2;
@@ -67,8 +67,9 @@ public class Player1Punching : MonoBehaviour
         {
             anim.SetBool("Range", false);
         }
-
-        if (p2Health <= 0 && current==scene.Arena)
+        
+        
+        if(p2Health <= 0 && current==(scene)SceneManager.GetActiveScene().buildIndex)
         {
             GameObject Player1 = GameObject.Find("Player1");
             DontDestroyOnLoad(Player1);
@@ -83,7 +84,8 @@ public class Player1Punching : MonoBehaviour
             //move character
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
 
-            SceneManager.LoadScene("player1Win");
+            //SceneManager.LoadScene("player1Win");
+            SceneManager.LoadScene("SampleScene");
             Object.Destroy(p2);
             current=scene.P1;
         }
