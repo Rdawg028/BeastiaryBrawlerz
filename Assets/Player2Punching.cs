@@ -12,7 +12,7 @@ public class Player2Punching : MonoBehaviour
     public float p1Health;
     GameObject p1;
     GameObject win1;
-    scene current = scene.Arena;
+    scene current = (scene)SceneManager.GetActiveScene().buildIndex;
     bool blocking;
     GameObject tmpHealth;
     Slider HealthBar;
@@ -70,7 +70,7 @@ public class Player2Punching : MonoBehaviour
         }
        
         
-        if (p1Health <= 0 && current==scene.Arena)
+        if (p1Health <= 0 && current==(scene)SceneManager.GetActiveScene().buildIndex)
         {
             current = scene.P1;
 
