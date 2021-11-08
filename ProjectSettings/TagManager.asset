@@ -10,6 +10,8 @@ TagManager:
   - floorCollider
   - P1Collider
   - P2Collider
+  - UI
+  - roundCounter
   layers:
   - Default
   - TransparentFX

@@ -71,8 +71,8 @@ public class MenuCode : MonoBehaviour
         //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
         //}
 
-            //loops back around if it goes to -1 
-            if(buttonScene<0)
+            //loops back around if it goes to max scenes 
+            if(buttonScene<=-1)
             {
                 buttonScene = MAX_SCENES;
             }

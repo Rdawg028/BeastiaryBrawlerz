@@ -12,11 +12,13 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     public float p2Health;
     GameObject p2;
-    scene current = scene.Arena;
+    scene current = (scene)SceneManager.GetActiveScene().buildIndex;
     Player2Punching scr;
     bool blocking;
     Slider HealthBar2;
-    GameObject tmpHealth; 
+    GameObject tmpHealth;
+    RoundsCoutners wins;
+    GameObject winTracker;
  
     // Start is called before the first frame update
     void Start()
@@ -31,8 +33,11 @@ public class Player1Punching : MonoBehaviour
         //Health Bar stuff
         tmpHealth = GameObject.Find("HealthBar2");
         HealthBar2 = tmpHealth.GetComponent<Slider>();
-        HealthBar2.value = p2Health; 
+        HealthBar2.value = p2Health;
 
+        //win tracking
+        winTracker = GameObject.Find("RoundCounter");
+        wins = winTracker.GetComponent<RoundsCoutners>();
        
 
     }
@@ -67,8 +72,9 @@ public class Player1Punching : MonoBehaviour
         {
             anim.SetBool("Range", false);
         }
-
-        if (p2Health <= 0 && current==scene.Arena)
+        
+        
+        if(p2Health <= 0 && wins.P1Wins > 3 && current ==(scene)SceneManager.GetActiveScene().buildIndex)
         {
             GameObject Player1 = GameObject.Find("Player1");
             DontDestroyOnLoad(Player1);
@@ -76,15 +82,24 @@ public class Player1Punching : MonoBehaviour
             DontDestroyOnLoad(theCamera);
             GameObject floor = GameObject.FindWithTag("Ground");
             DontDestroyOnLoad(floor);
-
+            GameObject Timer = GameObject.FindWithTag("UI");
+            DontDestroyOnLoad(Timer);
             //GameObject gameManager = GameObject.FindWithTag("gameManager");
             //DontDestroyOnLoad(gameManager);
             //move character
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
 
             SceneManager.LoadScene("player1Win");
+           // SceneManager.LoadScene("SampleScene");
             Object.Destroy(p2);
             current=scene.P1;
+        }
+        else if(p2Health <= 0 && current == (scene)SceneManager.GetActiveScene().buildIndex)
+        {
+            wins.Player1Wins();
+            SceneManager.LoadScene((int)current);
+
+            DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
         }
 
         if (Input.GetKey(KeyCode.S))
