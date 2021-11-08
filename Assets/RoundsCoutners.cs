@@ -24,15 +24,17 @@ public class RoundsCoutners : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (POne.p2Health <= 0)
-        {
-            P2Wins += 1;
-        }
-
-        if (PTwo.p1Health <= 0)
-        {
-            P1Wins += 1;
-        }
         
+        
+    }
+
+    public void Player1Wins()
+    {
+        P1Wins += 1;
+    }
+
+    public void Player2Wins()
+    {
+        P2Wins += 1;
     }
 }

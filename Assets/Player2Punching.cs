@@ -16,9 +16,10 @@ public class Player2Punching : MonoBehaviour
     bool blocking;
     GameObject tmpHealth;
     Slider HealthBar;
-  
-   
-    
+    RoundsCoutners wins;
+    GameObject winTracker;
+
+
 
 
     // Start is called before the first frame update
@@ -37,7 +38,12 @@ public class Player2Punching : MonoBehaviour
         HealthBar.value = p1Health;
 
 
-       
+        //win tracking
+        winTracker = GameObject.Find("RoundCounter");
+        wins = winTracker.GetComponent<RoundsCoutners>();
+
+
+
     }
 
     // Update is called once per frame
@@ -70,7 +76,7 @@ public class Player2Punching : MonoBehaviour
         }
        
         
-        if (p1Health <= 0 && current==(scene)SceneManager.GetActiveScene().buildIndex)
+        if (p1Health <= 0 && wins.P2Wins > 3 && current ==(scene)SceneManager.GetActiveScene().buildIndex)
         {
             current = scene.P1;
 
@@ -91,6 +97,13 @@ public class Player2Punching : MonoBehaviour
             SceneManager.LoadScene("player1Win");
 
             Object.Destroy(p1);
+        }
+        else if (p1Health <= 0 && current == (scene)SceneManager.GetActiveScene().buildIndex)
+        {
+            wins.Player2Wins();
+            SceneManager.LoadScene((int)current);
+
+            DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
