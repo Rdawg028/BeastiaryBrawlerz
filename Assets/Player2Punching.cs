@@ -129,11 +129,13 @@ public class Player2Punching : MonoBehaviour
         {
             blocking = false;
         }
-        if (Input.GetKey(KeyCode.Alpha1) && !blocking && collision.collider.gameObject.tag == "Player 1")
+        /*
+        if (!blocking && collision.collider.gameObject.name == "Player1")
         {
             p1Health = TakeDamageLight(p1Health);
             HealthBar.value = p1Health; 
         }
+        */
 
         if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
         {
@@ -159,7 +161,7 @@ public class Player2Punching : MonoBehaviour
     // Functions for doing damage. 
     public float TakeDamageLight(float health) // light attack damage
     {
-            Debug.Log("Hit dectected");
+            //Debug.Log("Hit dectected");
             health -= 5;
             return health;
     }

@@ -123,7 +123,7 @@ public class Player1Punching : MonoBehaviour
         {
             blocking = true;
         }
-        if (Input.GetKey(KeyCode.T) && !blocking && collision.collider.gameObject.tag == "Player 2")
+        if  (!blocking && collision.collider.gameObject.name == "Player2")
         {
             p2Health = scr.TakeDamageLight(p2Health);
             HealthBar2.value = p2Health; 
