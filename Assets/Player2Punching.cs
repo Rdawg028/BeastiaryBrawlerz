@@ -12,10 +12,10 @@ public class Player2Punching : MonoBehaviour
     public float p1Health;
     GameObject p1;
     GameObject win1;
-    scene current = (scene)SceneManager.GetActiveScene().buildIndex;
+    scene current;
     bool blocking;
-    GameObject tmpHealth;
-    Slider HealthBar;
+    //GameObject tmpHealth;
+   // Slider HealthBar;
     RoundsCoutners wins;
     GameObject winTracker;
 
@@ -32,10 +32,14 @@ public class Player2Punching : MonoBehaviour
         // debugging stuff, basically ignoring collisions with colliders on the same layer
         Physics2D.IgnoreLayerCollision(0, 7);
 
+         current = (scene)SceneManager.GetActiveScene().buildIndex;
+
         //Health Bar stuff
+        /*
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = p1Health;
+        */
 
 
         //win tracking
@@ -95,7 +99,7 @@ public class Player2Punching : MonoBehaviour
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
             
             SceneManager.LoadScene("player1Win");
-
+            Debug.Log("P1Destroyed");
             Object.Destroy(p1);
         }
         else if (p1Health <= 0 && current == (scene)SceneManager.GetActiveScene().buildIndex)
@@ -141,19 +145,19 @@ public class Player2Punching : MonoBehaviour
         {
             anim.SetBool("IsBlocking", false);
             p1Health = TakeDamageHeavy(p1Health);
-            HealthBar.value = p1Health;
+            //HealthBar.value = p1Health;
         }
         else if (Input.GetKey(KeyCode.Alpha2) && collision.collider.gameObject.tag == "Player 1")
         {
             p1Health = TakeDamageHeavy(p1Health);
-            HealthBar.value = p1Health; 
+            //HealthBar.value = p1Health; 
         }
 
         if (Input.GetKey(KeyCode.Alpha3) && !blocking && collision.collider.gameObject.tag == "Player 1")
         {
             p1Health = TakeRangeDamage(p1Health);
             Debug.Log("Range Attack hit");
-            HealthBar.value = p1Health; 
+            //HealthBar.value = p1Health; 
         }
     }
 

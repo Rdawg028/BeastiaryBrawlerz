@@ -12,7 +12,7 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     public float p2Health;
     GameObject p2;
-    scene current = (scene)SceneManager.GetActiveScene().buildIndex;
+    scene current;
     Player2Punching scr;
     bool blocking;
     Slider HealthBar2;
@@ -29,6 +29,8 @@ public class Player1Punching : MonoBehaviour
         scr = p2.GetComponent<Player2Punching>();
         // ignores collisions of objects on the same layer. 
         Physics2D.IgnoreLayerCollision(0, 6);
+
+         current = (scene)SceneManager.GetActiveScene().buildIndex;
 
         //Health Bar stuff
         tmpHealth = GameObject.Find("HealthBar2");
@@ -90,7 +92,8 @@ public class Player1Punching : MonoBehaviour
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
 
             SceneManager.LoadScene("player1Win");
-           // SceneManager.LoadScene("SampleScene");
+            // SceneManager.LoadScene("SampleScene");
+            Debug.Log("Destoyed");
             Object.Destroy(p2);
             current=scene.P1;
         }
