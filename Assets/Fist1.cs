@@ -36,7 +36,6 @@ public class Fist1 : MonoBehaviour
             Debug.Log("Fist Hit");
             HealthBar.value = Player1Var.p2Health;
             Debug.Log("health bar");
-
         }
     }
 
