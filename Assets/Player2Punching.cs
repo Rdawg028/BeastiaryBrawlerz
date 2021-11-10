@@ -80,14 +80,14 @@ public class Player2Punching : MonoBehaviour
             DontDestroyOnLoad(theCamera);
             GameObject floor = GameObject.FindWithTag("Ground");
             DontDestroyOnLoad(floor);
-            GameObject Timer = GameObject.FindWithTag("UI");
-            DontDestroyOnLoad(Timer);
+            
+            wins.P2Wins = 0;
 
             //GameObject gameManager = GameObject.FindWithTag("gameManager");
             //DontDestroyOnLoad(gameManager);
             //move character
             //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
-            
+
             SceneManager.LoadScene("player1Win");
             Debug.Log("P1Destroyed");
             Object.Destroy(p1);

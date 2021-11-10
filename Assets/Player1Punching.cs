@@ -13,12 +13,14 @@ public class Player1Punching : MonoBehaviour
     public float p2Health;
     GameObject p2;
     scene current;
+    scene start;
     Player2Punching scr;
     bool blocking;
     Slider HealthBar2;
     GameObject tmpHealth;
     RoundsCoutners wins;
     GameObject winTracker;
+    int numRounds=1;
  
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class Player1Punching : MonoBehaviour
         Physics2D.IgnoreLayerCollision(0, 6);
 
          current = (scene)SceneManager.GetActiveScene().buildIndex;
+         start= (scene)SceneManager.GetActiveScene().buildIndex;
 
         //Health Bar stuff
         tmpHealth = GameObject.Find("HealthBar2");
@@ -77,28 +80,16 @@ public class Player1Punching : MonoBehaviour
         }
         
         
-        if(p2Health <= 0 && wins.P1Wins > 3 && current ==(scene)getCurrentScene())
+        if(p2Health <= 0 && wins.P1Wins > numRounds && current ==start)
         {
-            GameObject Player1 = GameObject.Find("Player1");
-            DontDestroyOnLoad(Player1);
-            GameObject theCamera = GameObject.FindWithTag("MainCamera");
-            DontDestroyOnLoad(theCamera);
-            GameObject floor = GameObject.FindWithTag("Ground");
-            DontDestroyOnLoad(floor);
-            GameObject Timer = GameObject.FindWithTag("UI");
-            DontDestroyOnLoad(Timer);
-            //GameObject gameManager = GameObject.FindWithTag("gameManager");
-            //DontDestroyOnLoad(gameManager);
-            //move character
-            //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
-
-            SceneManager.LoadScene("player1Win");
-            // SceneManager.LoadScene("SampleScene");
-            Debug.Log("Destoyed");
-            Object.Destroy(p2);
-            current=scene.P1;
+            if (wins.P1Wins > 0)
+            {
+                loadWin();
+            }
+            
+            
         }
-        else if(p2Health <= 0 && current == (scene)getCurrentScene())
+        else if(p2Health <= 0 && current == start)
         {
             wins.Player1Wins();
             SceneManager.LoadScene((int)current);
@@ -158,7 +149,29 @@ public class Player1Punching : MonoBehaviour
     {
         return SceneManager.GetActiveScene().buildIndex;
     }
-      
+
+    void loadWin()
+    {
+        GameObject Player1 = GameObject.Find("Player1");
+        DontDestroyOnLoad(Player1);
+        GameObject theCamera = GameObject.FindWithTag("MainCamera");
+        DontDestroyOnLoad(theCamera);
+        GameObject floor = GameObject.FindWithTag("Ground");
+        DontDestroyOnLoad(floor);
+
+        wins.P1Wins = -1;
+        //GameObject gameManager = GameObject.FindWithTag("gameManager");
+        //DontDestroyOnLoad(gameManager);
+        //move character
+        //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
+
+        SceneManager.LoadScene("player1Win");
+        // SceneManager.LoadScene("SampleScene");
+        Debug.Log("Destoyed");
+        Object.Destroy(p2);
+        current = scene.P1;
+    }
+
 }
 
 
