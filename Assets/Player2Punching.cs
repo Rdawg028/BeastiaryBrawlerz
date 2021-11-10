@@ -32,21 +32,11 @@ public class Player2Punching : MonoBehaviour
         // debugging stuff, basically ignoring collisions with colliders on the same layer
         Physics2D.IgnoreLayerCollision(0, 7);
 
-         current = (scene)SceneManager.GetActiveScene().buildIndex;
-
-        //Health Bar stuff
-        /*
-        tmpHealth = GameObject.Find("HealthBar");
-        HealthBar = tmpHealth.GetComponent<Slider>();
-        HealthBar.value = p1Health;
-        */
-
+        current = (scene)SceneManager.GetActiveScene().buildIndex;
 
         //win tracking
         winTracker = GameObject.Find("RoundCounter");
         wins = winTracker.GetComponent<RoundsCoutners>();
-
-
 
     }
 

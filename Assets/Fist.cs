@@ -10,7 +10,7 @@ public class Fist : MonoBehaviour
     Player2Punching Player2Var;
     GameObject tmpHealth;
     Slider HealthBar;
-    float p1Health = 25.0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Fist : MonoBehaviour
 
        tmpHealth = GameObject.Find("HealthBar");
        HealthBar = tmpHealth.GetComponent<Slider>();
-       HealthBar.value = p1Health;
+       HealthBar.value = Player2Var.p1Health;
 
     }
 
@@ -34,9 +34,9 @@ public class Fist : MonoBehaviour
     {
         if (collision.collider.gameObject.name == "Player1")
         {
-            p1Health = Player2Var.TakeDamageLight(p1Health);
+            Player2Var.p1Health = Player2Var.TakeDamageLight(Player2Var.p1Health);
             Debug.Log("Fist Hit");
-            HealthBar.value = p1Health;
+            HealthBar.value = Player2Var.p1Health;
             Debug.Log("health bar");
             
         }
