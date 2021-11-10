@@ -133,12 +133,6 @@ public class Player2Punching : MonoBehaviour
         }
         */
 
-        if (Input.GetKey(KeyCode.Alpha3) && !blocking && collision.collider.gameObject.tag == "Player 1")
-        {
-            p1Health = TakeRangeDamage(p1Health);
-            Debug.Log("Range Attack hit");
-            //HealthBar.value = p1Health; 
-        }
     }
 
 
