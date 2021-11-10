@@ -123,25 +123,15 @@ public class Player2Punching : MonoBehaviour
         {
             blocking = false;
         }
+     
         /*
-        if (!blocking && collision.collider.gameObject.name == "Player1")
-        {
-            p1Health = TakeDamageLight(p1Health);
-            HealthBar.value = p1Health; 
-        }
-        */
-
         if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
         {
             anim.SetBool("IsBlocking", false);
             p1Health = TakeDamageHeavy(p1Health);
             //HealthBar.value = p1Health;
         }
-        else if (Input.GetKey(KeyCode.Alpha2) && collision.collider.gameObject.tag == "Player 1")
-        {
-            p1Health = TakeDamageHeavy(p1Health);
-            //HealthBar.value = p1Health; 
-        }
+        */
 
         if (Input.GetKey(KeyCode.Alpha3) && !blocking && collision.collider.gameObject.tag == "Player 1")
         {
