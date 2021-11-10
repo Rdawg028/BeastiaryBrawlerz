@@ -21,6 +21,10 @@ public class Fist1 : MonoBehaviour
         tmpHealth = GameObject.Find("HealthBar2");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = Player1Var.p2Health;
+
+        scr = Player1.GetComponent<Player2Punching>();
+
+        
     }
 
 
