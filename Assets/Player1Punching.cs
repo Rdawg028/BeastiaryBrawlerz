@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum scene { Arena=0,P1=1,P2=2};
+public enum scene { Sample=0,P1=1,P2=2,Arena=3,Temple=4};
 
 
 public class Player1Punching : MonoBehaviour

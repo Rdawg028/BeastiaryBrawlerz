@@ -467,7 +467,7 @@ CapsuleCollider2D:
   m_Offset: {x: 16.66595, y: 0}
   m_Size: {x: 3.6826372, y: 31.034159}
   m_Direction: 0
---- !u!1001 &1457273084
+--- !u!1001 &963423795
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -476,7 +476,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 930435449817746181, guid: f37aee2b8af475348925001620a94769, type: 3}
       propertyPath: m_Name
-      value: RoundTracker
+      value: RoundCounter
       objectReference: {fileID: 0}
     - target: {fileID: 8210607521091383217, guid: f37aee2b8af475348925001620a94769, type: 3}
       propertyPath: m_RootOrder
@@ -691,6 +691,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 215315199842636573, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 215315199842636573, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_TagString
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 8510548076517387368, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
