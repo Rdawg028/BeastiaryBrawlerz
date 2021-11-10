@@ -25,6 +25,7 @@ public class Player1Punching : MonoBehaviour
     {
         anim = GameObject.Find("Player1").GetComponent<Animator>();
         p2Health = 25;
+
         p2 = GameObject.Find("Player2");
         scr = p2.GetComponent<Player2Punching>();
         // ignores collisions of objects on the same layer. 
@@ -76,7 +77,7 @@ public class Player1Punching : MonoBehaviour
         }
         
         
-        if(p2Health <= 0 && wins.P1Wins > 3 && current ==(scene)SceneManager.GetActiveScene().buildIndex)
+        if(p2Health <= 0 && wins.P1Wins > 3 && current ==(scene)getCurrentScene())
         {
             GameObject Player1 = GameObject.Find("Player1");
             DontDestroyOnLoad(Player1);
@@ -97,7 +98,7 @@ public class Player1Punching : MonoBehaviour
             Object.Destroy(p2);
             current=scene.P1;
         }
-        else if(p2Health <= 0 && current == (scene)SceneManager.GetActiveScene().buildIndex)
+        else if(p2Health <= 0 && current == (scene)getCurrentScene())
         {
             wins.Player1Wins();
             SceneManager.LoadScene((int)current);
@@ -150,6 +151,12 @@ public class Player1Punching : MonoBehaviour
             p2Health = scr.TakeRangeDamage(p2Health);
             HealthBar2.value = p2Health; 
         }
+    }
+
+
+    public int getCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
       
 }

@@ -70,7 +70,7 @@ public class Player2Punching : MonoBehaviour
         }
        
         
-        if (p1Health <= 0 && wins.P2Wins > 3 && current ==(scene)SceneManager.GetActiveScene().buildIndex)
+        if (p1Health <= 0 && wins.P2Wins > 3 && current ==(scene)getCurrentScene())
         {
             current = scene.P1;
 
@@ -92,7 +92,7 @@ public class Player2Punching : MonoBehaviour
             Debug.Log("P1Destroyed");
             Object.Destroy(p1);
         }
-        else if (p1Health <= 0 && current == (scene)SceneManager.GetActiveScene().buildIndex)
+        else if (p1Health <= 0 && current == (scene)getCurrentScene())
         {
             wins.Player2Wins();
             SceneManager.LoadScene((int)current);
@@ -164,4 +164,8 @@ public class Player2Punching : MonoBehaviour
         return health;
     }
 
+    public int getCurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
 }
