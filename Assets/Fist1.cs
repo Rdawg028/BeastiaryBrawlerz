@@ -25,8 +25,7 @@ public class Fist1 : MonoBehaviour
         scr = Player1.GetComponent<Player2Punching>();
 
         
-    }
-
+    } 
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
