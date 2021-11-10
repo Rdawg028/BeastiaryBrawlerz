@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8210607521091383217}
   - component: {fileID: 2688153780603356430}
   m_Layer: 0
-  m_Name: RoundTracker
+  m_Name: RoundCounter
   m_TagString: roundCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
