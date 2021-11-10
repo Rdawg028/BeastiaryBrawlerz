@@ -127,13 +127,8 @@ public class Player1Punching : MonoBehaviour
         {
             blocking = true;
         }
-        if  (!blocking && collision.collider.gameObject.name == "Player2")
-        {
-            p2Health = scr.TakeDamageLight(p2Health);
-            HealthBar2.value = p2Health; 
-            
-            
-        }
+
+
         if (Input.GetKey(KeyCode.Y) && blocking && collision.collider.gameObject.tag == "Player 2")
         {
             anim.SetBool("IsBlocking", false); // trying to get block break
