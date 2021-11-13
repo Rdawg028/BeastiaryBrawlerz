@@ -12,6 +12,7 @@ TagManager:
   - P2Collider
   - UI
   - roundCounter
+  - Players
   layers:
   - Default
   - TransparentFX
