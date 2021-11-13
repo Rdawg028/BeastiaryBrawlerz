@@ -24,6 +24,8 @@ public class Fist1 : MonoBehaviour
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = Player1Var.p2Health;
 
+        Player2 = GameObject.Find("Player2");
+        scr = Player2.GetComponent<Player2Punching>();
 
     } 
     public void OnCollisionEnter2D(Collision2D collision)
