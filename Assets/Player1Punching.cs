@@ -14,10 +14,7 @@ public class Player1Punching : MonoBehaviour
     GameObject p2;
     scene current;
     scene start;
-    Player2Punching scr;
     bool blocking;
-    Slider HealthBar2;
-    GameObject tmpHealth;
     RoundsCoutners wins;
     GameObject winTracker;
     int numRounds=1;
@@ -26,20 +23,14 @@ public class Player1Punching : MonoBehaviour
     void Start()
     {
         anim = GameObject.Find("Player1").GetComponent<Animator>();
-        p2Health = 25;
-
-        p2 = GameObject.Find("Player2");
-        scr = p2.GetComponent<Player2Punching>();
+        p2Health = 25.0f;
+        
         // ignores collisions of objects on the same layer. 
         Physics2D.IgnoreLayerCollision(0, 6);
 
          current = (scene)SceneManager.GetActiveScene().buildIndex;
          start= (scene)SceneManager.GetActiveScene().buildIndex;
 
-        //Health Bar stuff
-        tmpHealth = GameObject.Find("HealthBar2");
-        HealthBar2 = tmpHealth.GetComponent<Slider>();
-        HealthBar2.value = p2Health;
 
         //win tracking
         winTracker = GameObject.Find("RoundCounter");
@@ -119,24 +110,6 @@ public class Player1Punching : MonoBehaviour
             blocking = true;
         }
 
-
-        if (Input.GetKey(KeyCode.Y) && blocking && collision.collider.gameObject.tag == "Player 2")
-        {
-            anim.SetBool("IsBlocking", false); // trying to get block break
-            p2Health = scr.TakeDamageHeavy(p2Health);
-            HealthBar2.value = p2Health;
-        }
-        else if (Input.GetKey(KeyCode.Y) && !blocking && collision.collider.gameObject.tag == "Player 2")
-        {
-            p2Health = scr.TakeDamageHeavy(p2Health);
-            HealthBar2.value = p2Health;
-        }
-
-        if (Input.GetKey(KeyCode.U) && !blocking && collision.collider.gameObject.tag == "Player 2")
-        {
-            p2Health = scr.TakeRangeDamage(p2Health);
-            HealthBar2.value = p2Health; 
-        }
     }
 
 
