@@ -10,7 +10,7 @@ public class TimerScript : MonoBehaviour
     public bool timeRunning = false;
     public Text timeText;
     GameObject tmp;
-    GameObject P3;
+    GameObject P1;
     GameObject P2;
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class TimerScript : MonoBehaviour
         timeRunning = true;
         tmp = GameObject.Find("Timer");
         timeText = tmp.GetComponent<Text>();
-        P3 = GameObject.Find("Player3");
+        P1 = GameObject.Find("Player1");
         P2 = GameObject.Find("Player2");
     }
 
@@ -29,7 +29,7 @@ public class TimerScript : MonoBehaviour
        if (timeRunning)
         {
             //checking if either of the players is inactive
-            if (!P3.activeSelf || !P2.activeSelf)
+            if (!P1.activeSelf || !P2.activeSelf)
             {
                 DisplayTime(timeRemaining);
             }

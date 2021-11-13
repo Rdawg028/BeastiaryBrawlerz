@@ -17,7 +17,7 @@ public class RoundsCoutners : MonoBehaviour
     {
         P1 = GameObject.FindWithTag("Player 1");
         P2 = GameObject.FindWithTag("Player 2");
-        POne =P1.GetComponent<Player1Punching>();
+        POne = P1.GetComponent<Player1Punching>();
         PTwo = P2.GetComponent<Player2Punching>();
     }
 
