@@ -11,6 +11,7 @@ public class Range1 : MonoBehaviour
     GameObject tmpHealth;
     Slider HealthBar;
     Player2Punching scr;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Range1 : MonoBehaviour
 
         Player2 = GameObject.Find("Player2");
         scr = Player2.GetComponent<Player2Punching>();
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

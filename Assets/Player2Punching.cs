@@ -123,6 +123,7 @@ public class Player2Punching : MonoBehaviour
         {
             blocking = false;
         }
+
      
         /*
         if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
