@@ -30,7 +30,7 @@ public class Fist1 : MonoBehaviour
     } 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.name == "Player2")
+        if (collision.collider.gameObject.tag == "Players")
         {
             Player1Var.p2Health = scr.TakeDamageLight(Player1Var.p2Health);
             Debug.Log("Fist Hit");

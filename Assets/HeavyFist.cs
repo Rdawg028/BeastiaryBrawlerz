@@ -24,7 +24,7 @@ public class HeavyFist : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.name == "Player1")
+        if (collision.collider.gameObject.tag == "Players")
         {
             Player2Var.p1Health = Player2Var.TakeDamageHeavy(Player2Var.p1Health);
             Debug.Log("Fist Hit");

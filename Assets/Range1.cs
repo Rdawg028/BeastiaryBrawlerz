@@ -30,7 +30,7 @@ public class Range1 : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.name == "Player2")
+        if (collision.collider.gameObject.tag == "Players")
         {
             Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
             Debug.Log("Fist Hit");
