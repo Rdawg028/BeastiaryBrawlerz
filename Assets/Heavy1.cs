@@ -11,6 +11,7 @@ public class Heavy1 : MonoBehaviour
     GameObject tmpHealth;
     Slider HealthBar;
     Player2Punching scr;
+    Animator anim;
    
 
     // Start is called before the first frame update
@@ -25,7 +26,10 @@ public class Heavy1 : MonoBehaviour
 
         Player2 = GameObject.Find("Player2");
         scr = Player2.GetComponent<Player2Punching>();
-       
+
+        anim = Player2.GetComponent<Animator>();
+        anim.SetBool("IsHit", false);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,6 +40,7 @@ public class Heavy1 : MonoBehaviour
             Debug.Log("Fist Hit");
             HealthBar.value = Player1Var.p2Health;
             Debug.Log("health bar");
+            anim.SetBool("IsHit", true);
         }
     }
 }
