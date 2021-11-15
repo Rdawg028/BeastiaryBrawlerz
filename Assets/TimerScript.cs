@@ -26,6 +26,7 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
        if (timeRunning)
         {
             //checking if either of the players is inactive
@@ -49,6 +50,24 @@ public class TimerScript : MonoBehaviour
 
             }
         }
+        */
+        DisplayTime(timeRemaining);
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            DisplayTime(timeRemaining);
+        }
+        else
+        {
+            Debug.Log("Time has run out");
+            timeRemaining = 0;
+            timeRunning = false;
+            //So this line closed the playing on the unity editor, for the real game we have to use Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
+            
+        }
+
     }
 
     void DisplayTime(float timeToDisplay)
