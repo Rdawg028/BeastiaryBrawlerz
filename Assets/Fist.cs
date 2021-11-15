@@ -11,6 +11,7 @@ public class Fist : MonoBehaviour
     Player2Punching Player2Var;
     GameObject tmpHealth;
     Slider HealthBar;
+    Animator anim;
     
 
     // Start is called before the first frame update
@@ -23,7 +24,8 @@ public class Fist : MonoBehaviour
        HealthBar = tmpHealth.GetComponent<Slider>();
        HealthBar.value = Player2Var.p1Health;
 
-      
+       Player1 = GameObject.Find("Player1");
+       anim = Player1.GetComponent<Animator>();
 
     }
 
@@ -35,7 +37,8 @@ public class Fist : MonoBehaviour
             Debug.Log("Fist Hit");
             HealthBar.value = Player2Var.p1Health;
             Debug.Log("health bar");
-            
+
+            anim.SetBool("IsHit", true);
         }
         
     }
