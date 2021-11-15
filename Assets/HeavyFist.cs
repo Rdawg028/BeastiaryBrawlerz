@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class HeavyFist : MonoBehaviour
 {
-
+    GameObject Player1;
     GameObject Player2;
     Player2Punching Player2Var;
     GameObject tmpHealth;
     Slider HealthBar;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,9 @@ public class HeavyFist : MonoBehaviour
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = Player2Var.p1Health;
+
+        Player1 = GameObject.Find("Player1");
+        anim = Player1.GetComponent<Animator>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -30,6 +34,7 @@ public class HeavyFist : MonoBehaviour
             Debug.Log("Fist Hit");
             HealthBar.value = Player2Var.p1Health;
             Debug.Log("health bar");
+            anim.SetBool("IsHit", true);
 
         }
     }
