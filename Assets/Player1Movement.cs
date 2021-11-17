@@ -19,6 +19,7 @@ public class Player1Movement : MonoBehaviour
         //code for pausing
         timer = GameObject.Find("Timer");
         isRunning = timer.GetComponent<TimerScript>();
+
         Player1Engine = GameObject.Find("Player1").GetComponent<Rigidbody2D>();
         theAnimator = GameObject.Find("Player1").GetComponent<Animator>();
         facing = GameObject.Find("Player1").GetComponent<SpriteRenderer>();
