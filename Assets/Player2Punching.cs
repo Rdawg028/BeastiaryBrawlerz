@@ -17,7 +17,10 @@ public class Player2Punching : MonoBehaviour
     //GameObject tmpHealth;
    // Slider HealthBar;
     RoundsCoutners wins;
+    int numRounds = 1;
     GameObject winTracker;
+    GameObject timer;
+    TimerScript isRunning;
 
 
 
@@ -25,6 +28,11 @@ public class Player2Punching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //code for pausing
+        timer = GameObject.Find("Timer");
+        isRunning = timer.GetComponent<TimerScript>();
+
+
         anim = GameObject.Find("Player2").GetComponent<Animator>();
         p1Health = 25.0f;
         p1 = GameObject.Find("Player1");
@@ -43,79 +51,67 @@ public class Player2Punching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1)) // light attack
+        if (isRunning.timeRunning)
         {
-            anim.SetBool("IsPunch", true); 
-        }
-        else
-        {
-            anim.SetBool("IsPunch", false);
-        }
-        if (Input.GetKey(KeyCode.Alpha2)) // heavy attack
-        {
-            anim.SetBool("Heavy", true);
-        }
-        else
-        {
-            anim.SetBool("Heavy", false);
-        }
-        
-        if (Input.GetKey(KeyCode.Alpha3)) // range attack
-        {
-            anim.SetBool("Range", true);
-        }
-        else
-        {
-            anim.SetBool("Range", false);
-        }
-       
-        
-        if (p1Health <= 0 && wins.P2Wins > 3 && current ==(scene)getCurrentScene())
-        {
-            current = scene.P1;
+            if (Input.GetKey(KeyCode.Alpha1)) // light attack
+            {
+                anim.SetBool("IsPunch", true);
+            }
+            else
+            {
+                anim.SetBool("IsPunch", false);
+            }
+            if (Input.GetKey(KeyCode.Alpha2)) // heavy attack
+            {
+                anim.SetBool("Heavy", true);
+            }
+            else
+            {
+                anim.SetBool("Heavy", false);
+            }
 
-            GameObject Player2 = GameObject.Find("Player2");
-            DontDestroyOnLoad(Player2);
-            GameObject theCamera = GameObject.FindWithTag("MainCamera");
-            DontDestroyOnLoad(theCamera);
-            GameObject floor = GameObject.FindWithTag("Ground");
-            DontDestroyOnLoad(floor);
-            
-            wins.P2Wins = 0;
+            if (Input.GetKey(KeyCode.Alpha3)) // range attack
+            {
+                anim.SetBool("Range", true);
+            }
+            else
+            {
+                anim.SetBool("Range", false);
+            }
 
-            //GameObject gameManager = GameObject.FindWithTag("gameManager");
-            //DontDestroyOnLoad(gameManager);
-            //move character
-            //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
 
-            SceneManager.LoadScene("player1Win");
-            Debug.Log("P1Destroyed");
-            Object.Destroy(p1);
+            if (p1Health <= 0 && wins.P2Wins > numRounds && current == (scene)getCurrentScene())
+            {
+                if (wins.P2Wins > 0)
+                {
+                    loadWin();
+                }
+                
+            }
+            else if (p1Health <= 0 && current == (scene)getCurrentScene())
+            {
+                wins.Player2Wins();
+                SceneManager.LoadScene((int)current);
+
+                DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                anim.SetBool("IsBlocking", true);
+                anim.SetBool("BlockHolding", true);
+            }
+            else
+            {
+                anim.SetBool("IsBlocking", false);
+                anim.SetBool("BlockHolding", false);
+            }
         }
-        else if (p1Health <= 0 && current == (scene)getCurrentScene())
-        {
-            wins.Player2Wins();
-            SceneManager.LoadScene((int)current);
-
-            DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            anim.SetBool("IsBlocking", true);
-            anim.SetBool("BlockHolding", true);
-        }
-        else
-        {
-            anim.SetBool("IsBlocking", false);
-            anim.SetBool("BlockHolding", false);   
-        }
-
     }
 
     public void OnCollisionEnter2D (Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
+        if (isRunning.timeRunning && Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
         {
             blocking = true;
         }
@@ -163,4 +159,26 @@ public class Player2Punching : MonoBehaviour
     {
         return SceneManager.GetActiveScene().buildIndex;
     }
-}
+
+    void loadWin(){
+        current = scene.P1;
+
+        GameObject Player2 = GameObject.Find("Player2");
+        DontDestroyOnLoad(Player2);
+        GameObject theCamera = GameObject.FindWithTag("MainCamera");
+        DontDestroyOnLoad(theCamera);
+        GameObject floor = GameObject.FindWithTag("Ground");
+        DontDestroyOnLoad(floor);
+
+        wins.P2Wins = -1;
+
+        //GameObject gameManager = GameObject.FindWithTag("gameManager");
+        //DontDestroyOnLoad(gameManager);
+        //move character
+        //collision.gameObject.transform.position = new Vector2(-16.07f, 4.06f);
+
+        SceneManager.LoadScene("player1Win");
+        Debug.Log("P1Destroyed");
+        Object.Destroy(p1);
+    }
+ }
