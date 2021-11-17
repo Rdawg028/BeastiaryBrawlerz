@@ -13,7 +13,7 @@ public class PunchDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player2 = GameObject.Find("Player2");
+        player2 = GameObject.FindWithTag("Player 2");
         hitting = false;
     }
 

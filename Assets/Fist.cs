@@ -17,7 +17,7 @@ public class Fist : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Player2 = GameObject.FindWithTag(" ");
+       Player2 = GameObject.FindWithTag("Player 2");
        Player2Var = Player2.GetComponent<Player2Punching>();
 
        tmpHealth = GameObject.Find("HealthBar");
