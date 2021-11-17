@@ -18,10 +18,16 @@ public class Player1Punching : MonoBehaviour
     RoundsCoutners wins;
     GameObject winTracker;
     int numRounds=1;
- 
+    GameObject timer;
+    TimerScript isRunning;
+
     // Start is called before the first frame update
     void Start()
     {
+        //code for pausing
+        timer = GameObject.Find("Timer");
+        isRunning = timer.GetComponent<TimerScript>();
+
         anim = GameObject.Find("Player1").GetComponent<Animator>();
         p2Health = 25.0f;
         
@@ -42,70 +48,73 @@ public class Player1Punching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))  // light attack
+        //check if game is paused
+        if (isRunning.timeRunning)
         {
-            anim.SetBool("IsPunch", true);
-        }
-        else
-        {
-            anim.SetBool("IsPunch", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
-        {
-            anim.SetBool("Heavy", true);
-            
-        }
-        else
-        {
-            anim.SetBool("Heavy", false);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.U)) // range attack
-        {
-            anim.SetBool("Range", true);
-        }
-        else
-        {
-            anim.SetBool("Range", false);
-        }
-        
-        
-        if(p2Health <= 0 && wins.P1Wins > numRounds && current ==start)
-        {
-            if (wins.P1Wins > 0)
+            if (Input.GetKeyDown(KeyCode.T))  // light attack
             {
-                loadWin();
+                anim.SetBool("IsPunch", true);
             }
-            
-            
-        }
-        else if(p2Health <= 0 && current == start)
-        {
-            wins.Player1Wins();
-            SceneManager.LoadScene((int)current);
+            else
+            {
+                anim.SetBool("IsPunch", false);
+            }
 
-            DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
-        }
+            if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
+            {
+                anim.SetBool("Heavy", true);
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            anim.SetBool("IsBlocking", true);
-            anim.SetBool("BlockHolding", true);
-        }
-        else
-        {
-            anim.SetBool("IsBlocking", false);
-            anim.SetBool("BlockHolding", false);
-        }
+            }
+            else
+            {
+                anim.SetBool("Heavy", false);
+            }
 
-         
-        
+            if (Input.GetKeyDown(KeyCode.U)) // range attack
+            {
+                anim.SetBool("Range", true);
+            }
+            else
+            {
+                anim.SetBool("Range", false);
+            }
+
+
+            if (p2Health <= 0 && wins.P1Wins > numRounds && current == start)
+            {
+                if (wins.P1Wins > 0)
+                {
+                    loadWin();
+                }
+
+
+            }
+            else if (p2Health <= 0 && current == start)
+            {
+                wins.Player1Wins();
+                SceneManager.LoadScene((int)current);
+
+                DontDestroyOnLoad(GameObject.FindWithTag("roundCounter"));
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                anim.SetBool("IsBlocking", true);
+                anim.SetBool("BlockHolding", true);
+            }
+            else
+            {
+                anim.SetBool("IsBlocking", false);
+                anim.SetBool("BlockHolding", false);
+            }
+
+
+        }   
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (isRunning.timeRunning&&Input.GetKey(KeyCode.DownArrow))
         {
             blocking = true;
         }
