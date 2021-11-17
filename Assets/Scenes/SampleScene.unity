@@ -1158,7 +1158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
       propertyPath: m_TagString
-      value: Players
+      value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 1763725509737397747, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
       propertyPath: m_Layer
@@ -1371,7 +1371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_Name
-      value: Player1
+      value: CubertLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_Layer
@@ -1383,7 +1383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_TagString
-      value: Players
+      value: Player 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7498143070348078225, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}

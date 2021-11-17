@@ -33,9 +33,9 @@ public class Player2Punching : MonoBehaviour
         isRunning = timer.GetComponent<TimerScript>();
 
 
-        anim = GameObject.Find("Player2").GetComponent<Animator>();
+        anim = GameObject.FindWithTag("Player 2").GetComponent<Animator>();
         p1Health = 25.0f;
-        p1 = GameObject.Find("Player1");
+        p1 = GameObject.FindWithTag("Player 1");
         blocking = false;
         // debugging stuff, basically ignoring collisions with colliders on the same layer
         Physics2D.IgnoreLayerCollision(0, 7);
@@ -163,7 +163,7 @@ public class Player2Punching : MonoBehaviour
     void loadWin(){
         current = scene.P1;
 
-        GameObject Player2 = GameObject.Find("Player2");
+        GameObject Player2 = GameObject.FindWithTag("Player 2");
         DontDestroyOnLoad(Player2);
         GameObject theCamera = GameObject.FindWithTag("MainCamera");
         DontDestroyOnLoad(theCamera);

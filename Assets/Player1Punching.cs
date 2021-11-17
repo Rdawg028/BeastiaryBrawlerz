@@ -28,7 +28,7 @@ public class Player1Punching : MonoBehaviour
         timer = GameObject.Find("Timer");
         isRunning = timer.GetComponent<TimerScript>();
 
-        anim = GameObject.Find("Player1").GetComponent<Animator>();
+        anim = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
         p2Health = 25.0f;
         
         // ignores collisions of objects on the same layer. 
@@ -129,7 +129,7 @@ public class Player1Punching : MonoBehaviour
 
     void loadWin()
     {
-        GameObject Player1 = GameObject.Find("Player1");
+        GameObject Player1 = GameObject.FindWithTag("Player 1");
         DontDestroyOnLoad(Player1);
         GameObject theCamera = GameObject.FindWithTag("MainCamera");
         DontDestroyOnLoad(theCamera);

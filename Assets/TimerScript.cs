@@ -19,8 +19,8 @@ public class TimerScript : MonoBehaviour
         timeRunning = true;
         tmp = GameObject.Find("Timer");
         timeText = tmp.GetComponent<Text>();
-        P1 = GameObject.Find("Player1");
-        P2 = GameObject.Find("Player2");
+        P1 = GameObject.FindWithTag("Player 1");
+        P2 = GameObject.FindWithTag("Player 2");
     }
 
     // Update is called once per frame
