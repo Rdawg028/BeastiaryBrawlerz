@@ -10,8 +10,15 @@ public class Player1Movement : MonoBehaviour
     Animator theAnimator;
     Rigidbody2D Player1Engine;
     SpriteRenderer facing;
+    GameObject timer;
+    TimerScript isRunning;
+
     void Start()
     {
+
+        //code for pausing
+        timer = GameObject.Find("Timer");
+        isRunning = timer.GetComponent<TimerScript>();
         Player1Engine = GameObject.Find("Player1").GetComponent<Rigidbody2D>();
         theAnimator = GameObject.Find("Player1").GetComponent<Animator>();
         facing = GameObject.Find("Player1").GetComponent<SpriteRenderer>();
@@ -35,60 +42,62 @@ public class Player1Movement : MonoBehaviour
 
         // theAnimator.SetBool("Moving", move);
 
-
-       // Debug.Log(theAnimator.GetBool("OnGround"));
-        if (Input.GetKey(KeyCode.D))
+        if (isRunning.timeRunning)
         {
-
-            Player1Engine.velocity = rightMove;
-            theAnimator.SetBool("Moving", true);
-            facing.flipX = true;
-            
-            
-
-        }
-
-        else if (Input.GetKey(KeyCode.A))
-        {
-            Player1Engine.velocity = leftMove;
-            theAnimator.SetBool("Moving", true);
-            facing.flipX = false;
-            Player1Engine.SetRotation(0);
-        }
-        //
-        //else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
-        //{
-            
-        //    Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
-        //    theAnimator.SetBool("OnGround", false);
-        //   // ground = false;
-
-        //}
-        else
-        {
-            if (Player1Engine.velocity.x > 0)
+            // Debug.Log(theAnimator.GetBool("OnGround"));
+            if (Input.GetKey(KeyCode.D))
             {
-                Player1Engine.velocity = Player1Engine.velocity - VelFriction;
-                if (Player1Engine.velocity.x < 0)
-                {
-                    Player1Engine.velocity = noMove;
-                    theAnimator.SetBool("Moving", false);
-                }
+
+                Player1Engine.velocity = rightMove;
+                theAnimator.SetBool("Moving", true);
+                facing.flipX = true;
+
+
+
             }
-            else if (Player1Engine.velocity.x < 0)
+
+            else if (Input.GetKey(KeyCode.A))
             {
-                Player1Engine.velocity = Player1Engine.velocity + VelFriction;
+                Player1Engine.velocity = leftMove;
+                theAnimator.SetBool("Moving", true);
+                facing.flipX = false;
+                Player1Engine.SetRotation(0);
+            }
+            //
+            //else if (Input.GetKeyDown(KeyCode.W) && theAnimator.GetBool("OnGround"))
+            //{
+
+            //    Player1Engine.AddForce(jumpForce, ForceMode2D.Impulse);
+            //    theAnimator.SetBool("OnGround", false);
+            //   // ground = false;
+
+            //}
+            else
+            {
                 if (Player1Engine.velocity.x > 0)
                 {
-                    Player1Engine.velocity = noMove;
-                    theAnimator.SetBool("Moving", false);
+                    Player1Engine.velocity = Player1Engine.velocity - VelFriction;
+                    if (Player1Engine.velocity.x < 0)
+                    {
+                        Player1Engine.velocity = noMove;
+                        theAnimator.SetBool("Moving", false);
+                    }
                 }
-            }
+                else if (Player1Engine.velocity.x < 0)
+                {
+                    Player1Engine.velocity = Player1Engine.velocity + VelFriction;
+                    if (Player1Engine.velocity.x > 0)
+                    {
+                        Player1Engine.velocity = noMove;
+                        theAnimator.SetBool("Moving", false);
+                    }
+                }
 
+
+            }
 
         }
     }
-
     //public void OnCollisionEnter2D(Collision2D TheCollision)
     //{
     //    //gets called on collision

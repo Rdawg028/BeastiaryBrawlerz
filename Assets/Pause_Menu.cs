@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pause_Menu : MonoBehaviour
 {
-    bool paused = false;
+    
     GameObject timer;
     TimerScript isRunning;
 
@@ -28,7 +28,10 @@ public class Pause_Menu : MonoBehaviour
         {
             GUILayout.Label("Game is paused!");
             if (GUILayout.Button("Click me to unpause"))
+            {
                 isRunning.timeRunning = !isRunning.timeRunning;
+            }
+                
         }
     }
 
