@@ -52,12 +52,12 @@ public class TimerScript : MonoBehaviour
         }
         */
         DisplayTime(timeRemaining);
-        if (timeRemaining > 0)
+        if (timeRemaining > 0 && timeRunning)
         {
             timeRemaining -= Time.deltaTime;
             DisplayTime(timeRemaining);
         }
-        else
+        else if(timeRemaining<0)
         {
             Debug.Log("Time has run out");
             timeRemaining = 0;
