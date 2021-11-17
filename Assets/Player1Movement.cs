@@ -20,9 +20,9 @@ public class Player1Movement : MonoBehaviour
         timer = GameObject.Find("Timer");
         isRunning = timer.GetComponent<TimerScript>();
 
-        Player1Engine = GameObject.Find("Player1").GetComponent<Rigidbody2D>();
-        theAnimator = GameObject.Find("Player1").GetComponent<Animator>();
-        facing = GameObject.Find("Player1").GetComponent<SpriteRenderer>();
+        Player1Engine = GameObject.FindWithTag("Player 1").GetComponent<Rigidbody2D>();
+        theAnimator = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
+        facing = GameObject.FindWithTag("Player 1").GetComponent<SpriteRenderer>();
         //physicsEngine.AddForce(firstVector);
         Debug.Log("GameStart");
 
