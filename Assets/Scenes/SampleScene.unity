@@ -1545,11 +1545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510548077456319428, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_Color.g
-      value: 0.42099953
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8510548077456319428, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8510548077456319429, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_AnchorMax.x
