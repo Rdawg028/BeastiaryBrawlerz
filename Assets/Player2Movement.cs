@@ -23,8 +23,8 @@ public class Player2Movement : MonoBehaviour
 
 
         Player2Engine = GameObject.FindWithTag("Player 2").GetComponent<Rigidbody2D>();
-        theAnimator = GameObject.FindWithTag("Playerv2").GetComponent<Animator>();
-        facing = GameObject.FindWithTag("Player 2").GetComponent<SpriteRenderer>();
+        theAnimator = GameObject.FindWithTag("Player 2").GetComponent<Animator>();
+        facing = Player2Engine.GetComponent<SpriteRenderer>();
         //physicsEngine.AddForce(firstVector);
         Debug.Log("GameStart");
 
@@ -57,6 +57,7 @@ public class Player2Movement : MonoBehaviour
                 Player2Engine.velocity = rightMove;
                 theAnimator.SetBool("Moving", true);
                 facing.flipX = true;
+                
 
 
 
@@ -68,6 +69,7 @@ public class Player2Movement : MonoBehaviour
                 theAnimator.SetBool("Moving", true);
                 facing.flipX = false;
                 Player2Engine.SetRotation(0);
+              
             }
 
 
