@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6638848510537830165}
   - component: {fileID: 1386816918622799553}
-  m_Layer: 0
+  - component: {fileID: 1596928237}
+  m_Layer: 6
   m_Name: RangeAttackBox
-  m_TagString: Untagged
+  m_TagString: P1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +58,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &1596928237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574234888469550850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af18a43dd68928e4cb8f48b1f0de096f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7498143070348078226
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,10 +80,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7498143070348078227}
   - component: {fileID: 7498143070348078224}
-  - component: {fileID: 7498143070348078225}
-  m_Layer: 0
+  - component: {fileID: 1741568580}
+  m_Layer: 6
   m_Name: PunchHitBox
-  m_TagString: Untagged
+  m_TagString: P1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +118,7 @@ CircleCollider2D:
   m_Offset: {x: 1, y: 0}
   serializedVersion: 2
   m_Radius: 1.2
---- !u!114 &7498143070348078225
+--- !u!114 &1741568580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7498143070348078226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4198b331bca35484d84fe12dca9bb95f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d2833ee27dc92e438f03531d446534e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8692681738722498737
@@ -127,9 +140,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6030493061064178338}
   - component: {fileID: 1846795272355324118}
-  m_Layer: 0
+  - component: {fileID: 1794614308}
+  m_Layer: 6
   m_Name: HeavyAttackBox
-  m_TagString: Untagged
+  m_TagString: P1Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +178,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1794614308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8692681738722498737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94bf7ea440336041a41bda2b68f4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8982177998502193371
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,10 +204,9 @@ GameObject:
   - component: {fileID: 7498143069996030512}
   - component: {fileID: 7498143069996030517}
   - component: {fileID: 7498143069996030516}
-  - component: {fileID: 7498143069996030522}
   - component: {fileID: 7498143069996030523}
-  m_Layer: 0
-  m_Name: Player1
+  m_Layer: 6
+  m_Name: CubertLeft
   m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +267,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -809324203
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f43130e932da7714d8e54f12c4ccaa9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -306,7 +331,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &7498143069996030516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -333,18 +358,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 9}
   m_EdgeRadius: 0
---- !u!114 &7498143069996030522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982177998502193371}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3adfec935d1b50498925abc1748f867, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7498143069996030523
 MonoBehaviour:
   m_ObjectHideFlags: 0
