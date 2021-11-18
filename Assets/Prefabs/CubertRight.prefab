@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6122896890820073899}
   - component: {fileID: 6122896890820073903}
   - component: {fileID: 6122896890820073902}
-  m_Layer: 0
-  m_Name: Player2
+  m_Layer: 7
+  m_Name: CubertRight
   m_TagString: Player 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1405654777004347809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.35, y: -3.18, z: 0}
-  m_LocalScale: {x: 0.6315, y: 0.6087, z: 1}
+  m_LocalScale: {x: 0.6315, y: 0.6087, z: 0}
   m_Children:
   - {fileID: 6122896891032584402}
   - {fileID: 6122896891693363014}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -809324203
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f43130e932da7714d8e54f12c4ccaa9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,12 +106,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6122896890820073900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70651d6e5f35294c8306b238b3cec97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1Health: 0
 --- !u!1 &1763725509737397747
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,9 +192,10 @@ GameObject:
   m_Component:
   - component: {fileID: 142672755160311489}
   - component: {fileID: 2512589152044772744}
-  m_Layer: 0
+  - component: {fileID: 758090044}
+  m_Layer: 7
   m_Name: P2Range
-  m_TagString: Untagged
+  m_TagString: P2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,8 +208,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763725509737397747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6017421, y: -0.3091761, z: 0}
-  m_LocalScale: {x: 1.5835313, y: 1.6428455, z: 1}
+  m_LocalPosition: {x: 0.19406, y: 0.2, z: 0}
+  m_LocalScale: {x: 1.7565321, y: 2.1780782, z: 1.02}
   m_Children: []
   m_Father: {fileID: 2515679967365259904}
   m_RootOrder: 3
@@ -238,6 +240,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &758090044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763725509737397747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff314fd925f147d4b9f34e8f3c5c686e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3967295543080034700
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,9 +262,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3507773514313795781}
   - component: {fileID: 7182197140361305351}
-  m_Layer: 0
+  - component: {fileID: 1205072073}
+  m_Layer: 7
   m_Name: P2Heavy
-  m_TagString: Untagged
+  m_TagString: P2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,6 +300,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1205072073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3967295543080034700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe6582be169b4447a479996dfc143c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6122896891032584403
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,9 +322,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6122896891032584402}
   - component: {fileID: 6122896891032584405}
-  m_Layer: 0
+  - component: {fileID: 1121153202}
+  m_Layer: 7
   m_Name: Player2PunchHit
-  m_TagString: Untagged
+  m_TagString: P2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 6122896891032584403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2, y: 0.7, z: 0}
-  m_LocalScale: {x: 1.2854948, y: 1.3336456, z: 0.81179}
+  m_LocalScale: {x: 1.526525, y: 1.3336456, z: 0.81179}
   m_Children: []
   m_Father: {fileID: 2515679967365259904}
   m_RootOrder: 0
@@ -332,6 +360,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.2
+--- !u!114 &1121153202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122896891032584403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4534c7979f9fb6d47b7b69a7a3e06970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6122896891693363015
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6122896891693363014}
   - component: {fileID: 6122896891693363017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: floorcollider
   m_TagString: floorCollider
   m_Icon: {fileID: 0}
