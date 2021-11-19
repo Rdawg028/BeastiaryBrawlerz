@@ -57,9 +57,6 @@ public class Player2Movement : MonoBehaviour
                 Player2Engine.velocity = rightMove;
                 theAnimator.SetBool("Moving", true);
                 facing.flipX = true;
-                
-
-
 
             }
 
