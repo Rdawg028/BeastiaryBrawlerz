@@ -56,7 +56,15 @@ public class Player2Movement : MonoBehaviour
 
                 Player2Engine.velocity = rightMove;
                 theAnimator.SetBool("Moving", true);
-                facing.flipX = true;
+                if (Player2Engine.name == "CubertRight")
+                {
+                    facing.flipX = true;
+                }
+                else
+                {
+                    facing.flipX = false;
+                }
+                
                 
 
 
@@ -67,9 +75,16 @@ public class Player2Movement : MonoBehaviour
             {
                 Player2Engine.velocity = leftMove;
                 theAnimator.SetBool("Moving", true);
-                facing.flipX = false;
                 Player2Engine.SetRotation(0);
-              
+                if (Player2Engine.name == "CubertRight")
+                {
+                    facing.flipX = false;
+                }
+                else
+                {
+                    facing.flipX = true;
+                }
+
             }
 
 
