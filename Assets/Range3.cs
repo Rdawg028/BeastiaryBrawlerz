@@ -12,13 +12,13 @@ public class Range3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player2 = GameObject.Find("Player2");
+        Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.tag == "Players")
+        if (collision.collider.gameObject.tag == "Player 2")
         {
             Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
             Debug.Log("Fist Hit");
