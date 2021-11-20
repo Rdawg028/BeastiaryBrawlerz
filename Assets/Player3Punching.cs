@@ -20,6 +20,17 @@ public class Player3Punching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
+        {
+            anim.SetBool("Heavy", true);
+
+        }
+        else
+        {
+            anim.SetBool("Heavy", false);
+        }
+
         if (Input.GetKey(KeyCode.S)) // blocking
         {
             anim.SetBool("IsBlocking", true);

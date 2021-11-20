@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Range3 : MonoBehaviour
+public class Heavy3 : MonoBehaviour
 {
     GameObject Player1;
     Player1Punching Player1Var;
@@ -23,12 +23,11 @@ public class Range3 : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
+            Player1Var.p2Health = scr.TakeDamageHeavy(Player1Var.p2Health);
             Debug.Log("Fist Hit");
             //HealthBar.value = Player1Var.p2Health;
             // Debug.Log("health bar");
             anim.SetBool("IsHit", true);
-           
         }
     }
 }
