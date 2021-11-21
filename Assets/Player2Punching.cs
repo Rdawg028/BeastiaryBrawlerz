@@ -14,8 +14,6 @@ public class Player2Punching : MonoBehaviour
     GameObject win1;
     scene current;
     bool blocking;
-    //GameObject tmpHealth;
-   // Slider HealthBar;
     RoundsCoutners wins;
     int numRounds = 1;
     GameObject winTracker;
@@ -45,6 +43,7 @@ public class Player2Punching : MonoBehaviour
         //win tracking
         winTracker = GameObject.Find("RoundCounter");
         wins = winTracker.GetComponent<RoundsCoutners>();
+
 
     }
 

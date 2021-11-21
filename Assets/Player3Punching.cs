@@ -7,12 +7,14 @@ public class Player3Punching : MonoBehaviour
 
     Animator anim;
     public float p3Health;
+    public float p2Health;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
         p3Health = 25.0f;
+        p2Health = 25.0f;
         Physics2D.IgnoreLayerCollision(0, 8);
         
     }
