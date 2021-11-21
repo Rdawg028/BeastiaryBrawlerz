@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player3Punching : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Player3Punching : MonoBehaviour
     Animator anim;
     public float p3Health;
     public float p2Health;
+    GameObject tmpHealth;
+    Slider HealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +19,10 @@ public class Player3Punching : MonoBehaviour
         p3Health = 25.0f;
         p2Health = 25.0f;
         Physics2D.IgnoreLayerCollision(0, 8);
-        
+
+        tmpHealth = GameObject.Find("HealthBar");
+        HealthBar = tmpHealth.GetComponent<Slider>();
+        HealthBar.value = p3Health;
     }
 
     // Update is called once per frame

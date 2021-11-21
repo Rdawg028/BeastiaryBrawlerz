@@ -1,32 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Heavy3 : MonoBehaviour
 {
-    GameObject Player1;
-    Player1Punching Player1Var;
+    GameObject Player3;
     GameObject Player2;
+    Player3Punching Player3Var;
+    GameObject tmpHealth;
+    Slider HealthBar;
     Player2Punching scr;
     Animator anim;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Player2 = GameObject.FindWithTag("Player 2");
+        Player3 = GameObject.FindWithTag("Player1");
+        Player3Var = Player3.GetComponent<Player3Punching>();
+
+        tmpHealth = GameObject.Find("HealthBar2");
+        HealthBar = tmpHealth.GetComponent<Slider>();
+       
+
+        Player2 = GameObject.Find("Player2");
         scr = Player2.GetComponent<Player2Punching>();
 
-        anim = Player2.GetComponent<Animator>();
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player1Var.p2Health = scr.TakeDamageHeavy(Player1Var.p2Health);
+            Player3Var.p2Health = scr.TakeDamageHeavy(Player3Var.p2Health);
             Debug.Log("Fist Hit");
-            //HealthBar.value = Player1Var.p2Health;
-            // Debug.Log("health bar");
+            HealthBar.value = Player3Var.p2Health;
+            Debug.Log("health bar");
             anim.SetBool("IsHit", true);
         }
     }

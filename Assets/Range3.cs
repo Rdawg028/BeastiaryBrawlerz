@@ -28,8 +28,6 @@ public class Range3 : MonoBehaviour
         Player2 = GameObject.Find("Player2");
         scr = Player2.GetComponent<Player2Punching>();
 
-        anim = Player2.GetComponent<Animator>();
-        anim.SetBool("IsHit", false);
 
     }
 
