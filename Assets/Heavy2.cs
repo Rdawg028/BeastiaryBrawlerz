@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeavyFist : MonoBehaviour
+public class Heavy2 : MonoBehaviour
 {
     GameObject Player1;
     GameObject Player2;
