@@ -22,28 +22,37 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23333333
+        value: -2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.35000002
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Player2PunchHit
-    classID: 1
+    attribute: m_Offset.x
+    path: P2Punch
+    classID: 58
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -58,26 +67,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.35000002
-        value: -2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Offset.x
-    path: Player2PunchHit
-    classID: 58
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
+        time: 0.23333333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -98,7 +88,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   m_PPtrCurves:
@@ -108,6 +98,8 @@ AnimationClip:
     - time: 0.083333336
       value: {fileID: 21300000, guid: b7765d0985ce6d34581a654bc6fa4b23, type: 3}
     - time: 0.16666667
+      value: {fileID: 21300000, guid: d64bbc5f1fe96d0469f6701a6c070d20, type: 3}
+    - time: 0.23333333
       value: {fileID: 21300000, guid: d64bbc5f1fe96d0469f6701a6c070d20, type: 3}
     - time: 0.25
       value: {fileID: 21300000, guid: 63fb2a21950b2ba42adb29123ea48a5b, type: 3}
@@ -125,14 +117,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 575328070
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 575328070
+      path: 3691591726
       attribute: 413499720
       script: {fileID: 0}
       typeID: 58
@@ -146,7 +131,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 575328070
+      path: 3691591726
       attribute: 1872933342
       script: {fileID: 0}
       typeID: 58
@@ -155,6 +140,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: a844779b98857ce4ca81ecf386513d68, type: 3}
     - {fileID: 21300000, guid: b7765d0985ce6d34581a654bc6fa4b23, type: 3}
+    - {fileID: 21300000, guid: d64bbc5f1fe96d0469f6701a6c070d20, type: 3}
     - {fileID: 21300000, guid: d64bbc5f1fe96d0469f6701a6c070d20, type: 3}
     - {fileID: 21300000, guid: 63fb2a21950b2ba42adb29123ea48a5b, type: 3}
     - {fileID: 21300000, guid: ec07e38ae76088e4983b76591ee30a24, type: 3}
@@ -184,28 +170,37 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23333333
+        value: -2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.35000002
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Player2PunchHit
-    classID: 1
+    attribute: m_Offset.x
+    path: P2Punch
+    classID: 58
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -220,26 +215,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.35000002
-        value: -2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Offset.x
-    path: Player2PunchHit
-    classID: 58
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
+        time: 0.23333333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -260,7 +236,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   m_EulerEditorCurves: []
