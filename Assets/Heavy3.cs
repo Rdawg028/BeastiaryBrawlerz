@@ -28,7 +28,7 @@ public class Heavy3 : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
 
-        anim = Player3.GetComponent<Animator>();
+        anim = Player2.GetComponent<Animator>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
