@@ -20,7 +20,7 @@ public class HeavyFist : MonoBehaviour
 
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
-        HealthBar.value = Player2Var.p1Health;
+        //HealthBar.value = Player2Var.p1Health;
 
         Player1 = GameObject.FindWithTag("Player 1");
         anim = Player1.GetComponent<Animator>();

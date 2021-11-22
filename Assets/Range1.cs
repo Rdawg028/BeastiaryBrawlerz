@@ -22,7 +22,7 @@ public class Range1 : MonoBehaviour
 
         tmpHealth = GameObject.Find("HealthBar2");
         HealthBar = tmpHealth.GetComponent<Slider>();
-        HealthBar.value = Player1Var.p2Health;
+        //HealthBar.value = Player1Var.p2Health;
 
         Player2 = GameObject.Find("Player2");
         scr = Player2.GetComponent<Player2Punching>();

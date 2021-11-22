@@ -8,7 +8,6 @@ public class Player3Punching : MonoBehaviour
 
     Animator anim;
     public float p3Health;
-    public float p2Health;
     GameObject tmpHealth;
     Slider HealthBar;
 

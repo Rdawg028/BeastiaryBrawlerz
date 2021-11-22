@@ -35,9 +35,9 @@ public class Heavy3 : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player3Var.p2Health = scr.TakeDamageHeavy(Player3Var.p2Health);
+            scr.p2Health = scr.TakeDamageHeavy(scr.p2Health);
             Debug.Log("Fist Hit");
-            HealthBar.value = Player3Var.p2Health;
+            HealthBar.value = scr.p2Health;
             Debug.Log("health bar");
             anim.SetBool("IsHit", true);
         }
