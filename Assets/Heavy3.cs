@@ -18,14 +18,14 @@ public class Heavy3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player3 = GameObject.FindWithTag("Player1");
+        Player3 = GameObject.FindWithTag("Player 1");
         Player3Var = Player3.GetComponent<Player3Punching>();
 
         tmpHealth = GameObject.Find("HealthBar2");
         HealthBar = tmpHealth.GetComponent<Slider>();
        
 
-        Player2 = GameObject.Find("Player2");
+        Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
 
 

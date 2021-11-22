@@ -18,14 +18,14 @@ public class Range3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player3 = GameObject.FindWithTag("Player1");
+        Player3 = GameObject.FindWithTag("Player 1");
         Player3Var = Player3.GetComponent<Player3Punching>();
 
-        tmpHealth = GameObject.Find("HealthBar2");
+        tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = Player3Var.p3Health;
 
-        Player2 = GameObject.Find("Player2");
+        Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
 
 
@@ -40,6 +40,7 @@ public class Range3 : MonoBehaviour
             HealthBar.value = Player3Var.p2Health;
             Debug.Log("health bar");
             anim.SetBool("IsHit", true);
+            
         }
     }
 }
