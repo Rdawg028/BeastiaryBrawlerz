@@ -21,6 +21,10 @@ public class Player1Punching : MonoBehaviour
     GameObject timer;
     TimerScript isRunning;
 
+    GameObject tmpHealth;
+    Slider HealthBar;
+    public float p1Health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +45,13 @@ public class Player1Punching : MonoBehaviour
         //win tracking
         winTracker = GameObject.Find("RoundCounter");
         wins = winTracker.GetComponent<RoundsCoutners>();
-       
+
+        //Health
+        tmpHealth = GameObject.Find("HealthBar");
+        HealthBar = tmpHealth.GetComponent<Slider>();
+        p1Health = 25.0f;
+        HealthBar.value = p1Health;
+
 
     }
 

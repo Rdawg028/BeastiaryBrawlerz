@@ -28,16 +28,16 @@ public class Heavy3 : MonoBehaviour
         Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
 
-
+        anim = Player3.GetComponent<Animator>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player3Var.p2Health = scr.TakeDamageHeavy(Player3Var.p2Health);
+            scr.p2Health = scr.TakeDamageHeavy(scr.p2Health);
             Debug.Log("Fist Hit");
-            HealthBar.value = Player3Var.p2Health;
+            HealthBar.value = scr.p2Health;
             Debug.Log("health bar");
             anim.SetBool("IsHit", true);
         }

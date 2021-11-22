@@ -12,8 +12,7 @@ public class Range3 : MonoBehaviour
     Slider HealthBar;
     Player2Punching scr;
     Animator anim;
-    
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +20,15 @@ public class Range3 : MonoBehaviour
         Player3 = GameObject.FindWithTag("Player 1");
         Player3Var = Player3.GetComponent<Player3Punching>();
 
-        tmpHealth = GameObject.Find("HealthBar");
+        tmpHealth = GameObject.Find("HealthBar2");
         HealthBar = tmpHealth.GetComponent<Slider>();
-        HealthBar.value = Player3Var.p3Health;
+        //HealthBar.value = Player3Var.p2Health;
 
         Player2 = GameObject.FindWithTag("Player 2");
         scr = Player2.GetComponent<Player2Punching>();
 
+
+        anim = Player3.GetComponent<Animator>();
 
     }
 
@@ -35,9 +36,9 @@ public class Range3 : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player3Var.p2Health = scr.TakeRangeDamage(Player3Var.p2Health);
+            scr.p2Health = scr.TakeRangeDamage(scr.p2Health);
             Debug.Log("Fist Hit");
-            HealthBar.value = Player3Var.p2Health;
+            HealthBar.value = scr.p2Health;
             Debug.Log("health bar");
             anim.SetBool("IsHit", true);
             
