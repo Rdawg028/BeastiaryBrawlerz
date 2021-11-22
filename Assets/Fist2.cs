@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fist : MonoBehaviour
+public class Fist2 : MonoBehaviour
 {
 
     GameObject Player2;
