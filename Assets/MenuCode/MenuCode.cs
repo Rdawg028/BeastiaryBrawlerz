@@ -11,6 +11,10 @@ public class MenuCode : MonoBehaviour
     int buttonScene;
     const int MAX_SCENES=4;
     Sprite button;
+    public SpriteRenderer back;
+    public Sprite arena;
+    public Sprite temple;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +22,14 @@ public class MenuCode : MonoBehaviour
          sceneChooser = GameObject.Find("SceneChanger").GetComponent<Button>();
         buttonScene = 0;
         button = Resources.Load<Sprite>("Frame 1");
+        //back = GameObject.Find("Background").GetComponent<SpriteRenderer>();
         // Arena.GetComponentInChildren<Text> = "Yep";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        back.sprite()
     }
 
     
@@ -51,6 +56,7 @@ public class MenuCode : MonoBehaviour
                 break;
             case 3:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Mountain Temple";
+
                 break;
             case 4:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
