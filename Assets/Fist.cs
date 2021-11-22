@@ -40,6 +40,7 @@ public class Fist : MonoBehaviour
 
             anim.SetBool("IsHit", true);
         }
+       
         
     }
 }

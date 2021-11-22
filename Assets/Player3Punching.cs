@@ -7,7 +7,7 @@ public class Player3Punching : MonoBehaviour
 {
 
     Animator anim;
-    public float p3Health;
+    public float p1Health;
     GameObject tmpHealth;
     Slider HealthBar;
 
@@ -15,12 +15,12 @@ public class Player3Punching : MonoBehaviour
     void Start()
     {
         anim = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
-        p3Health = 25.0f;
+        p1Health = 25.0f;
         Physics2D.IgnoreLayerCollision(0, 8);
 
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
-        HealthBar.value = p3Health;
+        HealthBar.value = p1Health;
     }
 
     // Update is called once per frame
