@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 1579659602}
   - component: {fileID: 1579659604}
   - component: {fileID: 1579659603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Heavy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,6 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p3Health: 0
+  p2Health: 0
 --- !u!114 &1952072650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,6 +1307,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510548077898222739, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510548078450560103, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

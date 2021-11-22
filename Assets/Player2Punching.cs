@@ -20,6 +20,9 @@ public class Player2Punching : MonoBehaviour
     GameObject timer;
     TimerScript isRunning;
 
+    GameObject tmpHealth;
+    Slider HealthBar;
+    public float p2Health;
 
 
 
@@ -44,6 +47,10 @@ public class Player2Punching : MonoBehaviour
         winTracker = GameObject.Find("RoundCounter");
         wins = winTracker.GetComponent<RoundsCoutners>();
 
+        tmpHealth = GameObject.Find("HealthBar2");
+        HealthBar = tmpHealth.GetComponent<Slider>();
+        p2Health = 25.0f;
+        HealthBar.value = p2Health;
 
     }
 
