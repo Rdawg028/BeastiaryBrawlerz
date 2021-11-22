@@ -22,6 +22,7 @@ public class MenuCode : MonoBehaviour
          sceneChooser = GameObject.Find("SceneChanger").GetComponent<Button>();
         buttonScene = 0;
         button = Resources.Load<Sprite>("Frame 1");
+        
         //back = GameObject.Find("Background").GetComponent<SpriteRenderer>();
         // Arena.GetComponentInChildren<Text> = "Yep";
     }
@@ -29,7 +30,7 @@ public class MenuCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        back.sprite()
+       // back.sprite()
     }
 
     
@@ -56,10 +57,11 @@ public class MenuCode : MonoBehaviour
                 break;
             case 3:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Mountain Temple";
-
+                back.sprite = temple;
                 break;
             case 4:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
+                back.sprite = arena;
                 break;
 
         }
