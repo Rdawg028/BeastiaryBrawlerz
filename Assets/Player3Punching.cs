@@ -27,6 +27,15 @@ public class Player3Punching : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.T)) // light attack
+        {
+            anim.SetBool("Light", true);
+        }
+        else
+        {
+            anim.SetBool("Light", false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
         {
             anim.SetBool("Heavy", true);
