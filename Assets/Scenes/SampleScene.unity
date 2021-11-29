@@ -1676,8 +1676,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8510548076964836990, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_Value
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8510548076964836991, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510548076964836991, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8510548077456319429, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
