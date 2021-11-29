@@ -40,6 +40,7 @@ public class Pause_Menu : MonoBehaviour
     {
         isRunning.timeRunning = !isRunning.timeRunning;
         menu.SetActive(false);
+        Debug.Log("is hit");
     }
 
 
