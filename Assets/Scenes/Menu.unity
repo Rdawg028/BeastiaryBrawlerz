@@ -718,9 +718,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 7
+  field of view: 6.823174
+  orthographic: 1
+  orthographic size: 56.48969
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1144,6 +1144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2515679967365259904, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1452,6 +1456,10 @@ PrefabInstance:
     - target: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
