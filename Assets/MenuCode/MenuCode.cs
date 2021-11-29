@@ -20,8 +20,9 @@ public class MenuCode : MonoBehaviour
     {
 
          sceneChooser = GameObject.Find("SceneChanger").GetComponent<Button>();
-        buttonScene = 0;
+        buttonScene = 3;
         button = Resources.Load<Sprite>("Frame 1");
+        ButtonChange();
         
         //back = GameObject.Find("Background").GetComponent<SpriteRenderer>();
         // Arena.GetComponentInChildren<Text> = "Yep";
@@ -70,7 +71,7 @@ public class MenuCode : MonoBehaviour
     public void LeftArrrow()
     {
         //changing buttons so it can change which scene is pciked
-        
+        //1,0,2,5
             buttonScene--;
             //if it goes to the winning screen it changes to the arena
         //    if (buttonScene == 1)
@@ -80,10 +81,11 @@ public class MenuCode : MonoBehaviour
         //}
 
             //loops back around if it goes to max scenes 
-            if(buttonScene<=-1)
+            if(buttonScene<=2)
             {
                 buttonScene = MAX_SCENES;
             }
+         
 
         ButtonChange();
         
@@ -103,7 +105,7 @@ public class MenuCode : MonoBehaviour
             //loops back around if it goes above MAX_SCENES
             if (buttonScene > MAX_SCENES)
             {
-                buttonScene = 0;
+                buttonScene = 3;
             }
         ButtonChange();
     }
