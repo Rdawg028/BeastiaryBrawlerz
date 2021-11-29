@@ -24,11 +24,13 @@ public class Player2Punching : MonoBehaviour
     Slider HealthBar;
     public float p2Health;
 
-
+    GameObject p2; 
 
     // Start is called before the first frame update
     void Start()
     {
+        p2 = GameObject.FindWithTag("Player 2");
+
         //code for pausing
         timer = GameObject.Find("Timer");
         isRunning = timer.GetComponent<TimerScript>();
@@ -111,6 +113,11 @@ public class Player2Punching : MonoBehaviour
             {
                 anim.SetBool("IsBlocking", false);
                 anim.SetBool("BlockHolding", false);
+            }
+            
+            if (p2Health <= 0)
+            {
+                Object.Destroy(p2);
             }
         }
     }
