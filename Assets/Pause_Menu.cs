@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pause_Menu : MonoBehaviour
 {
@@ -15,16 +16,18 @@ public class Pause_Menu : MonoBehaviour
     {
         timer = GameObject.Find("Timer");
         isRunning = timer.GetComponent<TimerScript>();
-        g = GameObject.Find("PauseMenu");
+        //g = GameObject.Find("PauseMenu");
         menu = GameObject.FindWithTag("Pause");
+        menu.SetActive(false);
     }
     void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
         {
             isRunning.timeRunning = !isRunning.timeRunning;
-            // menu.SetActive(true);
-            g.SetActive(true);
+            menu.SetActive(true);
+           // Debug.Log("Pause hit");
+           // g.SetActive(true);
             
         }
         
@@ -33,25 +36,16 @@ public class Pause_Menu : MonoBehaviour
             
             
     }
-
-    void OnGUI()
+    public void Unpause()
     {
-        //make a panel
-        //have it normally disable, enable on key press
-        //as many buttons as you want
-        //if (!isRunning.timeRunning&&isRunning.timeRemaining>0)
-        //{
-
-        //    menu.SetActive(!isRunning.timeRunning);
-        //    if (GUILayout.Button("Click me to unpause"))
-        //    {
-        //        isRunning.timeRunning = !isRunning.timeRunning;
-        //        menu.SetActive(!isRunning.timeRunning);
-        //    }
-            
-                
-        //}
+        isRunning.timeRunning = !isRunning.timeRunning;
+        menu.SetActive(false);
     }
 
+
+    public void loadmainMenu()
+    {
+        SceneManager.LoadScene(2);
+    }
     
 }
