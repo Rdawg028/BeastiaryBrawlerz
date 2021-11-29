@@ -10,6 +10,8 @@ public class Player3Punching : MonoBehaviour
     public float p1Health;
     GameObject tmpHealth;
     Slider HealthBar;
+    GameObject p1;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class Player3Punching : MonoBehaviour
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
         HealthBar.value = p1Health;
+
+        p1 = GameObject.FindWithTag("Player 1");
     }
 
     // Update is called once per frame
@@ -65,5 +69,11 @@ public class Player3Punching : MonoBehaviour
         {
             anim.SetBool("IsRange", false);
         }
+
+        if (p1Health <= 0)
+        {
+            Object.Destroy(p1);
+        }
+        
     }
 }

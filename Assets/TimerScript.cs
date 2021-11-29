@@ -63,7 +63,7 @@ public class TimerScript : MonoBehaviour
             timeRemaining = 0;
             timeRunning = false;
             //So this line closed the playing on the unity editor, for the real game we have to use Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
             //Application.Quit();
             
         }
