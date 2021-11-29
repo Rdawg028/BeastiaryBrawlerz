@@ -26,7 +26,7 @@ public class StartGame : MonoBehaviour
         if (starter == 1)
         {
             
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Menu");
         }
     }
 }

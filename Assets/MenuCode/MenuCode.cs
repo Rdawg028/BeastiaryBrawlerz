@@ -9,7 +9,7 @@ public class MenuCode : MonoBehaviour
     
     Button sceneChooser;
     int buttonScene;
-    const int MAX_SCENES=4;
+    const int MAX_SCENES=3;
     Sprite button;
     public SpriteRenderer back;
     public Sprite arena;
@@ -46,21 +46,22 @@ public class MenuCode : MonoBehaviour
     {
         switch (buttonScene)
         {
-            case 0:
-                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Tester";
-                break;
-            case 1:
-                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Player 1 Win Screen";
-                sceneChooser.GetComponent<Image>().sprite=button;
-                break;
+            //mountain is 2, arena is 3
+            //case 0:
+            //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Tester";
+            //    break;
+            //case 1:
+            //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Player 1 Win Screen";
+            //    sceneChooser.GetComponent<Image>().sprite=button;
+            //    break;
+            //case 2:
+            //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Menu";
+            //    break;
             case 2:
-                GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Menu";
-                break;
-            case 3:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Mountain Temple";
                 back.sprite = temple;
                 break;
-            case 4:
+            case 3:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
                 back.sprite = arena;
                 break;
@@ -81,7 +82,7 @@ public class MenuCode : MonoBehaviour
         //}
 
             //loops back around if it goes to max scenes 
-            if(buttonScene<=2)
+            if(buttonScene<=1)
             {
                 buttonScene = MAX_SCENES;
             }
@@ -105,7 +106,7 @@ public class MenuCode : MonoBehaviour
             //loops back around if it goes above MAX_SCENES
             if (buttonScene > MAX_SCENES)
             {
-                buttonScene = 3;
+                buttonScene = 2;
             }
         ButtonChange();
     }

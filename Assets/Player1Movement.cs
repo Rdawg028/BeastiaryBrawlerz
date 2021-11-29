@@ -45,7 +45,7 @@ public class Player1Movement : MonoBehaviour
 
         if (isRunning.timeRunning)
         {
-            // Debug.Log(theAnimator.GetBool("OnGround"));
+           
             if (Input.GetKey(KeyCode.D))
             {
 
@@ -93,19 +93,21 @@ public class Player1Movement : MonoBehaviour
                 if (Player1Engine.velocity.x > 0)
                 {
                     Player1Engine.velocity = Player1Engine.velocity - VelFriction;
-                    if (Player1Engine.velocity.x < 0)
+                    if (Player1Engine.velocity.x <= 0)
                     {
                         Player1Engine.velocity = noMove;
                         theAnimator.SetBool("Moving", false);
+                        
                     }
                 }
                 else if (Player1Engine.velocity.x < 0)
                 {
                     Player1Engine.velocity = Player1Engine.velocity + VelFriction;
-                    if (Player1Engine.velocity.x > 0)
+                    if (Player1Engine.velocity.x >= 0)
                     {
                         Player1Engine.velocity = noMove;
                         theAnimator.SetBool("Moving", false);
+                       
                     }
                 }
 
