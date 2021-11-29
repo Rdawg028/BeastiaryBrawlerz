@@ -13,6 +13,7 @@ TagManager:
   - UI
   - roundCounter
   - Players
+  - Pause
   layers:
   - Default
   - TransparentFX
