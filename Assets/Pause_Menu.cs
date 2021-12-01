@@ -22,9 +22,9 @@ public class Pause_Menu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isRunning.timeRunning = !isRunning.timeRunning;
+            isRunning.timeRunning = (false);
             menu.SetActive(true);
            // Debug.Log("Pause hit");
            // g.SetActive(true);
@@ -38,15 +38,15 @@ public class Pause_Menu : MonoBehaviour
     }
     public void Unpause()
     {
-        isRunning.timeRunning = !isRunning.timeRunning;
+        isRunning.timeRunning = true;
         menu.SetActive(false);
-        Debug.Log("is hit");
+        
     }
 
 
     public void loadmainMenu()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Menu");
     }
     
 }
