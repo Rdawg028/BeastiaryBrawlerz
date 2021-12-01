@@ -63,11 +63,11 @@ public class Player2Punching : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Alpha1)) // light attack
             {
-                anim.SetBool("IsPunch", true);
+                anim.SetBool("IsLight", true);
             }
             else
             {
-                anim.SetBool("IsPunch", false);
+                anim.SetBool("IsLight", false);
             }
             if (Input.GetKey(KeyCode.Alpha2)) // heavy attack
             {
