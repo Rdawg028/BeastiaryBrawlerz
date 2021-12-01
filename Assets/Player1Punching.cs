@@ -63,11 +63,11 @@ public class Player1Punching : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T))  // light attack
             {
-                anim.SetBool("IsPunch", true);
+                anim.SetBool("IsLight", true);
             }
             else
             {
-                anim.SetBool("IsPunch", false);
+                anim.SetBool("IsLight", false);
             }
 
             if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
@@ -119,7 +119,11 @@ public class Player1Punching : MonoBehaviour
             }
 
 
-        }   
+        } 
+        if (p1Health < 0)
+        {
+            anim.SetBool("IsDead", true);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
