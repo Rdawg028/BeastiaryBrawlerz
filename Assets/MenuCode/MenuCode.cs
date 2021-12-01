@@ -9,7 +9,7 @@ public class MenuCode : MonoBehaviour
     
     Button sceneChooser;
     int buttonScene;
-    const int MAX_SCENES=3;
+    const int MAX_SCENES=4;
     Sprite button;
     public SpriteRenderer back;
     public Sprite arena;
@@ -57,11 +57,11 @@ public class MenuCode : MonoBehaviour
             //case 2:
             //    GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Menu";
             //    break;
-            case 2:
+            case 3:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Mountain Temple";
                 back.sprite = temple;
                 break;
-            case 3:
+            case 4:
                 GameObject.Find("SceneChanger").GetComponentInChildren<Text>().text = "Arena";
                 back.sprite = arena;
                 break;
@@ -82,7 +82,7 @@ public class MenuCode : MonoBehaviour
         //}
 
             //loops back around if it goes to max scenes 
-            if(buttonScene<=1)
+            if(buttonScene<=2)
             {
                 buttonScene = MAX_SCENES;
             }
@@ -106,7 +106,7 @@ public class MenuCode : MonoBehaviour
             //loops back around if it goes above MAX_SCENES
             if (buttonScene > MAX_SCENES)
             {
-                buttonScene = 2;
+                buttonScene = 3;
             }
         ButtonChange();
     }
