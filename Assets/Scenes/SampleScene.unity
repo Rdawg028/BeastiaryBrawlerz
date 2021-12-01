@@ -294,7 +294,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.039021
+  orthographic size: 8.330768
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -771,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3618803256534065918, guid: 555bf27267cec98439f774e32132f854, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.4399414
+      objectReference: {fileID: 0}
     - target: {fileID: 4983563924053867943, guid: 555bf27267cec98439f774e32132f854, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -827,6 +831,10 @@ PrefabInstance:
     - target: {fileID: 613448389569648022, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064851145632099218, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
+      propertyPath: m_Size.x
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 8998497733858518494, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
       propertyPath: m_Name

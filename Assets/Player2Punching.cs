@@ -117,7 +117,8 @@ public class Player2Punching : MonoBehaviour
             
             if (p2Health <= 0)
             {
-                Object.Destroy(p2);
+                anim.SetBool("IsDead", true);
+                //Object.Destroy(p2);
             }
         }
     }
