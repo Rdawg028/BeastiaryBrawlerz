@@ -33,11 +33,11 @@ public class Player3Punching : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T)) // light attack
         {
-            anim.SetBool("Light", true);
+            anim.SetBool("IsLight", true);
         }
         else
         {
-            anim.SetBool("Light", false);
+            anim.SetBool("IsLight", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Y)) // heavy attack
@@ -63,11 +63,11 @@ public class Player3Punching : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U)) // range attack
         {
-            anim.SetBool("IsRange", true);
+            anim.SetBool("Range", true);
         }
         else
         {
-            anim.SetBool("IsRange", false);
+            anim.SetBool("Range", false);
         }
 
         if (p1Health <= 0)
