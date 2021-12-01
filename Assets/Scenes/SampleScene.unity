@@ -845,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubertRight
       objectReference: {fileID: 0}
+    - target: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2515679967365259904, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1214,7 +1218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3583477144658881724, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 14.1
       objectReference: {fileID: 0}
     - target: {fileID: 3583477144658881724, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1252,6 +1256,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941374950272870996, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4941374950272870999, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1262,9 +1270,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4941374950272870996, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
 --- !u!1 &8544655305448541953 stripped
 GameObject:
@@ -1285,3 +1294,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1Health: 0
   p2Health: 0
+--- !u!114 &8544655305448541955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544655305448541953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec686d113fae77c42a8c1146a3870b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
