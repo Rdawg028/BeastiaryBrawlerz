@@ -63,11 +63,11 @@ public class Player2Punching : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Alpha1)) // light attack
             {
-                anim.SetBool("IsPunch", true);
+                anim.SetBool("IsLight", true);
             }
             else
             {
-                anim.SetBool("IsPunch", false);
+                anim.SetBool("IsLight", false);
             }
             if (Input.GetKey(KeyCode.Alpha2)) // heavy attack
             {
@@ -117,7 +117,8 @@ public class Player2Punching : MonoBehaviour
             
             if (p2Health <= 0)
             {
-                Object.Destroy(p2);
+                anim.SetBool("IsDead", true);
+                //Object.Destroy(p2);
             }
         }
     }
