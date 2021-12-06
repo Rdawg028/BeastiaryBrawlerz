@@ -14,7 +14,7 @@ public class Player1Punching : MonoBehaviour
     GameObject p2;
     scene current;
     scene start;
-    bool blocking;
+    public bool blocking;
     RoundsCoutners wins;
     GameObject winTracker;
     int numRounds=1;
@@ -52,7 +52,7 @@ public class Player1Punching : MonoBehaviour
         p1Health = 25.0f;
         HealthBar.value = p1Health;
 
-
+        blocking = false;
     }
 
     // Update is called once per frame
@@ -111,11 +111,14 @@ public class Player1Punching : MonoBehaviour
             {
                 anim.SetBool("IsBlocking", true);
                 anim.SetBool("BlockHolding", true);
+                blocking = true;
+                Debug.Log("Blocking");
             }
             else
             {
                 anim.SetBool("IsBlocking", false);
                 anim.SetBool("BlockHolding", false);
+               
             }
 
 
@@ -126,14 +129,21 @@ public class Player1Punching : MonoBehaviour
         }
     }
 
+    
+    /*
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (isRunning.timeRunning&&Input.GetKey(KeyCode.DownArrow))
         {
             blocking = true;
         }
+        else
+        {
+            blocking = false;
+        }
 
     }
+    */
 
 
     public int getCurrentScene()

@@ -11,6 +11,7 @@ public class Range2 : MonoBehaviour
     GameObject tmpHealth;
     Slider HealthBar;
     Animator anim;
+    Player1Punching block;
 
     // Start is called before the first frame update
     void Start()
@@ -20,21 +21,24 @@ public class Range2 : MonoBehaviour
 
         tmpHealth = GameObject.Find("HealthBar");
         HealthBar = tmpHealth.GetComponent<Slider>();
-        //HealthBar.value = Player2Var.p1Health;
 
         Player1 = GameObject.FindWithTag("Player 1");
         anim = Player1.GetComponent<Animator>();
+        block = Player1.GetComponent<Player1Punching>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag == "Player 1")
         {
-            Player2Var.p1Health = Player2Var.TakeRangeDamage(Player2Var.p1Health);
-            Debug.Log("Fist Hit");
-            HealthBar.value = Player2Var.p1Health;
-            Debug.Log("health bar");
-            anim.SetBool("IsHit", true);
+            if (!block.blocking)
+            {
+                Player2Var.p1Health = Player2Var.TakeRangeDamage(Player2Var.p1Health);
+                Debug.Log("Fist Hit");
+                HealthBar.value = Player2Var.p1Health;
+                Debug.Log("health bar");
+                anim.SetBool("IsHit", true);
+            }
         }
     }
 }

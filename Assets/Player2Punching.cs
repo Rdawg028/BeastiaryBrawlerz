@@ -13,7 +13,7 @@ public class Player2Punching : MonoBehaviour
     GameObject p1;
     GameObject win1;
     scene current;
-    bool blocking;
+    public bool blocking;
     RoundsCoutners wins;
     int numRounds = 1;
     GameObject winTracker;
@@ -108,11 +108,13 @@ public class Player2Punching : MonoBehaviour
             {
                 anim.SetBool("IsBlocking", true);
                 anim.SetBool("BlockHolding", true);
+                blocking = true;
             }
             else
             {
                 anim.SetBool("IsBlocking", false);
                 anim.SetBool("BlockHolding", false);
+                blocking = false;
             }
             
             if (p2Health <= 0)
@@ -123,8 +125,10 @@ public class Player2Punching : MonoBehaviour
         }
     }
 
+    
     public void OnCollisionEnter2D (Collision2D collision)
     {
+        /*
         if (isRunning.timeRunning && Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
         {
             blocking = true;
@@ -135,7 +139,7 @@ public class Player2Punching : MonoBehaviour
         }
 
      
-        /*
+        
         if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
         {
             anim.SetBool("IsBlocking", false);
@@ -143,6 +147,7 @@ public class Player2Punching : MonoBehaviour
             //HealthBar.value = p1Health;
         }
         */
+        
 
     }
 
@@ -150,9 +155,9 @@ public class Player2Punching : MonoBehaviour
     // Functions for doing damage. 
     public float TakeDamageLight(float health) // light attack damage
     {
-            //Debug.Log("Hit dectected");
-            health -= 5;
-            return health;
+        Debug.Log("Light Hit");
+        health -= 5;
+        return health; 
     }
 
     public float TakeDamageHeavy(float health) // heavy attack damage
@@ -168,6 +173,7 @@ public class Player2Punching : MonoBehaviour
         health -= 3;
         return health;
     }
+
 
     public int getCurrentScene()
     {

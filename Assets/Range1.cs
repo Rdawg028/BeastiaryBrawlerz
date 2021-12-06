@@ -13,6 +13,7 @@ public class Range1 : MonoBehaviour
     Player2Punching scr;
     Animator anim;
     
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +35,15 @@ public class Range1 : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player 2")
         {
-            Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
-            Debug.Log("Fist Hit");
-            HealthBar.value = Player1Var.p2Health;
-            Debug.Log("health bar");
-            anim.SetBool("IsHit", true);
+            if (!scr.blocking)
+            {
+                Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
+                Debug.Log("Fist Hit");
+                HealthBar.value = Player1Var.p2Health;
+                Debug.Log("health bar");
+                anim.SetBool("IsHit", true);
+            }
+
         }
     }
 }

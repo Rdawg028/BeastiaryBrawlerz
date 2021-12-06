@@ -12,6 +12,7 @@ public class Fist2 : MonoBehaviour
     GameObject tmpHealth;
     Slider HealthBar;
     Animator anim;
+    Player1Punching block;
     
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class Fist2 : MonoBehaviour
 
        Player1 = GameObject.FindWithTag("Player 1");
        anim = Player1.GetComponent<Animator>();
+       block = Player1.GetComponent<Player1Punching>();
 
     }
 
@@ -33,6 +35,7 @@ public class Fist2 : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player 1")
         {
+            if (!block.blocking)
             Player2Var.p1Health = Player2Var.TakeDamageLight(Player2Var.p1Health);
             Debug.Log("Fist Hit");
             HealthBar.value = Player2Var.p1Health;
