@@ -13,12 +13,5 @@ public class CharacterInstancer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void OnCollisonEnter2D(Collision2D select)
-        {
-            if (false)
-            {
-
-            }
-        }
     }
 }
