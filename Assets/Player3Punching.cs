@@ -11,6 +11,8 @@ public class Player3Punching : MonoBehaviour
     GameObject tmpHealth;
     Slider HealthBar;
     GameObject p1;
+    GameObject p2;
+    Player2Punching scr;
     
 
     // Start is called before the first frame update
@@ -26,6 +28,9 @@ public class Player3Punching : MonoBehaviour
 
         p1 = GameObject.FindWithTag("Player 1");
         anim.SetBool("IsLose", false);
+        anim.SetBool("IsWin", false);
+
+        scr = p2.GetComponent<Player2Punching>();
     }
 
     // Update is called once per frame
@@ -75,6 +80,12 @@ public class Player3Punching : MonoBehaviour
         {
             anim.SetBool("IsLose", true);
         }
+        else if (scr.p2Health <= 0)
+        {
+            anim.SetBool("IsWin", true);
+        }
+
+       
         
     }
 }
