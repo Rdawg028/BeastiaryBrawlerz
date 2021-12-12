@@ -13,6 +13,7 @@ public class Player1Punching : MonoBehaviour
     public float p2Health;
     GameObject p2;
     Player2Punching scr;
+    Animator anim2;
     scene current;
     scene start;
     public bool blocking;
@@ -147,14 +148,19 @@ public class Player1Punching : MonoBehaviour
         return SceneManager.GetActiveScene().buildIndex;
     }
 
-    void loadWin()
+    public void loadWin()
     {
         GameObject Player1 = GameObject.FindWithTag("Player 1");
         DontDestroyOnLoad(Player1);
+        GameObject Player2 = GameObject.FindWithTag("Player 2");
+        DontDestroyOnLoad(Player2);
         GameObject theCamera = GameObject.FindWithTag("MainCamera");
         DontDestroyOnLoad(theCamera);
         GameObject floor = GameObject.FindWithTag("Ground");
         DontDestroyOnLoad(floor);
+        anim.SetBool("IsWin", true);
+        anim2 = GameObject.FindWithTag("Player 2").GetComponent<Animator>();
+        anim2.SetBool("IsLose", true);
 
         wins.P1Wins = -1;
         //GameObject gameManager = GameObject.FindWithTag("gameManager");
@@ -165,7 +171,7 @@ public class Player1Punching : MonoBehaviour
         SceneManager.LoadScene("player1Win");
         // SceneManager.LoadScene("SampleScene");
         Debug.Log("Destoyed");
-        Object.Destroy(p2);
+        //Object.Destroy(p2);
         current = scene.P1;
     }
 
