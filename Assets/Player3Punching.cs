@@ -30,6 +30,7 @@ public class Player3Punching : MonoBehaviour
         anim.SetBool("IsLose", false);
         anim.SetBool("IsWin", false);
 
+        p2 = GameObject.FindWithTag("Player 2");
         scr = p2.GetComponent<Player2Punching>();
     }
 

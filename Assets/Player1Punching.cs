@@ -12,6 +12,7 @@ public class Player1Punching : MonoBehaviour
     Animator anim;
     public float p2Health;
     GameObject p2;
+    Player2Punching scr;
     scene current;
     scene start;
     public bool blocking;
@@ -51,6 +52,11 @@ public class Player1Punching : MonoBehaviour
         HealthBar = tmpHealth.GetComponent<Slider>();
         p1Health = 25.0f;
         HealthBar.value = p1Health;
+
+        anim.SetBool("IsWin", false);
+        anim.SetBool("IsLose", false);
+        p2 = GameObject.FindWithTag("Player 2");
+        scr = p2.GetComponent<Player2Punching>();
 
         blocking = false;
     }
@@ -125,25 +131,15 @@ public class Player1Punching : MonoBehaviour
         } 
         if (p1Health < 0)
         {
-            anim.SetBool("IsDead", true);
+            anim.SetBool("IsLose", true);
+        }
+        else if (scr.p2Health <= 0)
+        {
+            anim.SetBool("IsWin", true);
         }
     }
 
     
-    /*
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (isRunning.timeRunning&&Input.GetKey(KeyCode.DownArrow))
-        {
-            blocking = true;
-        }
-        else
-        {
-            blocking = false;
-        }
-
-    }
-    */
 
 
     public int getCurrentScene()
