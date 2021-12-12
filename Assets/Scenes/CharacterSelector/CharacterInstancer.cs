@@ -30,8 +30,9 @@ public class CharacterInstancer : MonoBehaviour
         {
             
             thing.found = true;
-            IronLeft.transform.position = new Vector2(-6.29f, -3.12f);
+            IronLeft.transform.position = new Vector2(-5.97f, -2.55f);
             IronLeft.transform.localScale = new Vector2(.5f, .5f);
+            IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
             Instantiate(IronLeft);
         }
         else if (select.gameObject.name == "CubeBert")
