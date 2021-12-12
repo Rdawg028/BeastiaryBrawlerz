@@ -8,6 +8,7 @@ public class CharacterInstancer : MonoBehaviour
 
     GameObject player1;
     public GameObject IronLeft;
+    public GameObject CubertLeft;
     GameObject selector;
     Selector thing;
     void Start()
@@ -29,15 +30,16 @@ public class CharacterInstancer : MonoBehaviour
         if (select.gameObject.name == "IronMaiden")
         {
             
-            thing.found = true;
+            //thing.found = true;
             IronLeft.transform.position = new Vector2(-5.97f, -2.55f);
             IronLeft.transform.localScale = new Vector2(.5f, .5f);
-            IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
+            //IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
             Instantiate(IronLeft);
         }
         else if (select.gameObject.name == "CubeBert")
         {
-
+            CubertLeft.transform.position = new Vector2(-5.97f, -2.55f);
+            Instantiate(CubertLeft);
         }
     }
 
@@ -45,6 +47,10 @@ public class CharacterInstancer : MonoBehaviour
     {
         Debug.Log("Exit");
         if (other.gameObject.name == "IronMaiden")
+        {
+            Destroy(GameObject.FindWithTag("Player 1"));
+        }
+        if (other.gameObject.name == "CubeBert")
         {
             Destroy(GameObject.FindWithTag("Player 1"));
         }

@@ -820,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IronLeft: {fileID: 8998497733858518494, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
+  CubertLeft: {fileID: 0}
 --- !u!1001 &1040759375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1096,6 +1097,7 @@ GameObject:
   - component: {fileID: 1221742242}
   - component: {fileID: 1221742245}
   - component: {fileID: 1221742244}
+  - component: {fileID: 1221742246}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -1176,6 +1178,27 @@ CapsuleCollider2D:
   m_Offset: {x: 11.923508, y: 2.2728262}
   m_Size: {x: 6.20512, y: 19.821718}
   m_Direction: 0
+--- !u!50 &1221742246
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221742241}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1601177276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1270,7 @@ GameObject:
   - component: {fileID: 1611586300}
   m_Layer: 0
   m_Name: Blockers
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,8 +1302,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28337765, y: 2.1410675}
-  m_Size: {x: 6.6529045, y: 15.427502}
+  m_Offset: {x: 0.43756366, y: 2.1410675}
+  m_Size: {x: 6.3445325, y: 15.427502}
   m_Direction: 0
 --- !u!61 &1611586301
 BoxCollider2D:
@@ -1295,7 +1318,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.473497, y: 4.0186195}
+  m_Offset: {x: -10.912568, y: 4.0186195}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1306,7 +1329,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5531874, y: 9.037239}
+  m_Size: {x: 3.8145847, y: 9.037239}
   m_EdgeRadius: 0
 --- !u!1 &1777014501
 GameObject:
@@ -1554,6 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IronLeft: {fileID: 8998497733858518494, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
+  CubertLeft: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
 --- !u!50 &1933341170
 Rigidbody2D:
   serializedVersion: 4
