@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IronMaidenLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 8998497733858518494, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
 --- !u!1001 &6122896891773293713
@@ -1501,6 +1505,10 @@ PrefabInstance:
     - target: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_Name
       value: IronMaidenRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
