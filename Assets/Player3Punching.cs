@@ -25,6 +25,7 @@ public class Player3Punching : MonoBehaviour
         HealthBar.value = p1Health;
 
         p1 = GameObject.FindWithTag("Player 1");
+        anim.SetBool("IsLose", false);
     }
 
     // Update is called once per frame
@@ -72,7 +73,7 @@ public class Player3Punching : MonoBehaviour
 
         if (p1Health <= 0)
         {
-            Object.Destroy(p1);
+            anim.SetBool("IsLose", true);
         }
         
     }
