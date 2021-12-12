@@ -119,37 +119,17 @@ public class Player2Punching : MonoBehaviour
             
             if (p2Health <= 0)
             {
-                anim.SetBool("IsDead", true);
+                anim.SetBool("IsLose", true);
                 //Object.Destroy(p2);
             }
         }
     }
 
-    
-    public void OnCollisionEnter2D (Collision2D collision)
-    {
-        /*
-        if (isRunning.timeRunning && Input.GetKey(KeyCode.S)) // so if blocking is true, damage should not be done
-        {
-            blocking = true;
-        }
-        else
-        {
-            blocking = false;
-        }
-
+ 
      
         
-        if (Input.GetKey(KeyCode.Alpha2) && blocking && collision.collider.gameObject.tag == "Player 1") // TODO fix block break
-        {
-            anim.SetBool("IsBlocking", false);
-            p1Health = TakeDamageHeavy(p1Health);
-            //HealthBar.value = p1Health;
-        }
-        */
-        
 
-    }
+        
 
 
     // Functions for doing damage. 
