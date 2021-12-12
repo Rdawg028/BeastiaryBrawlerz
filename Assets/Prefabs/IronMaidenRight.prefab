@@ -224,7 +224,8 @@ GameObject:
   - component: {fileID: 4941374950272871003}
   - component: {fileID: 4941374950272871002}
   - component: {fileID: 4941374950272870999}
-  - component: {fileID: 4941374950272870996}
+  - component: {fileID: 8544655305448541954}
+  - component: {fileID: 8544655305448541955}
   m_Layer: 8
   m_Name: IronMaidenRight
   m_TagString: Player 2
@@ -373,13 +374,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5575062151347192172}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05f355252269245499a66b7bc82d8f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1Health: 0
---- !u!114 &4941374950272870996
+--- !u!114 &8544655305448541954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,6 +389,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5575062151347192172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc6320b1dbdd31459d3ac2f855b4e65, type: 3}
+  m_Script: {fileID: 11500000, guid: d70651d6e5f35294c8306b238b3cec97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1Health: 0
+  blocking: 0
+  p2Health: 0
+--- !u!114 &8544655305448541955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575062151347192172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec686d113fae77c42a8c1146a3870b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

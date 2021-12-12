@@ -35,6 +35,7 @@ public class Selector : MonoBehaviour
     Vector3 bottomRight;
     Vector3 bottomLeft;
 
+    public bool found=false;
 
     // Start is called before the first frame update
     void Start()
@@ -58,66 +59,68 @@ public class Selector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!found)
         {
-            if (SelectP1.transform.position == bottomLeft)
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                SelectP1.transform.position = topLeft;
+                if (SelectP1.transform.position == bottomLeft)
+                {
+                    SelectP1.transform.position = topLeft;
 
-                P1.sprite = Player1_4;
+                    P1.sprite = Player1_4;
+                }
+                else if (SelectP1.transform.position == bottomRight)
+                {
+                    SelectP1.transform.position = topRight;
+                    P1.sprite = Player1_2;
+                }
+
+
             }
-            else if (SelectP1.transform.position == bottomRight)
+            else if (Input.GetKeyDown(KeyCode.D))
             {
-                SelectP1.transform.position = topRight;
-                P1.sprite = Player1_2;
+                if (SelectP1.transform.position == topLeft)
+                {
+                    SelectP1.transform.position = topRight;
+                    P1.sprite = Player1_2;
+                }
+                else if (SelectP1.transform.position == bottomLeft)
+                {
+                    SelectP1.transform.position = bottomRight;
+                    P1.sprite = Player1_1;
+                }
+
             }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (SelectP1.transform.position == topLeft)
+                {
+                    SelectP1.transform.position = bottomLeft;
+                    P1.sprite = Player1_3;
+                }
+                else if (SelectP1.transform.position == topRight)
+                {
+                    SelectP1.transform.position = bottomRight;
+                    P1.sprite = Player1_1;
+                }
 
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (SelectP1.transform.position == topRight)
+                {
+                    SelectP1.transform.position = topLeft;
 
+                    P1.sprite = Player1_4;
+                }
+                else if (SelectP1.transform.position == bottomRight)
+                {
+                    SelectP1.transform.position = bottomLeft;
+                    P1.sprite = Player1_3;
+                }
+
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (SelectP1.transform.position == topLeft)
-            {
-                SelectP1.transform.position = topRight;
-                P1.sprite = Player1_2;
-            }
-            else if (SelectP1.transform.position == bottomLeft)
-            {
-                SelectP1.transform.position = bottomRight;
-                P1.sprite = Player1_1;
-            }
-
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (SelectP1.transform.position == topLeft)
-            {
-                SelectP1.transform.position = bottomLeft;
-                P1.sprite = Player1_3;
-            }
-            else if (SelectP1.transform.position == topRight)
-            {
-                SelectP1.transform.position = bottomRight;
-                P1.sprite = Player1_1;
-            }
-
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (SelectP1.transform.position == topRight)
-            {
-                SelectP1.transform.position = topLeft;
-
-                P1.sprite = Player1_4;
-            }
-            else if (SelectP1.transform.position == bottomRight)
-            {
-                SelectP1.transform.position = bottomLeft;
-                P1.sprite = Player1_3;
-            }
-
-        }
-
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {

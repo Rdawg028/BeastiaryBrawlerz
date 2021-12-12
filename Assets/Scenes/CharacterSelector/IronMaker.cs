@@ -14,12 +14,17 @@ public class IronMaker : MonoBehaviour
     void Update()
     {
 
-        void OnCollisonEnter2D(Collision2D select)
-        {
-            if (false)
-            {
+        
+    }
+    
+    void onCollisionEnter(Collision2D select)
+    {
 
-            }
+        Debug.Log("triggered");
+        if (select.gameObject.name == "IronMaiden")
+        {
+            Debug.Log("Endtered");
+           // Instantiate(IronLeft);
         }
     }
 }
