@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 1221742245}
   - component: {fileID: 1221742244}
   - component: {fileID: 1221742246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 1611586299}
   - component: {fileID: 1611586301}
   - component: {fileID: 1611586300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blockers
   m_TagString: Ground
   m_Icon: {fileID: 0}
