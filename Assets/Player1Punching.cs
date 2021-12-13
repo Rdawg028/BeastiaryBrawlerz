@@ -89,11 +89,11 @@ public class Player1Punching : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.U)) // range attack
             {
-                anim.SetBool("Range", true);
+                anim.SetBool("IsRange", true);
             }
             else
             {
-                anim.SetBool("Range", false);
+                anim.SetBool("IsRange", false);
             }
 
 
@@ -125,6 +125,7 @@ public class Player1Punching : MonoBehaviour
             {
                 anim.SetBool("IsBlocking", false);
                 anim.SetBool("BlockHolding", false);
+                blocking = false;
                
             }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class TimerScript : MonoBehaviour
     GameObject tmp;
     GameObject P1;
     GameObject P2;
+    RoundsCoutners wins;
+    GameObject winTracker;
+    scene current;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +25,15 @@ public class TimerScript : MonoBehaviour
         timeText = tmp.GetComponent<Text>();
         P1 = GameObject.FindWithTag("Player 1");
         P2 = GameObject.FindWithTag("Player 2");
+
+        winTracker = GameObject.Find("RoundCounter");
+        wins = winTracker.GetComponent<RoundsCoutners>();
+        current = (scene)SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        /*
+    { 
        if (timeRunning)
         {
             //checking if either of the players is inactive
@@ -44,14 +51,19 @@ public class TimerScript : MonoBehaviour
                 Debug.Log("Time has run out");
                 timeRemaining = 0;
                 timeRunning = false;
+
+                wins.Player1Wins();
+                SceneManager.LoadScene((int)current);
+
                 //So this line closed the playing on the unity editor, for the real game we have to use Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false;
-                Application.Quit();
+                //UnityEditor.EditorApplication.isPlaying = false;
+                //Application.Quit();
 
             }
         }
-        */
-
+        
+        
+        /*
         DisplayTime(timeRemaining);
         if (timeRemaining > 0 && timeRunning)
         {
@@ -63,6 +75,7 @@ public class TimerScript : MonoBehaviour
             Debug.Log("Time has run out");
             timeRemaining = 0;
             timeRunning = false;
+        */
 
 
             //So this line closed the playing on the unity editor, for the real game we have to use Application.Quit();
@@ -71,7 +84,7 @@ public class TimerScript : MonoBehaviour
             
         }
 
-    }
+    
 
     void DisplayTime(float timeToDisplay)
     {
