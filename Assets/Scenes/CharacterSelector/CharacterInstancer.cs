@@ -15,6 +15,11 @@ public class CharacterInstancer : MonoBehaviour
     public Sprite iron1;
     public Sprite cube1;
     public bool P1Done;
+
+    public SpriteRenderer back1;
+    public Sprite bIron;
+    public Sprite bCube;
+ 
   
     void Start()
     {
@@ -30,6 +35,7 @@ public class CharacterInstancer : MonoBehaviour
         {
             thing.found = true;
             playerUno.sprite = null;
+            back1.sprite = bIron;
             IronLeft.transform.position = new Vector2(-5.97f, -2.55f);
             IronLeft.transform.localScale = new Vector2(.5f, .5f);
 
@@ -39,12 +45,13 @@ public class CharacterInstancer : MonoBehaviour
         {
             thing.found = true; 
             playerUno.sprite = null;
+            back1.sprite = bCube;
             CubertLeft.transform.position = new Vector2(-5.97f, -2.55f);
             Instantiate(CubertLeft);
         }
         else if (Input.GetKeyDown(KeyCode.Escape)&&GameObject.FindWithTag("Player 1").activeInHierarchy)
         {
-
+            back1.sprite= null;
             Destroy(GameObject.FindWithTag("Player 1"));
             thing.found = false;
         }
@@ -79,18 +86,18 @@ public class CharacterInstancer : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        Debug.Log("Exit one");
-        if (other.gameObject.name == "IronMaiden")
-        {
-            playerUno.sprite = null;
-           // Destroy(GameObject.FindWithTag("Player 1"));
-        }
-        if (other.gameObject.name == "CubeBert")
-        {
-            playerUno.sprite = null;
-            //Destroy(GameObject.FindWithTag("Player 1"));
-        }
-    }
+    //public void OnTriggerExit2D(Collider2D other)
+    //{
+    //    Debug.Log("Exit one");
+    //    if (other.gameObject.name == "IronMaiden")
+    //    {
+    //        playerUno.sprite = null;
+    //       // Destroy(GameObject.FindWithTag("Player 1"));
+    //    }
+    //    if (other.gameObject.name == "CubeBert")
+    //    {
+    //        playerUno.sprite = null;
+    //        //Destroy(GameObject.FindWithTag("Player 1"));
+    //    }
+    //}
 }
