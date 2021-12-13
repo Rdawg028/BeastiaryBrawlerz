@@ -3,7 +3,14 @@ guid: 699fe006de2b4f1428b6326508eb8bb5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - win1: {instanceID: 0}
+  - win2: {instanceID: 0}
+  - winner: {instanceID: 0}
+  - p1WinSound: {fileID: 8300000, guid: 2f40d6455ffce3340960a6eba3cdf2da, type: 3}
+  - p2WinSound: {fileID: 8300000, guid: 2f40d6455ffce3340960a6eba3cdf2da, type: 3}
+  - p1LoseSound: {fileID: 8300000, guid: 470ae4f86b55ba149939652e989d631c, type: 3}
+  - p2LoseSound: {fileID: 8300000, guid: 470ae4f86b55ba149939652e989d631c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
