@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Selector : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Selector : MonoBehaviour
     public Sprite Player2_3;
     public Sprite Player2_4;
 
+    CharacterInstancer checkDone1;
+    CharacterInstancer2 checkDone2;
 
     //for the red selector
     float pos1X=-4.59f;
@@ -42,6 +45,11 @@ public class Selector : MonoBehaviour
     {
         SelectP1 = GameObject.Find("Player1");
         SelectP2 = GameObject.Find("Player2");
+        
+
+        checkDone1 = SelectP1.GetComponent<CharacterInstancer>();
+        checkDone2 = SelectP2.GetComponent<CharacterInstancer2>();
+
         topLeft = new Vector3(pos1X, pos1Y, 0);
         topRight = new Vector3(pos2X, pos2Y, 0);
         bottomLeft = new Vector3(pos3X, pos3Y, 0);
@@ -59,6 +67,11 @@ public class Selector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (checkDone1.P1Done && checkDone2.P2Done)
+        {
+            SceneManager.LoadScene("Menu");
+        }
         if (!found)
         {
             if (Input.GetKeyDown(KeyCode.W))

@@ -51,7 +51,7 @@ public class Player1Movement : MonoBehaviour
 
                 Player1Engine.velocity = rightMove;
                 theAnimator.SetBool("Moving", true);
-                if (Player1Engine.name == "CubertLeft")
+                if (Player1Engine.name == "CubertLeft"|| Player1Engine.name == "CubertLeft(Clone)")
                 {
                     facing.flipX = true;
                 }
