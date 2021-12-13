@@ -51,7 +51,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   - curve:
@@ -88,7 +88,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   m_PPtrCurves:
@@ -117,7 +117,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 575328070
+      path: 3691591726
       attribute: 413499720
       script: {fileID: 0}
       typeID: 58
@@ -131,7 +131,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 575328070
+      path: 3691591726
       attribute: 1872933342
       script: {fileID: 0}
       typeID: 58
@@ -199,7 +199,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.x
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   - curve:
@@ -236,7 +236,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Offset.y
-    path: Player2PunchHit
+    path: P2Punch
     classID: 58
     script: {fileID: 0}
   m_EulerEditorCurves: []
