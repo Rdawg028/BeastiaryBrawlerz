@@ -13,6 +13,9 @@ public class CharacterInstancer2 : MonoBehaviour
     GameObject selector;
     Selector thing;
     public bool P2Done;
+    public SpriteRenderer back2;
+    public Sprite bIron2;
+    public Sprite bCube2;
     void Start()
     {
         player2 = GameObject.Find("Player2");
@@ -27,6 +30,7 @@ public class CharacterInstancer2 : MonoBehaviour
         {
             //thing.found = true;
             playerDos.sprite = null;
+            back2.sprite = bIron2;
             IronRight.transform.position = new Vector2(5.92f, -2.75f);
             ////IronRight.transform.localScale = new Vector2(.5f, .5f);
             ////IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
@@ -36,12 +40,13 @@ public class CharacterInstancer2 : MonoBehaviour
         {
             //thing.found = true;
             playerDos.sprite = null;
+            back2.sprite = bCube2;
             CubertRight.transform.position = new Vector2(5.92f, -2.75f);
             Instantiate(CubertRight);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace) && GameObject.FindWithTag("Player 2").activeInHierarchy)
         {
-
+            back2.sprite = null;
             Destroy(GameObject.FindWithTag("Player 2"));
         }
 
@@ -73,16 +78,16 @@ public class CharacterInstancer2 : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(Collider2D other)
-    {
+    //public void OnTriggerExit2D(Collider2D other)
+    //{
         
-        if (other.gameObject.name == "IronMaiden")
-        {
-           // Destroy(GameObject.FindWithTag("Player 2"));
-        }
-        if (other.gameObject.name == "CubeBert")
-        {
-           // Destroy(GameObject.FindWithTag("Player 2"));
-        }
-    }
+    //    if (other.gameObject.name == "IronMaiden")
+    //    {
+    //       // Destroy(GameObject.FindWithTag("Player 2"));
+    //    }
+    //    if (other.gameObject.name == "CubeBert")
+    //    {
+    //       // Destroy(GameObject.FindWithTag("Player 2"));
+    //    }
+    //}
 }
