@@ -942,6 +942,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6122896891032584403, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
+      propertyPath: m_Name
+      value: P2Punch
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
 --- !u!1001 &1987245957
