@@ -1209,6 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1601177278}
   - component: {fileID: 1601177277}
+  - component: {fileID: 1601177279}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1257,6 +1258,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1601177279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601177276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca7327e34c1d974491d8a3dc9176ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IronRight: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+  CubertRight: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
 --- !u!1 &1611586298
 GameObject:
   m_ObjectHideFlags: 0

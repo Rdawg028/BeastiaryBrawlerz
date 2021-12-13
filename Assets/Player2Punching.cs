@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Player2Punching : MonoBehaviour
 {
     Animator anim;
+    Animator anim2;
     public float p1Health;
     GameObject p1;
     GameObject win1;
@@ -117,11 +118,11 @@ public class Player2Punching : MonoBehaviour
                 blocking = false;
             }
             
-            if (p2Health <= 0)
-            {
-                anim.SetBool("IsLose", true);
-                //Object.Destroy(p2);
-            }
+            //if (p2Health <= 0)
+            //{
+            //    anim.SetBool("IsLose", true);
+            //    //Object.Destroy(p2);
+            //}
         }
     }
 
@@ -165,11 +166,15 @@ public class Player2Punching : MonoBehaviour
 
         GameObject Player2 = GameObject.FindWithTag("Player 2");
         DontDestroyOnLoad(Player2);
+        GameObject Player1 = GameObject.FindWithTag("Player 1");
+        DontDestroyOnLoad(Player1);
         GameObject theCamera = GameObject.FindWithTag("MainCamera");
         DontDestroyOnLoad(theCamera);
         GameObject floor = GameObject.FindWithTag("Ground");
         DontDestroyOnLoad(floor);
-
+        anim.SetBool("IsWin", true);
+        anim2 = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
+        anim2.SetBool("IsLose", true);
         wins.P2Wins = -1;
 
         //GameObject gameManager = GameObject.FindWithTag("gameManager");
