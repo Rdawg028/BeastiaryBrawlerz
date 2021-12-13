@@ -195,7 +195,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0a072351496e74245a18740b07f3e68b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8dd0142ea4f96c04299ab9faff7ab24f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.381
   m_Pitch: 1
@@ -1267,12 +1267,20 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6315
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.37
       objectReference: {fileID: 0}
     - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.01
+      value: -4.09
       objectReference: {fileID: 0}
     - target: {fileID: 6370675980649695518, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
       propertyPath: m_LocalPosition.z
