@@ -30,7 +30,7 @@ public class CharacterInstancer : MonoBehaviour
         if (select.gameObject.name == "IronMaiden")
         {
             
-            //thing.found = true;
+            thing.found = true;
             IronLeft.transform.position = new Vector2(-5.97f, -2.55f);
             IronLeft.transform.localScale = new Vector2(.5f, .5f);
             //IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
