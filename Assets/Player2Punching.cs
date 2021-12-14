@@ -184,6 +184,6 @@ public class Player2Punching : MonoBehaviour
 
         SceneManager.LoadScene("player1Win");
         Debug.Log("P1Destroyed");
-        Object.Destroy(p1);
+        //Object.Destroy(p1);
     }
  }

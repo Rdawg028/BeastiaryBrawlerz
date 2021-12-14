@@ -76,8 +76,13 @@ public class PlayerWins : MonoBehaviour
             SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
             SceneManager.MoveGameObjectToScene(GameObject.Find("CharacterChoices"), SceneManager.GetActiveScene());
             SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player1"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player2"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 1"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 2"), SceneManager.GetActiveScene());
+            //var objects = GameObject.FindObjectsOfType(GameObject);
+            //for (o : GameObject in objects)
+            //{
+            //    Destory(o.gameObject);
+            //}
             SceneManager.LoadScene("Character selecter");
         }
         
