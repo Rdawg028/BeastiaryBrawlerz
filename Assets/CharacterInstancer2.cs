@@ -16,11 +16,18 @@ public class CharacterInstancer2 : MonoBehaviour
     public SpriteRenderer back2;
     public Sprite bIron2;
     public Sprite bCube2;
+
+    GameObject choice;
+    CharacterMaker character;
+
     void Start()
     {
         player2 = GameObject.Find("Player2");
         selector = GameObject.Find("Selector");
         thing = selector.GetComponent<Selector>();
+
+        choice = GameObject.Find("CharacterChoices");
+        character = choice.GetComponent<CharacterMaker>();
     }
 
     // Update is called once per frame
@@ -35,6 +42,7 @@ public class CharacterInstancer2 : MonoBehaviour
             ////IronRight.transform.localScale = new Vector2(.5f, .5f);
             ////IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
             Instantiate(IronRight);
+            character.Iron2=true;
         }
         else if (Input.GetKeyDown(KeyCode.RightControl) && playerDos.sprite == cube)
         {
@@ -43,11 +51,14 @@ public class CharacterInstancer2 : MonoBehaviour
             back2.sprite = bCube2;
             CubertRight.transform.position = new Vector2(5.92f, -2.75f);
             Instantiate(CubertRight);
+            character.CubeBert2 = true;
         }
         else if (Input.GetKeyDown(KeyCode.Backspace) && GameObject.FindWithTag("Player 2").activeInHierarchy)
         {
             back2.sprite = null;
             Destroy(GameObject.FindWithTag("Player 2"));
+            character.Iron2 = false;
+            character.CubeBert2 = false;
         }
 
         if (Input.GetKeyDown(KeyCode.RightShift) && GameObject.FindWithTag("Player 2").activeInHierarchy)
