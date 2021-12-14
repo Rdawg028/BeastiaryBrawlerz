@@ -1705,8 +1705,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.43756366, y: 2.1410675}
-  m_Size: {x: 6.3445325, y: 15.427502}
+  m_Offset: {x: -0.14519668, y: 2.1410675}
+  m_Size: {x: 5.179012, y: 15.427502}
   m_Direction: 0
 --- !u!61 &1611586301
 BoxCollider2D:
@@ -1925,6 +1925,7 @@ MonoBehaviour:
   Player2_3: {fileID: 21300000, guid: 48fc6b9dcf85d4d409765df5b1e7e0a4, type: 3}
   Player2_4: {fileID: 21300000, guid: 91cccf0c46527e74283dcce4d74ea8cc, type: 3}
   found: 0
+  found2: 0
 --- !u!1 &1933341166
 GameObject:
   m_ObjectHideFlags: 0

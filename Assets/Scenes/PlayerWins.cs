@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWins : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class PlayerWins : MonoBehaviour
     public AudioClip p2WinSound;
     public AudioClip p1LoseSound;
     public AudioClip p2LoseSound;
+
+    float timeRemaining = 20;
+    public bool timeRunning = false;
+
+
     void Start()
     {
         win = GameObject.Find("Player1Wins");
@@ -50,5 +56,25 @@ public class PlayerWins : MonoBehaviour
 
     }
 
- 
+    private void Update()
+    {
+         if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            
+        }
+        else
+        {
+            timeRemaining = 0;
+            
+        }
+
+        if (timeRemaining == 0)
+        {
+            SceneManager.LoadScene("Character selecter");
+        }
+        
+    }
+
+
 }

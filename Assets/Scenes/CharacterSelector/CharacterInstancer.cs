@@ -43,7 +43,7 @@ public class CharacterInstancer : MonoBehaviour
             playerUno.sprite = null;
             back1.sprite = bIron;
             IronLeft.transform.position = new Vector2(-5.97f, -2.55f);
-            IronLeft.transform.localScale = new Vector2(.5f, .5f);
+            //IronLeft.transform.localScale = new Vector2(.5f, .5f);
 
             Instantiate(IronLeft);
             character.Iron1 = true;
