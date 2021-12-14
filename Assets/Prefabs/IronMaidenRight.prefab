@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4941374949553809011}
   - component: {fileID: 4941374949553809009}
   - component: {fileID: 4941374949553809008}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Range3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 4941374949911353548}
   - component: {fileID: 4941374949911353546}
   - component: {fileID: 4941374949911353549}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Heavy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4941374950908662806}
   - component: {fileID: 4941374950908662807}
   - component: {fileID: 4941374950908662804}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Light3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 4941374950272871002}
   - component: {fileID: 8544655305448541954}
   - component: {fileID: 8544655305448541955}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: IronMaidenRight
   m_TagString: Player 2
   m_Icon: {fileID: 0}
