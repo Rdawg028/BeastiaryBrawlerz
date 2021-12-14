@@ -70,7 +70,7 @@ public class Player1Movement : MonoBehaviour
                 Player1Engine.velocity = leftMove;
                 theAnimator.SetBool("Moving", true);
                 Player1Engine.SetRotation(0);
-                if (Player1Engine.name == "CubertLeft")
+                if (Player1Engine.name == "CubertLeft" || Player1Engine.name == "CubertLeft(Clone)")
                 {
                     facing.flipX = false;
                 }
