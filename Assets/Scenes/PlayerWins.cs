@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWins : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerWins : MonoBehaviour
     public AudioClip p2WinSound;
     public AudioClip p1LoseSound;
     public AudioClip p2LoseSound;
-    
+    public float timeRemaining = 20;
     void Start()
     {
         win = GameObject.Find("Player1Wins");
