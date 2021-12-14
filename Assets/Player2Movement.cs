@@ -123,10 +123,7 @@ public class Player2Movement : MonoBehaviour
                     }
                 }
 
-                //if (Player2Engine.velocity.y == 0)
-                //{
-                //   // theAnimator.SetBool("OnGround", true);
-                //}
+                
 
             }
 
@@ -135,30 +132,7 @@ public class Player2Movement : MonoBehaviour
         }
 
 
-        //old Jumping code, now gone
-
-        //public void OnCollisionEnter2D(Collision2D TheCollision)
-        //{
-        //    //gets called on collision
-
-        //    if (TheCollision.gameObject.CompareTag("Ground"))
-        //    {
-
-        //        //if collision with ground
-        //        theAnimator.SetBool("OnGround", true);
-        //        //theAnimator.SetBool("InAir", false);
-        //        // ground = true;
-
-        //    }
-        //    else
-        //    {
-        //        if (theAnimator.GetBool("InAir")){
-        //            theAnimator.SetBool("OnGround", false);
-        //        }
-
-        //    }
-
-        //}
+       
     }
 
     

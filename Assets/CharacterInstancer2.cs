@@ -41,8 +41,7 @@ public class CharacterInstancer2 : MonoBehaviour
             playerDos.sprite = null;
             back2.sprite = bIron2;
             IronRight.transform.position = new Vector2(5.92f, -2.75f);
-            ////IronRight.transform.localScale = new Vector2(.5f, .5f);
-            ////IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
+           
             Instantiate(IronRight);
             character.Iron2=true;
         }
@@ -79,31 +78,14 @@ public class CharacterInstancer2 : MonoBehaviour
         {
             playerDos.sprite = iron;
             playerDos.flipX = true;
-            //thing.found = true;
-            //IronRight.transform.position = new Vector2(5.92f, -2.75f);
-            ////IronRight.transform.localScale = new Vector2(.5f, .5f);
-            ////IronLeft.GetComponent<Rigidbody2D>().isKinematic = false; 
-            //Instantiate(IronRight);
+          
         }
         else if (select.gameObject.name == "CubeBert")
         {
             playerDos.flipX = false;
             playerDos.sprite = cube;
-            //CubertRight.transform.position = new Vector2(5.92f, -2.75f);
-            //Instantiate(CubertRight);
+            
         }
     }
 
-    //public void OnTriggerExit2D(Collider2D other)
-    //{
-        
-    //    if (other.gameObject.name == "IronMaiden")
-    //    {
-    //       // Destroy(GameObject.FindWithTag("Player 2"));
-    //    }
-    //    if (other.gameObject.name == "CubeBert")
-    //    {
-    //       // Destroy(GameObject.FindWithTag("Player 2"));
-    //    }
-    //}
 }
