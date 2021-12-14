@@ -82,6 +82,7 @@ public class CharacterInstancer : MonoBehaviour
         Debug.Log("enter one");
         if (select.gameObject.name == "IronMaiden")
         {
+            playerUno.flipX = false;
             Debug.Log("enter iron");
             playerUno.sprite = iron1;
             //thing.found = true;
@@ -92,6 +93,7 @@ public class CharacterInstancer : MonoBehaviour
         }
         else if (select.gameObject.name == "CubeBert")
         {
+            playerUno.flipX = true;
             playerUno.sprite = cube1;
             //CubertLeft.transform.position = new Vector2(-5.97f, -2.55f);
             //Instantiate(CubertLeft);

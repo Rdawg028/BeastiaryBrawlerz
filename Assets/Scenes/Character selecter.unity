@@ -1382,7 +1382,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35310555, y: -1.742902}
+  m_Offset: {x: -0.35310555, y: -1.5899673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1393,7 +1393,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.480068, y: 0.99091864}
+  m_Size: {x: 21.480068, y: 1.2967882}
   m_EdgeRadius: 0
 --- !u!4 &1221742243
 Transform:
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   IronRight: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
   CubertRight: {fileID: 1405654777004347809, guid: 18362fcc4d9fa834c91a1af46ce56215, type: 3}
   playerDos: {fileID: 384236063}
-  iron: {fileID: -254075004164222129, guid: 6f799835afa35fd4e9266a865d3636a3, type: 3}
+  iron: {fileID: 21300000, guid: fabc446b73c97fb4482b6c65aa44c897, type: 3}
   cube: {fileID: 21300000, guid: c1b93f85ec6b2d846bc4d022593696dc, type: 3}
   P2Done: 0
   back2: {fileID: 2065277637}
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   IronLeft: {fileID: 8998497733858518494, guid: 65633b61ab64cbc4c951dc6e4a85e0dc, type: 3}
   CubertLeft: {fileID: 8982177998502193371, guid: 23a32d62d08a6bf45be7bc6d6554eb58, type: 3}
   playerUno: {fileID: 2036868101}
-  iron1: {fileID: -3596438432202172163, guid: 6f799835afa35fd4e9266a865d3636a3, type: 3}
+  iron1: {fileID: 21300000, guid: fabc446b73c97fb4482b6c65aa44c897, type: 3}
   cube1: {fileID: 21300000, guid: c1b93f85ec6b2d846bc4d022593696dc, type: 3}
   P1Done: 0
   back1: {fileID: 136217753}
@@ -2078,7 +2078,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.901222, y: 10.34}
+    oldSize: {x: 13.6, y: 13.01}
     newSize: {x: 9.901222, y: 10.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2127,7 +2127,7 @@ SpriteRenderer:
   m_SortingLayerID: -809324203
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3596438432202172163, guid: 6f799835afa35fd4e9266a865d3636a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fabc446b73c97fb4482b6c65aa44c897, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
