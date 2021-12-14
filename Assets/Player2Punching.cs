@@ -164,10 +164,10 @@ public class Player2Punching : MonoBehaviour
     void loadWin(){
         current = scene.P1;
 
-        GameObject Player2 = GameObject.FindWithTag("Player 2");
-        DontDestroyOnLoad(Player2);
-        GameObject Player1 = GameObject.FindWithTag("Player 1");
-        DontDestroyOnLoad(Player1);
+        //GameObject Player2 = GameObject.FindWithTag("Player 2");
+        DontDestroyOnLoad(p2);
+       // GameObject Player1 = GameObject.FindWithTag("Player 1");
+        DontDestroyOnLoad(p1);
         GameObject theCamera = GameObject.FindWithTag("MainCamera");
         DontDestroyOnLoad(theCamera);
         GameObject floor = GameObject.FindWithTag("Ground");
@@ -184,6 +184,6 @@ public class Player2Punching : MonoBehaviour
 
         SceneManager.LoadScene("player1Win");
         Debug.Log("P1Destroyed");
-        Object.Destroy(p1);
+        //Object.Destroy(p1);
     }
  }

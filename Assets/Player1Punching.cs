@@ -137,15 +137,7 @@ public class Player1Punching : MonoBehaviour
 
 
         } 
-        if (p1Health < 0)
-        {
-            anim.SetBool("IsLose", true);
-            
-        }
-        else if (scr.p2Health <= 0)
-        {
-            anim.SetBool("IsWin", true);
-        }
+
     }
 
     

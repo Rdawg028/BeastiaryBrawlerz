@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerWins : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerWins : MonoBehaviour
     public AudioClip p2WinSound;
     public AudioClip p1LoseSound;
     public AudioClip p2LoseSound;
-    
+    public float timeRemaining = 20;
     void Start()
     {
         win = GameObject.Find("Player1Wins");
@@ -49,12 +50,44 @@ public class PlayerWins : MonoBehaviour
             P2Sound.Play();
             
         }
-        else if (anim2.GetBool("IsWin"))
+        if (anim2.GetBool("IsWin"))
         {
             winner.sprite = win2;
         }
 
     }
 
- 
+    private void Update()
+    {
+         if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            
+        }
+        else
+        {
+            timeRemaining = 0;
+            
+        }
+
+        if (timeRemaining == 0)
+        {
+            SceneManager.MoveGameObjectToScene(GameObject.Find("Main Camera"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.Find("CharacterChoices"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 1"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 2"), SceneManager.GetActiveScene());
+            //var objects = GameObject.FindObjectsOfType(GameObject);
+            //for (o : GameObject in objects)
+            //{
+            //    Destory(o.gameObject);
+            //}
+            SceneManager.LoadScene("Character selecter");
+        }
+        
+    }
+
+
+
 }
