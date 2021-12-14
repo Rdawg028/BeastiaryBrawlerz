@@ -40,6 +40,8 @@ public class Selector : MonoBehaviour
 
     public bool found=false;
 
+    public bool found2 = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,64 +136,66 @@ public class Selector : MonoBehaviour
 
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (!found2)
         {
-            if (SelectP2.transform.position == bottomLeft)
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                SelectP2.transform.position = topLeft;
-                P2.sprite = Player2_4;
-            }
-            else if (SelectP2.transform.position == bottomRight)
-            {
-                SelectP2.transform.position = topRight;
-                P2.sprite = Player2_1;
-            }
+                if (SelectP2.transform.position == bottomLeft)
+                {
+                    SelectP2.transform.position = topLeft;
+                    P2.sprite = Player2_4;
+                }
+                else if (SelectP2.transform.position == bottomRight)
+                {
+                    SelectP2.transform.position = topRight;
+                    P2.sprite = Player2_1;
+                }
 
+
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (SelectP2.transform.position == topLeft)
+                {
+                    SelectP2.transform.position = topRight;
+                    P2.sprite = Player2_1;
+                }
+                else if (SelectP2.transform.position == bottomLeft)
+                {
+                    SelectP2.transform.position = bottomRight;
+                    P2.sprite = Player2_3;
+                }
+
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (SelectP2.transform.position == topLeft)
+                {
+                    SelectP2.transform.position = bottomLeft;
+                    P2.sprite = Player2_2;
+                }
+                else if (SelectP2.transform.position == topRight)
+                {
+                    SelectP2.transform.position = bottomRight;
+                    P2.sprite = Player2_3;
+                }
+
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (SelectP2.transform.position == topRight)
+                {
+                    SelectP2.transform.position = topLeft;
+                    P2.sprite = Player2_4;
+                }
+                else if (SelectP2.transform.position == bottomRight)
+                {
+                    SelectP2.transform.position = bottomLeft;
+                    P2.sprite = Player2_2;
+                }
+            }
 
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (SelectP2.transform.position == topLeft)
-            {
-                SelectP2.transform.position = topRight;
-                P2.sprite = Player2_1;
-            }
-            else if (SelectP2.transform.position == bottomLeft)
-            {
-                SelectP2.transform.position = bottomRight;
-                P2.sprite = Player2_3;
-            }
-
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (SelectP2.transform.position == topLeft)
-            {
-                SelectP2.transform.position = bottomLeft;
-                P2.sprite = Player2_2;
-            }
-            else if (SelectP2.transform.position == topRight)
-            {
-                SelectP2.transform.position = bottomRight;
-                P2.sprite = Player2_3;
-            }
-
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (SelectP2.transform.position == topRight)
-            {
-                SelectP2.transform.position = topLeft;
-                P2.sprite = Player2_4;
-            }
-            else if (SelectP2.transform.position == bottomRight)
-            {
-                SelectP2.transform.position = bottomLeft;
-                P2.sprite = Player2_2;
-            }
-        }
-
     }
 
 
