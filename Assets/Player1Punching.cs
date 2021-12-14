@@ -145,9 +145,6 @@ public class Player1Punching : MonoBehaviour
         else if (scr.p2Health <= 0)
         {
             anim.SetBool("IsWin", true);
-            P1Sound.clip = p1WinSound;
-            P1Sound.Play();
-            Debug.Log("sound");
         }
     }
 

@@ -12,6 +12,7 @@ public class Heavy1 : MonoBehaviour
     Slider HealthBar;
     Player2Punching scr;
     Animator anim;
+    AudioSource source;
    
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class Heavy1 : MonoBehaviour
         anim = Player2.GetComponent<Animator>();
         anim.SetBool("IsHit", false);
 
+        source = Player1.GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +40,7 @@ public class Heavy1 : MonoBehaviour
         {
             if (!scr.blocking)
             {
+                source.Play();
                 Player1Var.p2Health = scr.TakeDamageHeavy(Player1Var.p2Health);
                 Debug.Log("Fist Hit");
                 HealthBar.value = Player1Var.p2Health;

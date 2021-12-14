@@ -14,6 +14,7 @@ public class Fist2 : MonoBehaviour
     Animator anim;
     Player1Punching block;
     
+    
 
     // Start is called before the first frame update
     void Start()

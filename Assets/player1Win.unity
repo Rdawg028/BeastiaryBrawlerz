@@ -304,3 +304,7 @@ MonoBehaviour:
   win1: {fileID: 21300000, guid: b44f9ff94ddf2e14884e1d0ea1594aa2, type: 3}
   win2: {fileID: 21300000, guid: 1a4f138a07e97334c877d293e29b04bb, type: 3}
   winner: {fileID: 659242569}
+  p1WinSound: {fileID: 8300000, guid: 2f40d6455ffce3340960a6eba3cdf2da, type: 3}
+  p2WinSound: {fileID: 8300000, guid: 2f40d6455ffce3340960a6eba3cdf2da, type: 3}
+  p1LoseSound: {fileID: 8300000, guid: 470ae4f86b55ba149939652e989d631c, type: 3}
+  p2LoseSound: {fileID: 8300000, guid: 470ae4f86b55ba149939652e989d631c, type: 3}
