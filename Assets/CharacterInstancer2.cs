@@ -78,6 +78,7 @@ public class CharacterInstancer2 : MonoBehaviour
         if (select.gameObject.name == "IronMaiden")
         {
             playerDos.sprite = iron;
+            playerDos.flipX = true;
             //thing.found = true;
             //IronRight.transform.position = new Vector2(5.92f, -2.75f);
             ////IronRight.transform.localScale = new Vector2(.5f, .5f);
@@ -86,6 +87,7 @@ public class CharacterInstancer2 : MonoBehaviour
         }
         else if (select.gameObject.name == "CubeBert")
         {
+            playerDos.flipX = false;
             playerDos.sprite = cube;
             //CubertRight.transform.position = new Vector2(5.92f, -2.75f);
             //Instantiate(CubertRight);
