@@ -56,7 +56,7 @@ public class Player2Movement : MonoBehaviour
 
                 Player2Engine.velocity = rightMove;
                 theAnimator.SetBool("Moving", true);
-                if (Player2Engine.name == "CubertRight")
+                if (Player2Engine.name == "CubertRight"||Player2Engine.name == "CubertRight(Clone)")
                 {
                     facing.flipX = true;
                 }
@@ -76,7 +76,7 @@ public class Player2Movement : MonoBehaviour
                 Player2Engine.velocity = leftMove;
                 theAnimator.SetBool("Moving", true);
                 Player2Engine.SetRotation(0);
-                if (Player2Engine.name == "CubertRight")
+                if (Player2Engine.name == "CubertRight"|| Player2Engine.name == "CubertRight(Clone)")
                 {
                     facing.flipX = false;
                 }

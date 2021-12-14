@@ -17,6 +17,8 @@ public class CharacterInstancer2 : MonoBehaviour
     public Sprite bIron2;
     public Sprite bCube2;
 
+ 
+
     GameObject choice;
     CharacterMaker character;
 
@@ -35,7 +37,7 @@ public class CharacterInstancer2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightControl) && playerDos.sprite == iron)
         {
-            //thing.found = true;
+            thing.found2 = true;
             playerDos.sprite = null;
             back2.sprite = bIron2;
             IronRight.transform.position = new Vector2(5.92f, -2.75f);
@@ -46,7 +48,7 @@ public class CharacterInstancer2 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.RightControl) && playerDos.sprite == cube)
         {
-            //thing.found = true;
+            thing.found2 = true;
             playerDos.sprite = null;
             back2.sprite = bCube2;
             CubertRight.transform.position = new Vector2(5.92f, -2.75f);
@@ -55,6 +57,7 @@ public class CharacterInstancer2 : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Backspace) && GameObject.FindWithTag("Player 2").activeInHierarchy)
         {
+            thing.found2 = false;
             back2.sprite = null;
             Destroy(GameObject.FindWithTag("Player 2"));
             character.Iron2 = false;

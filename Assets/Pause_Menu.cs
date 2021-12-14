@@ -46,7 +46,7 @@ public class Pause_Menu : MonoBehaviour
 
     public void loadmainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Character selecter");
     }
     
 }
