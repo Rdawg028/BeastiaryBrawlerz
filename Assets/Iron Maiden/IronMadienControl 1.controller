@@ -261,7 +261,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 72e7d2029a3788240bbbc26a18dc16c9, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7a74ef35b934fdc4bb339f38c89c26f3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -363,7 +363,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9666e9b62e5ac4d4d9b232fffa3609d5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 892a8b7a1f9991d489d24a785f476130, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -403,7 +403,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IronMadienControl
+  m_Name: IronMadienControl 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsBlocking
@@ -600,7 +600,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ad2dd4dca8376444bb3e64a4d71a0c13, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5a8b5e5fb8a0e2e478d0d8b48d94434a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

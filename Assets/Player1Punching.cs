@@ -27,6 +27,10 @@ public class Player1Punching : MonoBehaviour
     Slider HealthBar;
     public float p1Health;
 
+    AudioSource P1Sound;
+    public AudioClip p1LoseSound;
+    public AudioClip p1WinSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +64,8 @@ public class Player1Punching : MonoBehaviour
         scr = p2.GetComponent<Player2Punching>();
 
         blocking = false;
+
+        P1Sound = GameObject.FindWithTag("Player 1").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -134,10 +140,14 @@ public class Player1Punching : MonoBehaviour
         if (p1Health < 0)
         {
             anim.SetBool("IsLose", true);
+            
         }
         else if (scr.p2Health <= 0)
         {
             anim.SetBool("IsWin", true);
+            P1Sound.clip = p1WinSound;
+            P1Sound.Play();
+            Debug.Log("sound");
         }
     }
 

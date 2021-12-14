@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &184889898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4941374950908662809, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+  m_PrefabInstance: {fileID: 8543234465392700182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &184889900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184889898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4534c7979f9fb6d47b7b69a7a3e06970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229901757
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +361,8 @@ MonoBehaviour:
   p2Health: 0
   blocking: 0
   p1Health: 0
+  p1LoseSound: {fileID: 0}
+  p1WinSound: {fileID: 0}
 --- !u!1 &897253596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,14 +1554,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941374949553809010, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_Name
+      value: IronRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941374949911353551, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_Name
+      value: IronHeavy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941374950272871002, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f27ecfe82250a8d4da71d810a0190e2d, type: 2}
+    - target: {fileID: 4941374950908662806, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941374950908662809, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+      propertyPath: m_Name
+      value: IronLight
+      objectReference: {fileID: 0}
     - target: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_Name
       value: IronMaidenRight
       objectReference: {fileID: 0}
     - target: {fileID: 5575062151347192172, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4941374950272870999, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
+    - {fileID: 4941374950908662804, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4824d098711235b41b188ccf4cb11a0c, type: 3}
