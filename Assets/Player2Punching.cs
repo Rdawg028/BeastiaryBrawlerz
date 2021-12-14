@@ -81,11 +81,11 @@ public class Player2Punching : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Alpha3)) // range attack
             {
-                anim.SetBool("Range", true);
+                anim.SetBool("IsRange", true);
             }
             else
             {
-                anim.SetBool("Range", false);
+                anim.SetBool("IsRange", false);
             }
 
 

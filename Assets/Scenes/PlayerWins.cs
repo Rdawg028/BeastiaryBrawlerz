@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerWins : MonoBehaviour
 {
@@ -16,17 +15,14 @@ public class PlayerWins : MonoBehaviour
     public SpriteRenderer winner;
     bool winne = false;
 
+    
     AudioSource P1Sound;
     AudioSource P2Sound;
     public  AudioClip p1WinSound;
     public AudioClip p2WinSound;
     public AudioClip p1LoseSound;
     public AudioClip p2LoseSound;
-
-    float timeRemaining = 20;
-    public bool timeRunning = false;
-
-
+    
     void Start()
     {
         win = GameObject.Find("Player1Wins");
@@ -43,7 +39,11 @@ public class PlayerWins : MonoBehaviour
         if (anim1.GetBool("IsWin"))
         {
             winner.sprite = win1;
-            P1Sound.clip = p1WinSound;
+            P1Sound.clip = Resources.Load<AudioClip>("Cubertwin");
+            if (P1Sound.clip == null)
+            {
+                Debug.Log("null");
+            }
             P1Sound.Play();
             P2Sound.clip = p2LoseSound;
             P2Sound.Play();
@@ -81,6 +81,7 @@ public class PlayerWins : MonoBehaviour
         }
         
     }
+
 
 
 }
