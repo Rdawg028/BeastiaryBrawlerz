@@ -49,12 +49,39 @@ public class PlayerWins : MonoBehaviour
             P2Sound.Play();
             
         }
-        else if (anim2.GetBool("IsWin"))
+        if (anim2.GetBool("IsWin"))
         {
             winner.sprite = win2;
         }
 
     }
 
- 
+    private void Update()
+    {
+         if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            
+        }
+        else
+        {
+            timeRemaining = 0;
+            
+        }
+
+        if (timeRemaining == 0)
+        {
+            SceneManager.MoveGameObjectToScene(GameObject.Find("Main Camera"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.Find("CharacterChoices"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player1"), SceneManager.GetActiveScene());
+            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player2"), SceneManager.GetActiveScene());
+            SceneManager.LoadScene("Character selecter");
+        }
+        
+    }
+
+
+
 }
