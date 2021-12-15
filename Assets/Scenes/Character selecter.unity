@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229, y: 95}
+  m_AnchoredPosition: {x: -836, y: 401}
   m_SizeDelta: {x: 158, y: 137.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570546580
@@ -906,8 +906,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -109, y: 59}
-  m_SizeDelta: {x: 187.31, y: 100.56}
+  m_AnchoredPosition: {x: -836, y: 225.14}
+  m_SizeDelta: {x: 158, y: 214.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714161002
 MonoBehaviour:
@@ -931,10 +931,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1595,8 +1595,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 109, y: 113}
-  m_SizeDelta: {x: 116.55, y: 129.62}
+  m_AnchoredPosition: {x: 811, y: 281.96997}
+  m_SizeDelta: {x: 181.71, y: 129.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346554614
 MonoBehaviour:
@@ -1635,10 +1635,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1899,7 +1899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 235, y: 94.624985}
+  m_AnchoredPosition: {x: 811, y: 415.15}
   m_SizeDelta: {x: 181.71, y: 136.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795835664
