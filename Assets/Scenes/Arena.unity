@@ -843,6 +843,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510548078450560096, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
       propertyPath: timeRemaining
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510548078450560102, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510548078450560102, guid: 059d6069f7da80447aa6039f648928b2, type: 3}
+      propertyPath: m_FontData.m_FontSize
       value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
