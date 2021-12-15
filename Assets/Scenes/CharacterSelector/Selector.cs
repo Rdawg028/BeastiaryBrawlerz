@@ -60,10 +60,10 @@ public class Selector : MonoBehaviour
         //Player1_2 = Resources.Load<Sprite>("Player1_2");
         //Player1_3 = Resources.Load<Sprite>("Player1_3");
         //Player1_4 = Resources.Load<Sprite>("Player1_4");
-        SelectP1.transform.position = topLeft;
-        P1.sprite = Player1_4;
-        SelectP2.transform.position = topRight;
-        P2.sprite = Player2_1;
+        SelectP1.transform.position = bottomLeft;
+        P1.sprite = Player1_3;
+        SelectP2.transform.position = bottomRight;
+        P2.sprite = Player2_3;
     }
 
     // Update is called once per frame
@@ -76,59 +76,59 @@ public class Selector : MonoBehaviour
         }
         if (!found)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            //if (Input.GetKeyDown(KeyCode.W))
+            //{
+            //    if (SelectP1.transform.position == bottomLeft)
+            //    {
+            //        SelectP1.transform.position = topLeft;
+
+            //        P1.sprite = Player1_4;
+            //    }
+            //    else if (SelectP1.transform.position == bottomRight)
+            //    {
+            //        SelectP1.transform.position = topRight;
+            //        P1.sprite = Player1_2;
+            //    }
+
+
+            //}
+             if (Input.GetKeyDown(KeyCode.D))
             {
-                if (SelectP1.transform.position == bottomLeft)
-                {
-                    SelectP1.transform.position = topLeft;
-
-                    P1.sprite = Player1_4;
-                }
-                else if (SelectP1.transform.position == bottomRight)
-                {
-                    SelectP1.transform.position = topRight;
-                    P1.sprite = Player1_2;
-                }
-
-
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                if (SelectP1.transform.position == topLeft)
-                {
-                    SelectP1.transform.position = topRight;
-                    P1.sprite = Player1_2;
-                }
-                else if (SelectP1.transform.position == bottomLeft)
+                //if (SelectP1.transform.position == topLeft)
+                //{
+                //    SelectP1.transform.position = topRight;
+                //    P1.sprite = Player1_2;
+                //}
+                 if (SelectP1.transform.position == bottomLeft)
                 {
                     SelectP1.transform.position = bottomRight;
                     P1.sprite = Player1_1;
                 }
 
             }
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                if (SelectP1.transform.position == topLeft)
-                {
-                    SelectP1.transform.position = bottomLeft;
-                    P1.sprite = Player1_3;
-                }
-                else if (SelectP1.transform.position == topRight)
-                {
-                    SelectP1.transform.position = bottomRight;
-                    P1.sprite = Player1_1;
-                }
+            //else if (Input.GetKeyDown(KeyCode.S))
+            //{
+            //    if (SelectP1.transform.position == topLeft)
+            //    {
+            //        SelectP1.transform.position = bottomLeft;
+            //        P1.sprite = Player1_3;
+            //    }
+            //    else if (SelectP1.transform.position == topRight)
+            //    {
+            //        SelectP1.transform.position = bottomRight;
+            //        P1.sprite = Player1_1;
+            //    }
 
-            }
+            //}
             else if (Input.GetKeyDown(KeyCode.A))
             {
-                if (SelectP1.transform.position == topRight)
-                {
-                    SelectP1.transform.position = topLeft;
+                //if (SelectP1.transform.position == topRight)
+                //{
+                //    SelectP1.transform.position = topLeft;
 
-                    P1.sprite = Player1_4;
-                }
-                else if (SelectP1.transform.position == bottomRight)
+                //    P1.sprite = Player1_4;
+                //}
+                 if (SelectP1.transform.position == bottomRight)
                 {
                     SelectP1.transform.position = bottomLeft;
                     P1.sprite = Player1_3;
@@ -138,64 +138,64 @@ public class Selector : MonoBehaviour
         }
         if (!found2)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (SelectP2.transform.position == bottomLeft)
-                {
-                    SelectP2.transform.position = topLeft;
-                    P2.sprite = Player2_4;
-                }
-                else if (SelectP2.transform.position == bottomRight)
-                {
-                    SelectP2.transform.position = topRight;
-                    P2.sprite = Player2_1;
-                }
+            //if (Input.GetKeyDown(KeyCode.UpArrow))
+            //{
+            //    if (SelectP2.transform.position == bottomLeft)
+            //    {
+            //        SelectP2.transform.position = topLeft;
+            //        P2.sprite = Player2_4;
+            //    }
+            //    else if (SelectP2.transform.position == bottomRight)
+            //    {
+            //        SelectP2.transform.position = topRight;
+            //        P2.sprite = Player2_1;
+            //    }
 
 
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            //}
+             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (SelectP2.transform.position == topLeft)
-                {
-                    SelectP2.transform.position = topRight;
-                    P2.sprite = Player2_1;
-                }
-                else if (SelectP2.transform.position == bottomLeft)
+                //if (SelectP2.transform.position == topLeft)
+                //{
+                //    SelectP2.transform.position = topRight;
+                //    P2.sprite = Player2_1;
+                //}
+                 if (SelectP2.transform.position == bottomLeft)
                 {
                     SelectP2.transform.position = bottomRight;
                     P2.sprite = Player2_3;
                 }
 
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            //else if (Input.GetKeyDown(KeyCode.DownArrow))
+            //{
+            //    if (SelectP2.transform.position == topLeft)
+            //    {
+            //        SelectP2.transform.position = bottomLeft;
+            //        P2.sprite = Player2_2;
+            //    }
+            //    else if (SelectP2.transform.position == topRight)
+            //    {
+            //        SelectP2.transform.position = bottomRight;
+            //        P2.sprite = Player2_3;
+            //    }
+
+            }
+             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (SelectP2.transform.position == topLeft)
+                //if (SelectP2.transform.position == topRight)
+                //{
+                //    SelectP2.transform.position = topLeft;
+                //    P2.sprite = Player2_4;
+                //}
+                 if (SelectP2.transform.position == bottomRight)
                 {
                     SelectP2.transform.position = bottomLeft;
                     P2.sprite = Player2_2;
                 }
-                else if (SelectP2.transform.position == topRight)
-                {
-                    SelectP2.transform.position = bottomRight;
-                    P2.sprite = Player2_3;
-                }
-
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                if (SelectP2.transform.position == topRight)
-                {
-                    SelectP2.transform.position = topLeft;
-                    P2.sprite = Player2_4;
-                }
-                else if (SelectP2.transform.position == bottomRight)
-                {
-                    SelectP2.transform.position = bottomLeft;
-                    P2.sprite = Player2_2;
-                }
             }
 
-        }
+        
     }
 
 
