@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1Health: 0
   blocking: 0
-  p2Health: 0
+  p2Health: 25
 --- !u!82 &-3012914828643780839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 6122896891032584405}
   - component: {fileID: 1121153202}
   m_Layer: 7
-  m_Name: Player2PunchHit
+  m_Name: P2Punch
   m_TagString: P2Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
