@@ -19,6 +19,7 @@ public class PlayerWins : MonoBehaviour
     Rigidbody2D Player1Engine;
     Rigidbody2D Player2Engine;
 
+    GameObject winMenu;
 
     AudioSource CubeWin, IronWin, CubeLose, IronLose;
 
@@ -38,6 +39,9 @@ public class PlayerWins : MonoBehaviour
 
         Player1Engine = GameObject.FindWithTag("Player 1").GetComponent<Rigidbody2D>();
         Player2Engine = GameObject.FindWithTag("Player 2").GetComponent<Rigidbody2D>();
+
+        winMenu = GameObject.Find("PlayAgainMenu");
+        winMenu.SetActive(false);
 
         if (Player1Engine.name == "CubertLeft(Clone)")
         {
@@ -126,7 +130,7 @@ public class PlayerWins : MonoBehaviour
 
         if (timeRemaining == 0)
         {
-           
+            winMenu.SetActive(true);
         }
         
     }
