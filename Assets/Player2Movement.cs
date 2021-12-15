@@ -107,7 +107,7 @@ public class Player2Movement : MonoBehaviour
                 if (Player2Engine.velocity.x > 0)
                 {
                     Player2Engine.velocity = Player2Engine.velocity - VelFriction;
-                    if (Player2Engine.velocity.x < 0)
+                    if (Player2Engine.velocity.x <= 0)
                     {
                         Player2Engine.velocity = noMove;
                         theAnimator.SetBool("Moving", false);
@@ -116,7 +116,7 @@ public class Player2Movement : MonoBehaviour
                 else if (Player2Engine.velocity.x < 0)
                 {
                     Player2Engine.velocity = Player2Engine.velocity + VelFriction;
-                    if (Player2Engine.velocity.x > 0)
+                    if (Player2Engine.velocity.x >= 0)
                     {
                         Player2Engine.velocity = noMove;
                         theAnimator.SetBool("Moving", false);
