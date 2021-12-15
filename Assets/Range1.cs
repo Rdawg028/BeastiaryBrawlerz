@@ -12,6 +12,7 @@ public class Range1 : MonoBehaviour
     Slider HealthBar;
     Player2Punching scr;
     Animator anim;
+    AudioSource source;
     
     
 
@@ -29,6 +30,8 @@ public class Range1 : MonoBehaviour
         scr = Player2.GetComponent<Player2Punching>();
         anim = Player2.GetComponent<Animator>();
         anim.SetBool("IsHit", false);
+
+        source = Player1.GetComponent<AudioSource>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -37,6 +40,7 @@ public class Range1 : MonoBehaviour
         {
             if (!scr.blocking)
             {
+                source.Play();
                 Player1Var.p2Health = scr.TakeRangeDamage(Player1Var.p2Health);
                 Debug.Log("Fist Hit");
                 HealthBar.value = Player1Var.p2Health;
