@@ -12,6 +12,7 @@ public class Range2 : MonoBehaviour
     Slider HealthBar;
     Animator anim;
     Player1Punching block;
+    AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class Range2 : MonoBehaviour
         Player1 = GameObject.FindWithTag("Player 1");
         anim = Player1.GetComponent<Animator>();
         block = Player1.GetComponent<Player1Punching>();
+
+        source = Player2.GetComponent<AudioSource>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +36,7 @@ public class Range2 : MonoBehaviour
         {
             if (!block.blocking)
             {
+                source.Play();
                 Player2Var.p1Health = Player2Var.TakeRangeDamage(Player2Var.p1Health);
                 Debug.Log("Fist Hit");
                 HealthBar.value = Player2Var.p1Health;

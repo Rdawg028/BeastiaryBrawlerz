@@ -13,6 +13,7 @@ public class Fist2 : MonoBehaviour
     Slider HealthBar;
     Animator anim;
     Player1Punching block;
+    AudioSource source;
     
     
 
@@ -30,18 +31,21 @@ public class Fist2 : MonoBehaviour
        anim = Player1.GetComponent<Animator>();
        block = Player1.GetComponent<Player1Punching>();
 
+       source = Player2.GetComponent<AudioSource>();
+
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag == "Player 1")
         {
+            source.Play();
             if (!block.blocking)
             Player2Var.p1Health = Player2Var.TakeDamageLight(Player2Var.p1Health);
             Debug.Log("Fist Hit");
             HealthBar.value = Player2Var.p1Health;
             Debug.Log("health bar");
-
             anim.SetBool("IsHit", true);
         }
        
