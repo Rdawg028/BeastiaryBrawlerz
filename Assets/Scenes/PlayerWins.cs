@@ -15,14 +15,13 @@ public class PlayerWins : MonoBehaviour
     public Sprite win2;
     public SpriteRenderer winner;
     bool winne = false;
+    bool CubertL, IronL, CubertR, IronR;
+    Rigidbody2D Player1Engine;
+    Rigidbody2D Player2Engine;
 
-    
-    AudioSource P1Sound;
-    AudioSource P2Sound;
-    public  AudioClip p1WinSound;
-    public AudioClip p2WinSound;
-    public AudioClip p1LoseSound;
-    public AudioClip p2LoseSound;
+
+    AudioSource CubeWin, IronWin, CubeLose, IronLose;
+
     public float timeRemaining = 20;
     void Start()
     {
@@ -32,27 +31,82 @@ public class PlayerWins : MonoBehaviour
         anim2 = GameObject.FindWithTag("Player 2").GetComponent<Animator>();
         anim1 = GameObject.FindWithTag("Player 1").GetComponent<Animator>();
 
-        P1Sound = GameObject.FindWithTag("Player 1").GetComponent<AudioSource>();
-        P2Sound = GameObject.FindWithTag("Player 2").GetComponent<AudioSource>();
+        CubeWin = GameObject.Find("CubeWin").GetComponent<AudioSource>();
+        IronWin = GameObject.Find("IronWin").GetComponent<AudioSource>();
+        CubeLose = GameObject.Find("CubeLose").GetComponent<AudioSource>();
+        IronLose = GameObject.Find("IronLose").GetComponent<AudioSource>();
+
+        Player1Engine = GameObject.FindWithTag("Player 1").GetComponent<Rigidbody2D>();
+        Player2Engine = GameObject.FindWithTag("Player 2").GetComponent<Rigidbody2D>();
+
+        if (Player1Engine.name == "CubertLeft(Clone)")
+        {
+            CubertL = true;
+        }
+        else if (Player1Engine.name == "IronMaidenLeft(Clone)")
+        {
+            IronL = true;
+        }
+
+        if (Player2Engine.name == "CubertRight(Clone)")
+        {
+            CubertR = true;
+        }
+        else if (Player2Engine.name == "IronMaidenRight(Clone)")
+        {
+            IronR = true;
+        }
 
 
 
         if (anim1.GetBool("IsWin"))
         {
             winner.sprite = win1;
-            P1Sound.clip = Resources.Load<AudioClip>("Cubertwin");
-            if (P1Sound.clip == null)
+            if (CubertL && CubertR)
             {
-                Debug.Log("null");
+                CubeWin.Play();
+                CubeLose.Play();
             }
-            P1Sound.Play();
-            P2Sound.clip = p2LoseSound;
-            P2Sound.Play();
+            else if (IronL && IronR)
+            {
+                IronWin.Play();
+                IronLose.Play();
+            }
+            else if (CubertL && IronR)
+            {
+                CubeWin.Play();
+                IronLose.Play();
+            }
+            else if (IronL && CubertR)
+            {
+                IronWin.Play();
+                CubeLose.Play();
+            }
             
         }
         if (anim2.GetBool("IsWin"))
         {
             winner.sprite = win2;
+            if (CubertL && CubertR)
+            {
+                CubeWin.Play();
+                CubeLose.Play();
+            }
+            else if (IronL && IronR)
+            {
+                IronWin.Play();
+                IronLose.Play();
+            }
+            else if (CubertL && IronR)
+            {
+                CubeLose.Play();
+                IronWin.Play();
+            }
+            else if (IronL && CubertR)
+            {
+                IronLose.Play();
+                CubeWin.Play();
+            }
         }
 
     }
