@@ -72,20 +72,37 @@ public class PlayerWins : MonoBehaviour
 
         if (timeRemaining == 0)
         {
-            SceneManager.MoveGameObjectToScene(GameObject.Find("Main Camera"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.Find("CharacterChoices"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 1"), SceneManager.GetActiveScene());
-            SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 2"), SceneManager.GetActiveScene());
-            //var objects = GameObject.FindObjectsOfType(GameObject);
-            //for (o : GameObject in objects)
-            //{
-            //    Destory(o.gameObject);
-            //}
-            SceneManager.LoadScene("Character selecter");
+           
         }
         
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void loadStangeSelect()
+    {
+        SceneManager.MoveGameObjectToScene(GameObject.Find("Main Camera"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
+      
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 1"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 2"), SceneManager.GetActiveScene());
+
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void loadCharacterSelect()
+    {
+        SceneManager.MoveGameObjectToScene(GameObject.Find("Main Camera"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("RoundCounter"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("CharacterChoices"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Ground"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 1"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("Player 2"), SceneManager.GetActiveScene());
+        
+        SceneManager.LoadScene("Character selecter");
     }
 
 
